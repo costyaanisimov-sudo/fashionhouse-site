@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FASHION HOUSE Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #111111;
+  --white: #ffffff;
+  --grey-light: #f5f5f3;
+  --grey-mid: #d0cfc9;
+  --grey-text: #888880;
+}
+
+html { font-size: 18px; }
+
+body {
+  font-family: 'Cormorant', Georgia, serif;
+  background: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--grey-text);
+  font-weight: 400;
+}
+
+/* ═══════════════════════════
+   HEADER
+═══════════════════════════ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--white);
+  border-bottom: 1px solid var(--grey-mid);
+  height: 130px;
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.logo { text-decoration: none; flex-shrink: 0; }
+.logo img { height: 110px; width: auto; object-fit: contain; }
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+/* Lang switcher */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.lang-switch a {
+  color: var(--grey-text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.lang-switch a:hover { color: var(--black); }
+.lang-switch .active { color: var(--black); font-weight: 500; }
+.lang-switch span { color: var(--grey-mid); }
+
+.social-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.social-row a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--grey-text);
+  transition: color 0.2s;
+}
+.social-row a:hover { color: var(--black); }
+.social-row svg { width: 18px; height: 18px; }
+
+/* Combined top row: lang + social */
+.header-top-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+nav a {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--grey-text); }
+
+/* ═══════════════════════════
+   HERO
+═══════════════════════════ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  background: #111;
+}
+
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  padding: 0 40px;
+}
+
+.hero-tagline {
+  font-size: clamp(36px, 4vw, 64px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 36px;
+  line-height: 1.15;
+}
+
+.hero-cities {
+  font-size: clamp(18px, 1.8vw, 28px);
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ═══════════════════════════
+   ABOUT
+═══════════════════════════ */
+.section-about { padding: 130px 0 0; }
+
+.section-header { margin-bottom: 64px; }
+.section-header .label { margin-bottom: 22px; }
+
+.section-heading {
+  font-size: clamp(44px, 4vw, 62px);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.08;
+}
+
+.about-intro {
+  font-size: 22px;
+  line-height: 1.7;
+  color: #444;
+  max-width: 700px;
+  margin-top: 30px;
+  font-weight: 400;
+}
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--grey-mid);
+  border-bottom: 1px solid var(--grey-mid);
+  padding: 60px 0;
+  margin: 72px 0 0;
+}
+
+.metric-item {
+  padding: 0 48px;
+  border-right: 1px solid var(--grey-mid);
+}
+.metric-item:first-child { padding-left: 0; }
+.metric-item:last-child { border-right: none; }
+
+.metric-number {
+  font-size: clamp(42px, 4vw, 60px);
+  font-weight: 300;
+  line-height: 1.0;
+  margin-bottom: 12px;
+}
+.metric-unit { font-size: 28px; }
+.metric-caption {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey-text);
+  line-height: 1.5;
+}
+
+.about-image-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin: 80px 0;
+}
+.about-image-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.about-image-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+}
+.about-banner-text {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px 80px;
+}
+.about-banner-text h3 {
+  font-size: clamp(48px, 5vw, 80px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 80px;
+}
+.about-col-label {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--grey-text);
+  margin-bottom: 20px;
+}
+.about-col-text {
+  font-size: 19px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.about-wide-photo {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
+}
+.about-wide-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-wide-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.1) 100%);
+}
+.wide-photo-text {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+}
+.wide-photo-text p {
+  font-size: clamp(32px, 3vw, 52px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  max-width: 620px;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+/* ═══════════════════════════
+   PROJECTS
+═══════════════════════════ */
+.section-projects { padding: 140px 0 160px; }
+
+.project-block { margin-top: 96px; }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  align-items: stretch;
+  min-height: 540px;
+}
+.project-grid.reverse { grid-template-columns: 42% 58%; }
+
+.project-photo-cell { overflow: hidden; position: relative; }
+.project-photo-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.project-info-cell {
+  padding: 56px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-mid);
+  border-bottom: 1px solid var(--grey-mid);
+}
+.project-info-cell.right-cell { border-left: 1px solid var(--grey-mid); padding-left: 72px; padding-right: 0; }
+.project-info-cell.left-cell  { border-right: 1px solid var(--grey-mid); padding-right: 72px; padding-left: 0; }
+
+.project-number { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; }
+.project-name { font-size: clamp(34px, 3vw, 46px); font-weight: 300; letter-spacing: 0.03em; line-height: 1.12; margin-bottom: 8px; }
+.project-location { font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 44px; }
+
+.project-metrics { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--grey-mid); }
+.project-metric { padding: 22px 0; border-bottom: 1px solid var(--grey-mid); padding-right: 20px; }
+.project-metric:nth-child(even) { padding-left: 20px; padding-right: 0; border-left: 1px solid var(--grey-mid); }
+.project-metric-value { font-size: 30px; font-weight: 300; line-height: 1.0; margin-bottom: 4px; }
+.project-metric-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-text); }
+
+.project-gap { height: 160px; }
+
+/* ═══════════════════════════
+   PARTNERS
+═══════════════════════════ */
+.section-partners { padding: 120px 0; border-top: 1px solid var(--grey-mid); overflow: hidden; }
+.section-partners .section-header { margin-bottom: 64px; }
+
+.ticker-wrap { width: 100%; overflow: hidden; position: relative; }
+.ticker-wrap::before, .ticker-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
+}
+.ticker-wrap::before { left: 0; background: linear-gradient(to right, #fff, transparent); }
+.ticker-wrap::after  { right: 0; background: linear-gradient(to left, #fff, transparent); }
+
+.ticker-track {
+  display: flex; align-items: center; gap: 0;
+  animation: ticker 40s linear infinite;
+  width: max-content;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 56px; height: 80px; flex-shrink: 0;
+  border-right: 1px solid var(--grey-mid);
+}
+.ticker-item:last-child { border-right: none; }
+.ticker-item img {
+  height: 36px; width: auto; max-width: 160px; object-fit: contain;
+  filter: grayscale(100%) contrast(0.8); opacity: 0.7;
+  transition: opacity 0.3s, filter 0.3s;
+}
+.ticker-item img:hover { filter: none; opacity: 1; }
+
+/* ═══════════════════════════
+   NEWS
+═══════════════════════════ */
+.section-news { padding: 130px 0; background: var(--grey-light); }
+
+.news-grid {
+  display: grid; grid-template-columns: 57% 43%;
+  gap: 80px; align-items: start; margin-top: 72px;
+}
+.news-photo-cell { position: relative; overflow: hidden; }
+.news-photo-cell img { width: 100%; height: 560px; object-fit: cover; display: block; }
+.news-tag {
+  position: absolute; top: 32px; left: 32px;
+  background: var(--black); color: var(--white);
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 7px 16px; z-index: 1;
+}
+.news-date { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; margin-top: 8px; }
+.news-headline { font-size: clamp(28px, 2.8vw, 40px); font-weight: 400; letter-spacing: 0.02em; line-height: 1.2; margin-bottom: 26px; }
+.news-lead { font-size: 19px; line-height: 1.75; color: #555; margin-bottom: 44px; }
+
+.news-facts { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--grey-mid); margin-bottom: 44px; }
+.news-fact { padding: 22px 20px 22px 0; border-bottom: 1px solid var(--grey-mid); }
+.news-fact:nth-child(even) { padding-left: 20px; padding-right: 0; border-left: 1px solid var(--grey-mid); }
+.news-fact.full { grid-column: 1 / -1; border-left: none; padding-left: 0; }
+.news-fact-value { font-size: 30px; font-weight: 300; line-height: 1.0; margin-bottom: 4px; }
+.news-fact-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-text); }
+
+.news-cta {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--black); text-decoration: none;
+  border-bottom: 1px solid var(--black); padding-bottom: 3px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.news-cta:hover { color: var(--grey-text); border-color: var(--grey-text); }
+
+/* ═══════════════════════════
+   TENANTS
+═══════════════════════════ */
+.section-tenants { padding: 130px 0; }
+
+.tenants-heading {
+  font-size: clamp(44px, 4vw, 62px); font-weight: 300;
+  letter-spacing: 0.04em; line-height: 1.1;
+  margin-top: 24px; margin-bottom: 88px; max-width: 600px;
+}
+
+.contacts-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.contact-card { padding: 60px 0; border-top: 1px solid var(--grey-mid); padding-right: 80px; }
+.contact-card + .contact-card { padding-left: 80px; padding-right: 0; border-left: 1px solid var(--grey-mid); }
+
+.contact-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; margin-bottom: 28px; display: block; }
+.contact-name { font-size: 36px; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 6px; }
+.contact-title { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 30px; }
+.contact-detail { font-size: 17px; letter-spacing: 0.04em; color: var(--black); text-decoration: none; display: block; margin-bottom: 8px; line-height: 1.6; transition: color 0.2s; }
+.contact-detail:hover { color: var(--grey-text); }
+
+/* ═══════════════════════════
+   FOOTER
+═══════════════════════════ */
+footer { background: var(--black); padding: 80px 0 56px; }
+
+.footer-inner {
+  max-width: 1280px; margin: 0 auto; padding: 0 80px;
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 80px; align-items: start;
+}
+.footer-logo img { height: 96px; width: auto; background: var(--white); padding: 10px 16px; display: block; }
+.footer-nav a { display: block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 14px; transition: color 0.2s; padding-top: 4px; }
+.footer-nav a:hover { color: rgba(255,255,255,0.9); }
+.footer-contact { text-align: right; }
+.footer-phone { font-size: 30px; font-weight: 300; letter-spacing: 0.06em; color: var(--white); text-decoration: none; display: block; margin-bottom: 14px; }
+.footer-address { font-size: 14px; letter-spacing: 0.05em; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 280px; margin-left: auto; }
+
+.footer-bottom {
+  max-width: 1280px; margin: 56px auto 0; padding: 28px 80px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between;
+}
+.footer-copy { font-size: 12px; letter-spacing: 0.12em; color: rgba(255,255,255,0.25); }
+
+/* ═══════════════════════════
+   RESPONSIVE
+═══════════════════════════ */
+@media (max-width: 900px) {
+  .container { padding: 0 32px; }
+  .header-inner { padding: 0 20px; }
+  .project-grid, .project-grid.reverse, .news-grid, .about-columns, .contacts-grid { grid-template-columns: 1fr; }
+  .project-photo-cell img { height: 340px; width: 100%; object-fit: cover; }
+  .project-info-cell.right-cell, .project-info-cell.left-cell { padding: 40px 32px; border: none; border-top: 1px solid var(--grey-mid); }
+  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-contact { text-align: left; }
+  .footer-address { margin-left: 0; }
+  .metrics-row { grid-template-columns: 1fr; }
+  .metric-item { border-right: none; border-bottom: 1px solid var(--grey-mid); padding: 28px 0; }
+  .about-image-banner { height: 320px; }
+  .about-wide-photo { height: 380px; }
+  .news-photo-cell img { height: 340px; }
+  .contact-card, .contact-card + .contact-card { padding: 40px 0; border-left: none; border-top: 1px solid var(--grey-mid); }
+}
+
+@media (max-width: 600px) {
+  html { font-size: 15px; }
+  header { height: auto; padding: 12px 0 10px; }
+  .header-inner { flex-direction: column; align-items: stretch; gap: 10px; padding: 0 18px; position: relative; }
+  .logo img { height: 60px; }
+  .header-right { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; }
+  .header-top-row { position: absolute; top: 0; right: 18px; }
+  .lang-switch { font-size: 11px; }
+  .social-row { gap: 14px; }
+  .social-row svg { width: 20px; height: 20px; }
+  nav { gap: 0; justify-content: space-between; border-top: 1px solid var(--grey-mid); padding-top: 10px; }
+  nav a { font-size: 11px; letter-spacing: 0.10em; }
+  .hero { height: 100svh; min-height: 480px; }
+  .hero-tagline { font-size: 26px; padding: 0 16px; text-align: center; }
+  .hero-cities { font-size: 13px; letter-spacing: 0.18em; }
+  .container { padding: 0 18px; }
+  .about-banner-text { padding: 32px 18px; }
+  .about-banner-text h3 { font-size: 38px; }
+  .wide-photo-text { padding: 0 18px; }
+  .wide-photo-text p { font-size: 24px; }
+  .section-about { padding: 72px 0 0; }
+  .section-projects { padding: 72px 0 80px; }
+  .section-partners { padding: 72px 0; }
+  .section-news { padding: 72px 0; }
+  .section-tenants { padding: 72px 0; }
+  .project-gap { height: 72px; }
+  .section-heading { font-size: 36px; }
+  .tenants-heading { font-size: 36px; margin-bottom: 48px; }
+  .metric-number { font-size: 42px; }
+  .project-name { font-size: 30px; }
+  .news-headline { font-size: 26px; }
+  .contact-name { font-size: 28px; }
+  .about-image-banner { height: 260px; }
+  .about-wide-photo { height: 300px; }
+  .news-photo-cell img { height: 260px; }
+  .project-photo-cell img { height: 260px; }
+  footer { padding: 56px 0 40px; }
+  .footer-inner { padding: 0 18px; gap: 28px; }
+  .footer-bottom { padding: 20px 18px 0; flex-direction: column; gap: 8px; }
+  .footer-phone { font-size: 22px; }
+  .footer-logo img { height: 64px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
+    </a>
+
+    <div class="header-right">
+      <div class="header-top-row">
+        <!-- Lang switcher -->
+        <div class="lang-switch">
+          <a href="index.html">RU</a>
+          <span>/</span>
+          <a href="en.html" class="active">EN</a>
+        </div>
+        <!-- Social icons -->
+        <div class="social-row">
+          <a href="#" title="Telegram" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.613c-.152.674-.548.84-1.11.522l-3.06-2.254-1.476 1.42c-.163.163-.3.3-.616.3l.22-3.11 5.666-5.116c.247-.22-.053-.342-.383-.122L6.44 14.334l-3.01-.94c-.653-.204-.665-.653.137-.965l11.74-4.526c.546-.197 1.024.133.855.345h-.6z"/></svg>
+          </a>
+          <a href="#" title="VKontakte" aria-label="VKontakte">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.6-.19 1.37 1.26 2.186 1.815.617.416 1.086.325 1.086.325l2.183-.03s1.14-.071.6-.966c-.044-.073-.314-.661-1.618-1.87-1.365-1.265-1.182-1.06.462-3.248.999-1.33 1.399-2.142 1.274-2.49-.12-.332-.852-.244-.852-.244l-2.455.015s-.182-.025-.317.056c-.132.08-.217.267-.217.267s-.388 1.034-.905 1.913c-1.09 1.85-1.526 1.948-1.704 1.834-.414-.268-.31-1.075-.31-1.648 0-1.793.271-2.54-.529-2.733-.266-.064-.461-.107-1.141-.114-.872-.009-1.609.003-2.028.207-.278.136-.492.439-.362.456.161.022.527.098.72.362.249.34.24 1.104.24 1.104s.143 2.11-.333 2.372c-.327.178-.775-.185-1.737-1.843-.493-.854-.866-1.8-.866-1.8s-.072-.18-.202-.277c-.156-.115-.375-.152-.375-.152l-2.33.015s-.35.01-.478.162c-.114.135-.009.414-.009.414s1.826 4.27 3.892 6.423c1.895 1.973 4.047 1.843 4.047 1.843h.975z"/></svg>
+          </a>
+          <a href="#" title="Instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#news">News</a>
+        <a href="#tenants">Leasing</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="hero3.mp4" type="video/mp4">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay">
+    <p class="hero-tagline">We make outlet business easier</p>
+    <p class="hero-cities">Moscow &nbsp;·&nbsp; Saint Petersburg &nbsp;·&nbsp; Almaty</p>
+  </div>
+</section>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section class="section-about" id="about">
+  <div class="container">
+    <div class="section-header">
+      <p class="label">01 — About</p>
+      <h2 class="section-heading">Fashion House Group</h2>
+      <p class="about-intro">
+        A leading outlet centre developer and operator in Russia and the CIS.
+        We create spaces where premium shopping meets architectural excellence.
+      </p>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-item">
+        <div class="metric-number">80,000 <span class="metric-unit">m²</span></div>
+        <div class="metric-caption">Delivered GLA</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">130,000 <span class="metric-unit">m²</span></div>
+        <div class="metric-caption">Including projects<br>under development</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">78,000 <span class="metric-unit">m²</span></div>
+        <div class="metric-caption">Pipeline</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-image-banner">
+    <img src="autumn_013-Edit_fullres.jpg" alt="Shopping with benefits">
+    <div class="about-banner-text">
+      <h3>Shopping with value</h3>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="about-columns">
+      <div>
+        <p class="about-col-label">Our Role</p>
+        <p class="about-col-text">
+          Fashion House Group acts as full-cycle developer, operator and asset manager.
+          We handle master planning, architectural concept, leasing and day-to-day
+          operations — from the first sketch to the opening day and beyond.
+        </p>
+        <p class="about-col-text" style="margin-top:18px;">
+          Our model gives investors and partners transparent, measurable results
+          at every stage — from market analysis to real-time retail analytics.
+        </p>
+      </div>
+      <div>
+        <p class="about-col-label">Operating Model</p>
+        <p class="about-col-text">
+          Our leasing team builds tenant mixes focused on international fashion brands
+          and Russian designers. Deep knowledge of the outlet market allows us to
+          attract anchor tenants and deliver consistent footfall.
+        </p>
+        <p class="about-col-text" style="margin-top:18px;">
+          All assets are managed through our proprietary retail analytics platform,
+          tracking conversion rates, average basket size and shopper behaviour
+          in real time.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-wide-photo">
+    <img src="OZ0_5757_1.JPG" alt="Fashion House Outlet">
+    <div class="wide-photo-text">
+      <p>Bringing discounts of up to −70% to shoppers across Russia and the CIS</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PROJECTS ══════════════ -->
+<section class="section-projects" id="projects">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="label">02 — Projects</p>
+      <h2 class="section-heading">Our Projects</h2>
+    </div>
+
+    <!-- PROJECT 01 — SHEREMETYEVO -->
+    <div class="project-block">
+      <div class="project-grid">
+        <div class="project-photo-cell">
+          <img src="OZ0_5769.JPG" alt="Fashion House Outlet Sheremetyevo">
+        </div>
+        <div class="project-info-cell right-cell">
+          <div>
+            <p class="project-number">Project 01</p>
+            <h3 class="project-name">Fashion House Outlet<br>Sheremetyevo</h3>
+            <p class="project-location">Moscow</p>
+          </div>
+          <div class="project-metrics">
+            <div class="project-metric"><div class="project-metric-value">2013</div><div class="project-metric-label">Opening year</div></div>
+            <div class="project-metric"><div class="project-metric-value">20,269 m²</div><div class="project-metric-label">GLA</div></div>
+            <div class="project-metric"><div class="project-metric-value">27,122 m²</div><div class="project-metric-label">GBA</div></div>
+            <div class="project-metric"><div class="project-metric-value">1,800</div><div class="project-metric-label">Parking spaces</div></div>
+            <div class="project-metric"><div class="project-metric-value">110</div><div class="project-metric-label">Tenants</div></div>
+            <div class="project-metric"><div class="project-metric-value">1 floor</div><div class="project-metric-label">Enclosed format</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-gap"></div>
+
+    <!-- PROJECT 02 — TALLINSKOE -->
+    <div class="project-block">
+      <div class="project-grid reverse">
+        <div class="project-info-cell left-cell">
+          <div>
+            <p class="project-number">Project 02</p>
+            <h3 class="project-name">Fashion House Outlet<br>Tallinskoe</h3>
+            <p class="project-location">Saint Petersburg</p>
+          </div>
+          <div class="project-metrics">
+            <div class="project-metric"><div class="project-metric-value">2019</div><div class="project-metric-label">Opening year</div></div>
+            <div class="project-metric"><div class="project-metric-value">10,873 m²</div><div class="project-metric-label">GLA</div></div>
+            <div class="project-metric"><div class="project-metric-value">15,120 m²</div><div class="project-metric-label">GBA</div></div>
+            <div class="project-metric"><div class="project-metric-value">1,100</div><div class="project-metric-label">Parking spaces</div></div>
+            <div class="project-metric"><div class="project-metric-value">56</div><div class="project-metric-label">Tenants</div></div>
+            <div class="project-metric"><div class="project-metric-value">1 floor</div><div class="project-metric-label">Enclosed format</div></div>
+          </div>
+        </div>
+        <div class="project-photo-cell">
+          <img src="tallinskoe.jpg" alt="Fashion House Outlet Tallinskoe">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ PARTNERS ══════════════ -->
+<section class="section-partners" id="partners">
+  <div class="container">
+    <div class="section-header">
+      <p class="label">Our Partners</p>
+      <h2 class="section-heading" style="margin-top:18px;">Brands at Fashion House</h2>
+    </div>
+  </div>
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <div class="ticker-item"><img src="logos/Calvin_Klein_logo.png" alt="Calvin Klein"></div>
+      <div class="ticker-item"><img src="logos/Tom_Tailor_logo_logotype.png" alt="Tom Tailor"></div>
+      <div class="ticker-item"><img src="logos/Marc-OPolo.png" alt="Marc O'Polo"></div>
+      <div class="ticker-item"><img src="logos/Baon_logo.png" alt="Baon"></div>
+      <div class="ticker-item"><img src="logos/liu-jo-vector-logo.png" alt="Liu Jo"></div>
+      <div class="ticker-item"><img src="logos/Logo_colins-01.png" alt="Colin's"></div>
+      <div class="ticker-item"><img src="logos/Cris-Conf-Spa-pinko.png" alt="Pinko"></div>
+      <div class="ticker-item"><img src="logos/HENDERSON-logo2017_horiz_blue_on_white.jpg" alt="Henderson"></div>
+      <div class="ticker-item"><img src="logos/TH-Corporate_FC_NO.JPG" alt="Tommy Hilfiger"></div>
+      <div class="ticker-item"><img src="logos/U.S._Polo_Assn_1.png" alt="U.S. Polo Assn"></div>
+      <div class="ticker-item"><img src="logos/PaperShop_Logo_70mm-01-01.jpg" alt="Paper Shop"></div>
+      <div class="ticker-item"><img src="logos/noone.png" alt="Noone"></div>
+      <!-- duplicate -->
+      <div class="ticker-item"><img src="logos/Calvin_Klein_logo.png" alt="Calvin Klein"></div>
+      <div class="ticker-item"><img src="logos/Tom_Tailor_logo_logotype.png" alt="Tom Tailor"></div>
+      <div class="ticker-item"><img src="logos/Marc-OPolo.png" alt="Marc O'Polo"></div>
+      <div class="ticker-item"><img src="logos/Baon_logo.png" alt="Baon"></div>
+      <div class="ticker-item"><img src="logos/liu-jo-vector-logo.png" alt="Liu Jo"></div>
+      <div class="ticker-item"><img src="logos/Logo_colins-01.png" alt="Colin's"></div>
+      <div class="ticker-item"><img src="logos/Cris-Conf-Spa-pinko.png" alt="Pinko"></div>
+      <div class="ticker-item"><img src="logos/HENDERSON-logo2017_horiz_blue_on_white.jpg" alt="Henderson"></div>
+      <div class="ticker-item"><img src="logos/TH-Corporate_FC_NO.JPG" alt="Tommy Hilfiger"></div>
+      <div class="ticker-item"><img src="logos/U.S._Polo_Assn_1.png" alt="U.S. Polo Assn"></div>
+      <div class="ticker-item"><img src="logos/PaperShop_Logo_70mm-01-01.jpg" alt="Paper Shop"></div>
+      <div class="ticker-item"><img src="logos/noone.png" alt="Noone"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ NEWS ══════════════ -->
+<section class="section-news" id="news">
+  <div class="container">
+    <p class="label">03 — News</p>
+    <div class="news-grid">
+      <div class="news-photo-cell">
+        <div class="news-tag">New Project</div>
+        <img src="almaty6.jpg" alt="Fashion House Outlet Alatau — Almaty">
+      </div>
+      <div class="news-text-cell">
+        <p class="news-date">2025</p>
+        <h3 class="news-headline">
+          Fashion House Group expands into Central Asia: first outlet centre to open in Almaty
+        </h3>
+        <p class="news-lead">
+          The new Fashion House Outlet Alatau will be Kazakhstan's first full-format
+          outlet centre. Opening is planned for 2028.
+        </p>
+        <div class="news-facts">
+          <div class="news-fact"><div class="news-fact-value">24,000 m²</div><div class="news-fact-label">GLA</div></div>
+          <div class="news-fact"><div class="news-fact-value">3.8M+</div><div class="news-fact-label">People in catchment area</div></div>
+          <div class="news-fact"><div class="news-fact-value">up to 4M</div><div class="news-fact-label">Visitors per year</div></div>
+          <div class="news-fact"><div class="news-fact-value">2028</div><div class="news-fact-label">Opening</div></div>
+          <div class="news-fact full"><div class="news-fact-value">22,000 KZT</div><div class="news-fact-label">Projected average spend</div></div>
+        </div>
+        <a href="#" class="news-cta">Read more &nbsp;→</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ LEASING ══════════════ -->
+<section class="section-tenants" id="tenants">
+  <div class="container">
+    <p class="label">04 — Leasing</p>
+    <h2 class="tenants-heading">Become part of<br>Fashion House</h2>
+    <div class="contacts-grid">
+      <div class="contact-card">
+        <img class="contact-photo" src="DER_7218.jpg" alt="Anna Solovyeva">
+        <h3 class="contact-name">Anna Solovyeva</h3>
+        <p class="contact-title">Senior Leasing Manager</p>
+        <a href="mailto:anna.solovyeva@fashionhouse.com" class="contact-detail">anna.solovyeva@fashionhouse.com</a>
+        <a href="tel:+79152393698" class="contact-detail">+7 915 239 36 98</a>
+      </div>
+      <div class="contact-card">
+        <img class="contact-photo" src="DSC_3052_Classic-portrait.jpg" alt="Ekaterina Safonova">
+        <h3 class="contact-name">Ekaterina Safonova</h3>
+        <p class="contact-title">Senior Leasing Manager</p>
+        <a href="mailto:ekaterina.nikiforova@fashionhouse.com" class="contact-detail">ekaterina.nikiforova@fashionhouse.com</a>
+        <a href="tel:+79269377893" class="contact-detail">+7 926 937 78 93</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
+    </div>
+    <div class="footer-nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#news">News</a>
+      <a href="#tenants">Leasing</a>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+74955445543" class="footer-phone">+7 495 544-55-43</a>
+      <p class="footer-address">Moscow region, Chernaya Gryaz village,<br>Torgovo-Promyshlennaya str., 6</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Fashion House Group. All rights reserved.</span>
+    <span class="footer-copy">Privacy Policy</span>
+  </div>
+</footer>
+
+</body>
+</html>
