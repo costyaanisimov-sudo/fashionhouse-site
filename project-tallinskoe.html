@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion House Outlet Таллинское — Fashion House Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --black: #111; --white: #fff; --grey-light: #f5f5f3; --grey-mid: #d0cfc9; --grey-text: #888880; }
+html { font-size: 18px; }
+body { font-family: 'Cormorant', Georgia, serif; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 80px; }
+
+/* HEADER */
+header { position: sticky; top: 0; z-index: 200; background: var(--white); border-bottom: 1px solid var(--grey-mid); height: 130px; }
+.header-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.logo { text-decoration: none; flex-shrink: 0; }
+.logo img { height: 110px; width: auto; object-fit: contain; }
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.header-top-row { display: flex; align-items: center; gap: 24px; }
+.lang-switch { display: flex; align-items: center; gap: 6px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
+.lang-switch a { color: var(--grey-text); text-decoration: none; transition: color 0.2s; }
+.lang-switch a:hover, .lang-switch .active { color: var(--black); font-weight: 500; }
+.lang-switch span { color: var(--grey-mid); }
+.social-row { display: flex; align-items: center; gap: 18px; }
+.social-row a { display: flex; align-items: center; text-decoration: none; color: var(--grey-text); transition: color 0.2s; }
+.social-row a:hover { color: var(--black); }
+.social-row svg { width: 18px; height: 18px; }
+nav { display: flex; align-items: center; gap: 44px; }
+nav a { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); text-decoration: none; transition: color 0.2s; }
+nav a:hover { color: var(--grey-text); }
+
+/* HERO FULL WIDTH */
+.project-hero { position: relative; width: 100%; height: 680px; overflow: hidden; }
+.project-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.project-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 100%); }
+.project-hero-text { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 60px 80px; }
+.project-hero-label { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 14px; }
+.project-hero-title { font-size: clamp(44px, 5vw, 76px); font-weight: 300; color: #fff; letter-spacing: 0.04em; line-height: 1.08; }
+.project-hero-location { font-size: 16px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 12px; }
+
+/* BREADCRUMB */
+.breadcrumb { padding: 28px 0; border-bottom: 1px solid var(--grey-mid); }
+.breadcrumb a, .breadcrumb span { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-text); text-decoration: none; }
+.breadcrumb a:hover { color: var(--black); }
+.breadcrumb .sep { margin: 0 10px; }
+
+/* METRICS BAND */
+.metrics-band { background: var(--grey-light); padding: 60px 0; border-bottom: 1px solid var(--grey-mid); }
+.metrics-inner { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; }
+.band-metric { padding: 0 32px; border-right: 1px solid var(--grey-mid); }
+.band-metric:first-child { padding-left: 0; }
+.band-metric:last-child { border-right: none; }
+.band-metric-value { font-size: 32px; font-weight: 300; line-height: 1.0; margin-bottom: 6px; }
+.band-metric-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-text); }
+
+/* MAIN CONTENT */
+.project-body { padding: 100px 0; }
+.project-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; margin-bottom: 100px; }
+.project-intro-heading { font-size: clamp(36px, 3.5vw, 56px); font-weight: 300; letter-spacing: 0.04em; line-height: 1.1; }
+.project-intro-text p { font-size: 19px; line-height: 1.8; color: #444; margin-bottom: 20px; }
+
+/* GALLERY */
+.project-gallery { margin-bottom: 100px; }
+.gallery-full { width: 100%; height: 560px; object-fit: cover; display: block; margin-bottom: 3px; }
+.gallery-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.gallery-row img { width: 100%; height: 380px; object-fit: cover; display: block; }
+
+/* DETAILS */
+.project-details { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; padding: 80px 0; border-top: 1px solid var(--grey-mid); margin-bottom: 80px; }
+.detail-label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 16px; }
+.detail-text { font-size: 19px; line-height: 1.8; color: #333; }
+
+/* LEASING */
+.project-leasing { background: var(--grey-light); padding: 80px 0; }
+.leasing-heading { font-size: clamp(36px, 3vw, 52px); font-weight: 300; letter-spacing: 0.04em; margin-bottom: 60px; }
+.contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.contact-card { padding: 48px 0; border-top: 1px solid var(--grey-mid); padding-right: 80px; }
+.contact-card + .contact-card { padding-left: 80px; padding-right: 0; border-left: 1px solid var(--grey-mid); }
+.contact-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; margin-bottom: 24px; }
+.contact-name { font-size: 32px; font-weight: 400; margin-bottom: 5px; }
+.contact-title { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 24px; }
+.contact-detail { font-size: 16px; color: var(--black); text-decoration: none; display: block; margin-bottom: 6px; transition: color 0.2s; }
+.contact-detail:hover { color: var(--grey-text); }
+
+/* SUBSCRIBE */
+.subscribe-section { position: relative; overflow: hidden; min-height: 420px; display: flex; align-items: center; }
+.subscribe-section img.sub-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.subscribe-section::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.58); }
+.subscribe-inner { position: relative; z-index: 2; width: 100%; padding: 80px; }
+.sub-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+.sub-heading { font-size: clamp(32px, 3.5vw, 54px); font-weight: 300; color: #fff; letter-spacing: 0.04em; margin-bottom: 36px; max-width: 680px; line-height: 1.15; }
+.sub-form { display: flex; gap: 0; max-width: 560px; }
+.sub-form input { flex: 1; background: transparent; border: 1px solid rgba(255,255,255,0.4); border-right: none; color: #fff; font-family: 'Cormorant', serif; font-size: 17px; padding: 16px 24px; outline: none; }
+.sub-form input::placeholder { color: rgba(255,255,255,0.4); }
+.sub-form button { background: #fff; color: var(--black); border: none; font-family: 'Cormorant', serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; padding: 16px 32px; cursor: pointer; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+.sub-form button:hover { background: var(--black); color: #fff; }
+
+/* FOOTER */
+footer { background: var(--black); padding: 80px 0 56px; }
+.footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; display: grid; grid-template-columns: auto 1fr auto; gap: 80px; align-items: start; }
+.footer-logo img { height: 96px; width: auto; background: #fff; padding: 10px 16px; display: block; }
+.footer-nav a { display: block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+.footer-nav a:hover { color: rgba(255,255,255,0.9); }
+.footer-contact { text-align: right; }
+.footer-phone { font-size: 28px; font-weight: 300; color: #fff; text-decoration: none; display: block; margin-bottom: 12px; }
+.footer-address { font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 280px; margin-left: auto; }
+.footer-bottom { max-width: 1280px; margin: 48px auto 0; padding: 24px 80px 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; }
+.footer-copy { font-size: 12px; letter-spacing: 0.12em; color: rgba(255,255,255,0.25); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .container { padding: 0 32px; }
+  .header-inner { padding: 0 20px; }
+  .metrics-inner { grid-template-columns: repeat(3, 1fr); gap: 24px 0; }
+  .band-metric { padding: 16px 24px; border-right: none; border-bottom: 1px solid var(--grey-mid); }
+  .project-intro, .project-details, .contacts-grid { grid-template-columns: 1fr; gap: 48px; }
+  .contact-card, .contact-card + .contact-card { padding: 40px 0; border-left: none; }
+  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-contact { text-align: left; }
+  .footer-address { margin-left: 0; }
+}
+@media (max-width: 600px) {
+  header { height: auto; padding: 12px 0 10px; }
+  .header-inner { flex-direction: column; align-items: stretch; gap: 10px; padding: 0 18px; position: relative; }
+  .logo img { height: 60px; }
+  .header-right { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; }
+  .header-top-row { position: absolute; top: 0; right: 18px; }
+  nav { gap: 0; justify-content: space-between; border-top: 1px solid var(--grey-mid); padding-top: 10px; }
+  nav a { font-size: 11px; }
+  .project-hero { height: 420px; }
+  .project-hero-text { padding: 32px 18px; }
+  .project-body { padding: 60px 0; }
+  .container { padding: 0 18px; }
+  .subscribe-inner { padding: 60px 18px; }
+  .sub-form { flex-direction: column; }
+  .sub-form input { border-right: 1px solid rgba(255,255,255,0.4); border-bottom: none; }
+  .sub-form button { padding: 14px 24px; }
+  .gallery-full { height: 300px; }
+  .gallery-row img { height: 220px; }
+  .footer-inner { padding: 0 18px; gap: 28px; }
+  .footer-bottom { padding: 20px 18px 0; flex-direction: column; gap: 8px; }
+  .metrics-inner { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group"></a>
+    <div class="header-right">
+      <div class="header-top-row">
+        <div class="lang-switch">
+          <a href="project-tallinskoe.html" class="active">RU</a>
+          <span>/</span>
+          <a href="project-tallinskoe-en.html">EN</a>
+        </div>
+        <div class="social-row">
+          <a href="#" title="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.613c-.152.674-.548.84-1.11.522l-3.06-2.254-1.476 1.42c-.163.163-.3.3-.616.3l.22-3.11 5.666-5.116c.247-.22-.053-.342-.383-.122L6.44 14.334l-3.01-.94c-.653-.204-.665-.653.137-.965l11.74-4.526c.546-.197 1.024.133.855.345h-.6z"/></svg></a>
+          <a href="#" title="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.6-.19 1.37 1.26 2.186 1.815.617.416 1.086.325 1.086.325l2.183-.03s1.14-.071.6-.966c-.044-.073-.314-.661-1.618-1.87-1.365-1.265-1.182-1.06.462-3.248.999-1.33 1.399-2.142 1.274-2.49-.12-.332-.852-.244-.852-.244l-2.455.015s-.182-.025-.317.056c-.132.08-.217.267-.217.267s-.388 1.034-.905 1.913c-1.09 1.85-1.526 1.948-1.704 1.834-.414-.268-.31-1.075-.31-1.648 0-1.793.271-2.54-.529-2.733-.266-.064-.461-.107-1.141-.114-.872-.009-1.609.003-2.028.207-.278.136-.492.439-.362.456.161.022.527.098.72.362.249.34.24 1.104.24 1.104s.143 2.11-.333 2.372c-.327.178-.775-.185-1.737-1.843-.493-.854-.866-1.8-.866-1.8s-.072-.18-.202-.277c-.156-.115-.375-.152-.375-.152l-2.33.015s-.35.01-.478.162c-.114.135-.009.414-.009.414s1.826 4.27 3.892 6.423c1.895 1.973 4.047 1.843 4.047 1.843h.975z"/></svg></a>
+          <a href="#" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html#about">О нас</a>
+        <a href="index.html#projects">Проекты</a>
+        <a href="index.html#news">Новости</a>
+        <a href="index.html#tenants">Арендаторам</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="project-hero">
+  <img src="tallinskoe.jpg" alt="Fashion House Outlet Шереметьево">
+  <div class="project-hero-text">
+    <p class="project-hero-label">Проект 02</p>
+    <h1 class="project-hero-title">Fashion House Outlet<br>Таллинское</h1>
+    <p class="project-hero-location">Санкт-Петербург</p>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html">Главная</a>
+    <span class="sep">→</span>
+    <a href="index.html#projects">Проекты</a>
+    <span class="sep">→</span>
+    <span style="color:var(--black);">Fashion House Outlet Таллинское</span>
+  </div>
+</div>
+
+<!-- METRICS BAND -->
+<div class="metrics-band">
+  <div class="container">
+    <div class="metrics-inner">
+      <div class="band-metric"><div class="band-metric-value">2019</div><div class="band-metric-label">Год открытия</div></div>
+      <div class="band-metric"><div class="band-metric-value">10 873 м²</div><div class="band-metric-label">GLA</div></div>
+      <div class="band-metric"><div class="band-metric-value">15 120 м²</div><div class="band-metric-label">GBA</div></div>
+      <div class="band-metric"><div class="band-metric-value">1 100</div><div class="band-metric-label">Парковочных мест</div></div>
+      <div class="band-metric"><div class="band-metric-value">56</div><div class="band-metric-label">Арендаторов</div></div>
+      <div class="band-metric"><div class="band-metric-value">1 этаж</div><div class="band-metric-label">Закрытый формат</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN BODY -->
+<div class="project-body">
+  <div class="container">
+
+    <!-- INTRO -->
+    <div class="project-intro">
+      <h2 class="project-intro-heading">Аутлет-центр премиального формата в Санкт-Петербурге</h2>
+      <div class="project-intro-text">
+        <p>Fashion House Outlet Шереметьево открылся в 2013 году и стал первым аутлет-центром премиального формата в России. Расположенный в непосредственной близости от международного аэропорта Шереметьево, он предлагает покупателям уникальную возможность приобретать товары ведущих мировых брендов со скидками до 70% круглый год.</p>
+        <p>Центр объединяет 110 магазинов на площади 20 269 м² GLA. В числе арендаторов — ведущие международные fashion-бренды, спортивные марки, аксессуары и товары для дома. Удобное расположение на северном въезде в Москву обеспечивает стабильный трафик как от московских покупателей, так и от транзитных путешественников.</p>
+        <p>Архитектурная концепция центра выполнена в едином premium-стиле: крытые галереи, продуманная навигация и комфортная атмосфера делают шопинг удовольствием в любое время года.</p>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="project-gallery">
+      <img class="gallery-full" src="tallinskoe.jpg" alt="Fashion House Outlet Шереметьево">
+      <div class="gallery-row">
+        <img src="OZ0_5757_1.JPG" alt="Fashion House Outlet интерьер">
+        <img src="autumn_013-Edit_fullres.jpg" alt="Fashion House Outlet шопинг">
+      </div>
+    </div>
+
+    <!-- DETAILS -->
+    <div class="project-details">
+      <div>
+        <p class="detail-label">Концепция и формат</p>
+        <p class="detail-text">Fashion House Outlet Шереметьево работает по классической аутлет-модели: постоянные скидки 30–70% на коллекции прошлых сезонов от premium и contemporary брендов. Закрытый формат торгового центра обеспечивает комфорт покупателей независимо от сезона.</p>
+      </div>
+      <div>
+        <p class="detail-label">Расположение и транспортная доступность</p>
+        <p class="detail-text">Объект расположен в Московской области, д. Черная Грязь, в 5 минутах от аэропорта Шереметьево. Удобный съезд с Ленинградского шоссе (А-107), развитая парковочная инфраструктура на 1 800 мест. Регулярное автобусное сообщение с московским метро.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LEASING -->
+<section class="project-leasing" id="leasing">
+  <div class="container">
+    <h2 class="leasing-heading">Стать арендатором</h2>
+    <div class="contacts-grid">
+      <div class="contact-card">
+        <img class="contact-photo" src="DER_7218.jpg" alt="Anna Solovyeva">
+        <h3 class="contact-name">Anna Solovyeva</h3>
+        <p class="contact-title">Senior Leasing Manager</p>
+        <a href="mailto:anna.solovyeva@fashionhouse.com" class="contact-detail">anna.solovyeva@fashionhouse.com</a>
+        <a href="tel:+79152393698" class="contact-detail">+7 915 239 36 98</a>
+      </div>
+      <div class="contact-card">
+        <img class="contact-photo" src="DSC_3052_Classic-portrait.jpg" alt="Ekaterina Safonova">
+        <h3 class="contact-name">Ekaterina Safonova</h3>
+        <p class="contact-title">Senior Leasing Manager</p>
+        <a href="mailto:ekaterina.nikiforova@fashionhouse.com" class="contact-detail">ekaterina.nikiforova@fashionhouse.com</a>
+        <a href="tel:+79269377893" class="contact-detail">+7 926 937 78 93</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section class="subscribe-section">
+  <img class="sub-bg" src="subscribe-bg.jpg" alt="">
+  <div class="subscribe-inner">
+    <p class="sub-label">Новости</p>
+    <h2 class="sub-heading">Подпишитесь на новости Fashion House Group</h2>
+    <form class="sub-form" onsubmit="return false;">
+      <input type="email" placeholder="Ваш e-mail">
+      <button type="submit">Подписаться</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group"></div>
+    <div class="footer-nav">
+      <a href="index.html#about">О нас</a>
+      <a href="index.html#projects">Проекты</a>
+      <a href="index.html#news">Новости</a>
+      <a href="index.html#tenants">Арендаторам</a>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+74955445543" class="footer-phone">+7 495 544-55-43</a>
+      <p class="footer-address">МО, д. Черная Грязь,<br>Торгово-промышленная, д. 6</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Fashion House Group. Все права защищены.</span>
+    <span class="footer-copy">Политика конфиденциальности</span>
+  </div>
+</footer>
+</body>
+</html>
+
