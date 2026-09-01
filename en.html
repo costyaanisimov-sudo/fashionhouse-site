@@ -18,7 +18,7 @@
   --grey-text: #888880;
 }
 
-html { font-size: 18px; }
+html { font-size: 20px; }
 
 body {
   font-family: 'Cormorant', Georgia, serif;
@@ -76,7 +76,12 @@ header {
   gap: 8px;
 }
 
-/* Lang switcher */
+.header-top-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .lang-switch {
   display: flex;
   align-items: center;
@@ -85,49 +90,22 @@ header {
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
-.lang-switch a {
-  color: var(--grey-text);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.lang-switch a:hover { color: var(--black); }
-.lang-switch .active { color: var(--black); font-weight: 500; }
+.lang-switch a { color: var(--grey-text); text-decoration: none; transition: color 0.2s; }
+.lang-switch a:hover, .lang-switch .active { color: var(--black); font-weight: 500; }
 .lang-switch span { color: var(--grey-mid); }
 
-.social-row {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-.social-row a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: var(--grey-text);
-  transition: color 0.2s;
-}
+.social-row { display: flex; align-items: center; gap: 18px; }
+.social-row a { display: flex; align-items: center; text-decoration: none; color: var(--grey-text); transition: color 0.2s; }
 .social-row a:hover { color: var(--black); }
 .social-row svg { width: 18px; height: 18px; }
 
-/* Combined top row: lang + social */
-.header-top-row {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 44px;
-}
+nav { display: flex; align-items: center; gap: 44px; }
 nav a {
   font-size: 14px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--black);
   text-decoration: none;
-  font-weight: 400;
   transition: color 0.2s;
 }
 nav a:hover { color: var(--grey-text); }
@@ -142,7 +120,6 @@ nav a:hover { color: var(--grey-text); }
   overflow: hidden;
   background: #111;
 }
-
 .hero video {
   position: absolute;
   inset: 0;
@@ -151,7 +128,6 @@ nav a:hover { color: var(--grey-text); }
   object-fit: cover;
   opacity: 0.65;
 }
-
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -163,9 +139,8 @@ nav a:hover { color: var(--grey-text); }
   z-index: 2;
   padding: 0 40px;
 }
-
 .hero-tagline {
-  font-size: clamp(36px, 4vw, 64px);
+  font-size: clamp(38px, 4vw, 68px);
   font-weight: 300;
   font-style: italic;
   letter-spacing: 0.04em;
@@ -173,7 +148,6 @@ nav a:hover { color: var(--grey-text); }
   margin-bottom: 36px;
   line-height: 1.15;
 }
-
 .hero-cities {
   font-size: clamp(18px, 1.8vw, 28px);
   font-weight: 300;
@@ -191,14 +165,14 @@ nav a:hover { color: var(--grey-text); }
 .section-header .label { margin-bottom: 22px; }
 
 .section-heading {
-  font-size: clamp(44px, 4vw, 62px);
+  font-size: clamp(46px, 4vw, 66px);
   font-weight: 300;
   letter-spacing: 0.04em;
   line-height: 1.08;
 }
 
 .about-intro {
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1.7;
   color: #444;
   max-width: 700px;
@@ -214,159 +188,75 @@ nav a:hover { color: var(--grey-text); }
   padding: 60px 0;
   margin: 72px 0 0;
 }
-
-.metric-item {
-  padding: 0 48px;
-  border-right: 1px solid var(--grey-mid);
-}
+.metric-item { padding: 0 48px; border-right: 1px solid var(--grey-mid); }
 .metric-item:first-child { padding-left: 0; }
 .metric-item:last-child { border-right: none; }
-
-.metric-number {
-  font-size: clamp(42px, 4vw, 60px);
-  font-weight: 300;
-  line-height: 1.0;
-  margin-bottom: 12px;
-}
-.metric-unit { font-size: 28px; }
-.metric-caption {
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--grey-text);
-  line-height: 1.5;
-}
+.metric-number { font-size: clamp(44px, 4vw, 64px); font-weight: 300; line-height: 1.0; margin-bottom: 12px; }
+.metric-unit { font-size: 30px; }
+.metric-caption { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-text); line-height: 1.5; }
 
 .about-image-banner {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  margin: 80px 0;
+  position: relative; width: 100%; height: 500px; overflow: hidden; margin: 80px 0;
 }
-.about-image-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-}
-.about-image-banner::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
-}
-.about-banner-text {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  padding: 60px 80px;
-}
-.about-banner-text h3 {
-  font-size: clamp(48px, 5vw, 80px);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--white);
-  letter-spacing: 0.04em;
-  line-height: 1.1;
-}
+.about-image-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.about-image-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%); }
+.about-banner-text { position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end; padding: 60px 80px; }
+.about-banner-text h3 { font-size: clamp(50px, 5.5vw, 84px); font-weight: 300; font-style: italic; color: var(--white); letter-spacing: 0.04em; line-height: 1.1; }
 
-.about-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  margin-bottom: 80px;
-}
-.about-col-label {
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--grey-text);
-  margin-bottom: 20px;
-}
-.about-col-text {
-  font-size: 19px;
-  line-height: 1.8;
-  color: #333;
-}
+.about-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; }
+.about-col-label { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; }
+.about-col-text { font-size: 20px; line-height: 1.85; color: #333; }
 
-.about-wide-photo {
-  position: relative;
-  width: 100%;
-  height: 540px;
-  overflow: hidden;
-}
-.about-wide-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.about-wide-photo::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.1) 100%);
-}
-.wide-photo-text {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  padding: 0 80px;
-}
-.wide-photo-text p {
-  font-size: clamp(32px, 3vw, 52px);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--white);
-  max-width: 620px;
-  line-height: 1.25;
-  letter-spacing: 0.02em;
-}
+.about-wide-photo { position: relative; width: 100%; height: 540px; overflow: hidden; }
+.about-wide-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-wide-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.1) 100%); }
+.wide-photo-text { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; padding: 0 80px; }
+.wide-photo-text p { font-size: clamp(34px, 3vw, 56px); font-weight: 300; font-style: italic; color: var(--white); max-width: 620px; line-height: 1.25; letter-spacing: 0.02em; }
 
 /* ═══════════════════════════
-   PROJECTS
+   FEATURING (project cards)
 ═══════════════════════════ */
-.section-projects { padding: 140px 0 160px; }
-
-.project-block { margin-top: 96px; }
-
-.project-grid {
-  display: grid;
-  grid-template-columns: 58% 42%;
-  align-items: stretch;
-  min-height: 540px;
-}
-.project-grid.reverse { grid-template-columns: 42% 58%; }
-
-.project-photo-cell { overflow: hidden; position: relative; }
-.project-photo-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.project-info-cell {
-  padding: 56px 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.section-featuring {
+  padding: 120px 0 140px;
+  background: #f7f4f0;
   border-top: 1px solid var(--grey-mid);
-  border-bottom: 1px solid var(--grey-mid);
 }
-.project-info-cell.right-cell { border-left: 1px solid var(--grey-mid); padding-left: 72px; padding-right: 0; }
-.project-info-cell.left-cell  { border-right: 1px solid var(--grey-mid); padding-right: 72px; padding-left: 0; }
 
-.project-number { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; }
-.project-name { font-size: clamp(34px, 3vw, 46px); font-weight: 300; letter-spacing: 0.03em; line-height: 1.12; margin-bottom: 8px; }
-.project-location { font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 44px; }
+.featuring-heading {
+  font-size: clamp(42px, 4vw, 68px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 72px;
+}
 
-.project-metrics { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--grey-mid); }
-.project-metric { padding: 22px 0; border-bottom: 1px solid var(--grey-mid); padding-right: 20px; }
-.project-metric:nth-child(even) { padding-left: 20px; padding-right: 0; border-left: 1px solid var(--grey-mid); }
-.project-metric-value { font-size: 30px; font-weight: 300; line-height: 1.0; margin-bottom: 4px; }
-.project-metric-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-text); }
+.featuring-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
 
-.project-gap { height: 160px; }
+.feat-card { display: flex; flex-direction: column; }
+
+.feat-card-img-link { display: block; overflow: hidden; margin-bottom: 24px; }
+.feat-card-img-link img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.feat-card-img-link:hover img { transform: scale(1.03); }
+
+.feat-card-title { font-size: 26px; font-weight: 500; letter-spacing: 0.01em; line-height: 1.2; margin-bottom: 16px; }
+.feat-card-text { font-size: 18px; line-height: 1.8; color: #555; flex: 1; margin-bottom: 24px; }
+
+.feat-card-btn {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border: 1px solid var(--black);
+  padding: 12px 24px;
+  align-self: flex-start;
+  transition: background 0.2s, color 0.2s;
+}
+.feat-card-btn:hover { background: var(--black); color: #fff; }
+.feat-card--upcoming .feat-card-btn { border-color: var(--grey-mid); color: var(--grey-text); }
+.feat-card--upcoming .feat-card-btn:hover { background: var(--black); color: #fff; border-color: var(--black); }
 
 /* ═══════════════════════════
    PARTNERS
@@ -375,17 +265,11 @@ nav a:hover { color: var(--grey-text); }
 .section-partners .section-header { margin-bottom: 64px; }
 
 .ticker-wrap { width: 100%; overflow: hidden; position: relative; }
-.ticker-wrap::before, .ticker-wrap::after {
-  content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
-}
+.ticker-wrap::before, .ticker-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
 .ticker-wrap::before { left: 0; background: linear-gradient(to right, #fff, transparent); }
 .ticker-wrap::after  { right: 0; background: linear-gradient(to left, #fff, transparent); }
 
-.ticker-track {
-  display: flex; align-items: center; gap: 0;
-  animation: ticker 40s linear infinite;
-  width: max-content;
-}
+.ticker-track { display: flex; align-items: center; animation: ticker 40s linear infinite; width: max-content; }
 .ticker-track:hover { animation-play-state: paused; }
 
 @keyframes ticker {
@@ -393,17 +277,9 @@ nav a:hover { color: var(--grey-text); }
   100% { transform: translateX(-50%); }
 }
 
-.ticker-item {
-  display: flex; align-items: center; justify-content: center;
-  padding: 0 56px; height: 80px; flex-shrink: 0;
-  border-right: 1px solid var(--grey-mid);
-}
+.ticker-item { display: flex; align-items: center; justify-content: center; padding: 0 56px; height: 80px; flex-shrink: 0; border-right: 1px solid var(--grey-mid); }
 .ticker-item:last-child { border-right: none; }
-.ticker-item img {
-  height: 36px; width: auto; max-width: 160px; object-fit: contain;
-  filter: grayscale(100%) contrast(0.8); opacity: 0.7;
-  transition: opacity 0.3s, filter 0.3s;
-}
+.ticker-item img { height: 36px; width: auto; max-width: 160px; object-fit: contain; filter: grayscale(100%) contrast(0.8); opacity: 0.7; transition: opacity 0.3s, filter 0.3s; }
 .ticker-item img:hover { filter: none; opacity: 1; }
 
 /* ═══════════════════════════
@@ -411,92 +287,77 @@ nav a:hover { color: var(--grey-text); }
 ═══════════════════════════ */
 .section-news { padding: 130px 0; background: var(--grey-light); }
 
-.news-grid {
-  display: grid; grid-template-columns: 57% 43%;
-  gap: 80px; align-items: start; margin-top: 72px;
-}
+.news-grid { display: grid; grid-template-columns: 57% 43%; gap: 80px; align-items: start; margin-top: 72px; }
 .news-photo-cell { position: relative; overflow: hidden; }
 .news-photo-cell img { width: 100%; height: 560px; object-fit: cover; display: block; }
-.news-tag {
-  position: absolute; top: 32px; left: 32px;
-  background: var(--black); color: var(--white);
-  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-  padding: 7px 16px; z-index: 1;
-}
+.news-tag { position: absolute; top: 32px; left: 32px; background: var(--black); color: var(--white); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; padding: 7px 16px; z-index: 1; }
 .news-date { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; margin-top: 8px; }
-.news-headline { font-size: clamp(28px, 2.8vw, 40px); font-weight: 400; letter-spacing: 0.02em; line-height: 1.2; margin-bottom: 26px; }
-.news-lead { font-size: 19px; line-height: 1.75; color: #555; margin-bottom: 44px; }
+.news-headline { font-size: clamp(30px, 2.8vw, 44px); font-weight: 400; letter-spacing: 0.02em; line-height: 1.2; margin-bottom: 26px; }
+.news-lead { font-size: 20px; line-height: 1.8; color: #555; margin-bottom: 44px; }
 
 .news-facts { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--grey-mid); margin-bottom: 44px; }
 .news-fact { padding: 22px 20px 22px 0; border-bottom: 1px solid var(--grey-mid); }
 .news-fact:nth-child(even) { padding-left: 20px; padding-right: 0; border-left: 1px solid var(--grey-mid); }
 .news-fact.full { grid-column: 1 / -1; border-left: none; padding-left: 0; }
-.news-fact-value { font-size: 30px; font-weight: 300; line-height: 1.0; margin-bottom: 4px; }
+.news-fact-value { font-size: 32px; font-weight: 300; line-height: 1.0; margin-bottom: 4px; }
 .news-fact-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-text); }
 
-.news-cta {
-  display: inline-flex; align-items: center; gap: 12px;
-  font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--black); text-decoration: none;
-  border-bottom: 1px solid var(--black); padding-bottom: 3px;
-  transition: color 0.2s, border-color 0.2s;
-}
+.news-cta { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 3px; transition: color 0.2s, border-color 0.2s; }
 .news-cta:hover { color: var(--grey-text); border-color: var(--grey-text); }
 
 /* ═══════════════════════════
-   TENANTS
+   TENANTS / LEASING
 ═══════════════════════════ */
 .section-tenants { padding: 130px 0; }
 
-.tenants-heading {
-  font-size: clamp(44px, 4vw, 62px); font-weight: 300;
-  letter-spacing: 0.04em; line-height: 1.1;
-  margin-top: 24px; margin-bottom: 88px; max-width: 600px;
-}
+.tenants-heading { font-size: clamp(46px, 4vw, 66px); font-weight: 300; letter-spacing: 0.04em; line-height: 1.1; margin-top: 24px; margin-bottom: 88px; max-width: 600px; }
 
 .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; }
 .contact-card { padding: 60px 0; border-top: 1px solid var(--grey-mid); padding-right: 80px; }
 .contact-card + .contact-card { padding-left: 80px; padding-right: 0; border-left: 1px solid var(--grey-mid); }
-
 .contact-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; margin-bottom: 28px; display: block; }
-.contact-name { font-size: 36px; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 6px; }
+.contact-name { font-size: 38px; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 6px; }
 .contact-title { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 30px; }
-.contact-detail { font-size: 17px; letter-spacing: 0.04em; color: var(--black); text-decoration: none; display: block; margin-bottom: 8px; line-height: 1.6; transition: color 0.2s; }
+.contact-detail { font-size: 18px; letter-spacing: 0.04em; color: var(--black); text-decoration: none; display: block; margin-bottom: 8px; line-height: 1.6; transition: color 0.2s; }
 .contact-detail:hover { color: var(--grey-text); }
+
+/* ═══════════════════════════
+   SUBSCRIBE
+═══════════════════════════ */
+.subscribe-section { position: relative; overflow: hidden; min-height: 420px; display: flex; align-items: center; }
+.sub-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.subscribe-section::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+.subscribe-inner { position: relative; z-index: 2; width: 100%; max-width: 1280px; margin: 0 auto; padding: 80px; }
+.sub-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+.sub-heading { font-size: clamp(34px, 3.5vw, 58px); font-weight: 300; color: #fff; letter-spacing: 0.04em; margin-bottom: 36px; max-width: 680px; line-height: 1.15; }
+.sub-form { display: flex; max-width: 560px; }
+.sub-form input { flex: 1; background: transparent; border: 1px solid rgba(255,255,255,0.45); border-right: none; color: #fff; font-family: 'Cormorant', serif; font-size: 18px; padding: 16px 24px; outline: none; }
+.sub-form input::placeholder { color: rgba(255,255,255,0.4); }
+.sub-form input:focus { border-color: rgba(255,255,255,0.8); }
+.sub-form button { background: #fff; color: var(--black); border: none; font-family: 'Cormorant', serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; padding: 16px 32px; cursor: pointer; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+.sub-form button:hover { background: var(--black); color: #fff; }
 
 /* ═══════════════════════════
    FOOTER
 ═══════════════════════════ */
 footer { background: var(--black); padding: 80px 0 56px; }
-
-.footer-inner {
-  max-width: 1280px; margin: 0 auto; padding: 0 80px;
-  display: grid; grid-template-columns: auto 1fr auto;
-  gap: 80px; align-items: start;
-}
+.footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; display: grid; grid-template-columns: auto 1fr auto; gap: 80px; align-items: start; }
 .footer-logo img { height: 96px; width: auto; background: var(--white); padding: 10px 16px; display: block; }
 .footer-nav a { display: block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 14px; transition: color 0.2s; padding-top: 4px; }
 .footer-nav a:hover { color: rgba(255,255,255,0.9); }
 .footer-contact { text-align: right; }
-.footer-phone { font-size: 30px; font-weight: 300; letter-spacing: 0.06em; color: var(--white); text-decoration: none; display: block; margin-bottom: 14px; }
-.footer-address { font-size: 14px; letter-spacing: 0.05em; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 280px; margin-left: auto; }
-
-.footer-bottom {
-  max-width: 1280px; margin: 56px auto 0; padding: 28px 80px 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  display: flex; justify-content: space-between;
-}
+.footer-phone { font-size: 32px; font-weight: 300; letter-spacing: 0.06em; color: var(--white); text-decoration: none; display: block; margin-bottom: 14px; }
+.footer-address { font-size: 15px; letter-spacing: 0.05em; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 280px; margin-left: auto; }
+.footer-bottom { max-width: 1280px; margin: 56px auto 0; padding: 28px 80px 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; }
 .footer-copy { font-size: 12px; letter-spacing: 0.12em; color: rgba(255,255,255,0.25); }
 
 /* ═══════════════════════════
-   RESPONSIVE
+   RESPONSIVE — TABLET 900px
 ═══════════════════════════ */
 @media (max-width: 900px) {
   .container { padding: 0 32px; }
   .header-inner { padding: 0 20px; }
-  .project-grid, .project-grid.reverse, .news-grid, .about-columns, .contacts-grid { grid-template-columns: 1fr; }
-  .project-photo-cell img { height: 340px; width: 100%; object-fit: cover; }
-  .project-info-cell.right-cell, .project-info-cell.left-cell { padding: 40px 32px; border: none; border-top: 1px solid var(--grey-mid); }
+  .news-grid, .about-columns, .contacts-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 40px; }
   .footer-contact { text-align: left; }
   .footer-address { margin-left: 0; }
@@ -506,49 +367,54 @@ footer { background: var(--black); padding: 80px 0 56px; }
   .about-wide-photo { height: 380px; }
   .news-photo-cell img { height: 340px; }
   .contact-card, .contact-card + .contact-card { padding: 40px 0; border-left: none; border-top: 1px solid var(--grey-mid); }
+  .featuring-grid { grid-template-columns: 1fr; gap: 40px; }
+  .feat-card-img-link img { height: 260px; }
+  .section-featuring { padding: 72px 0 80px; }
 }
 
+/* ═══════════════════════════
+   RESPONSIVE — MOBILE 600px
+═══════════════════════════ */
 @media (max-width: 600px) {
-  html { font-size: 15px; }
+  html { font-size: 17px; }
   header { height: auto; padding: 12px 0 10px; }
   .header-inner { flex-direction: column; align-items: stretch; gap: 10px; padding: 0 18px; position: relative; }
   .logo img { height: 60px; }
   .header-right { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; }
   .header-top-row { position: absolute; top: 0; right: 18px; }
-  .lang-switch { font-size: 11px; }
-  .social-row { gap: 14px; }
-  .social-row svg { width: 20px; height: 20px; }
   nav { gap: 0; justify-content: space-between; border-top: 1px solid var(--grey-mid); padding-top: 10px; }
   nav a { font-size: 11px; letter-spacing: 0.10em; }
   .hero { height: 100svh; min-height: 480px; }
-  .hero-tagline { font-size: 26px; padding: 0 16px; text-align: center; }
+  .hero-tagline { font-size: 28px; padding: 0 16px; }
   .hero-cities { font-size: 13px; letter-spacing: 0.18em; }
   .container { padding: 0 18px; }
   .about-banner-text { padding: 32px 18px; }
-  .about-banner-text h3 { font-size: 38px; }
+  .about-banner-text h3 { font-size: 40px; }
   .wide-photo-text { padding: 0 18px; }
-  .wide-photo-text p { font-size: 24px; }
+  .wide-photo-text p { font-size: 26px; }
   .section-about { padding: 72px 0 0; }
-  .section-projects { padding: 72px 0 80px; }
   .section-partners { padding: 72px 0; }
   .section-news { padding: 72px 0; }
   .section-tenants { padding: 72px 0; }
-  .project-gap { height: 72px; }
-  .section-heading { font-size: 36px; }
-  .tenants-heading { font-size: 36px; margin-bottom: 48px; }
-  .metric-number { font-size: 42px; }
-  .project-name { font-size: 30px; }
-  .news-headline { font-size: 26px; }
-  .contact-name { font-size: 28px; }
+  .section-heading { font-size: 38px; }
+  .tenants-heading { font-size: 38px; margin-bottom: 48px; }
+  .metric-number { font-size: 44px; }
+  .news-headline { font-size: 28px; }
+  .contact-name { font-size: 30px; }
   .about-image-banner { height: 260px; }
   .about-wide-photo { height: 300px; }
   .news-photo-cell img { height: 260px; }
-  .project-photo-cell img { height: 260px; }
   footer { padding: 56px 0 40px; }
   .footer-inner { padding: 0 18px; gap: 28px; }
   .footer-bottom { padding: 20px 18px 0; flex-direction: column; gap: 8px; }
-  .footer-phone { font-size: 22px; }
+  .footer-phone { font-size: 24px; }
   .footer-logo img { height: 64px; }
+  .subscribe-inner { padding: 60px 18px; }
+  .sub-form { flex-direction: column; }
+  .sub-form input { border-right: 1px solid rgba(255,255,255,0.45); border-bottom: none; }
+  .sub-form button { padding: 14px 24px; }
+  .featuring-grid { grid-template-columns: 1fr; gap: 36px; }
+  .feat-card-img-link img { height: 240px; }
 }
 </style>
 </head>
@@ -557,19 +423,16 @@ footer { background: var(--black); padding: 80px 0 56px; }
 <!-- ══════════════ HEADER ══════════════ -->
 <header>
   <div class="header-inner">
-    <a href="index.html" class="logo">
+    <a href="en.html" class="logo">
       <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
     </a>
-
     <div class="header-right">
       <div class="header-top-row">
-        <!-- Lang switcher -->
         <div class="lang-switch">
           <a href="index.html">RU</a>
           <span>/</span>
           <a href="en.html" class="active">EN</a>
         </div>
-        <!-- Social icons -->
         <div class="social-row">
           <a href="#" title="Telegram" aria-label="Telegram">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.613c-.152.674-.548.84-1.11.522l-3.06-2.254-1.476 1.42c-.163.163-.3.3-.616.3l.22-3.11 5.666-5.116c.247-.22-.053-.342-.383-.122L6.44 14.334l-3.01-.94c-.653-.204-.665-.653.137-.965l11.74-4.526c.546-.197 1.024.133.855.345h-.6z"/></svg>
@@ -582,7 +445,6 @@ footer { background: var(--black); padding: 80px 0 56px; }
           </a>
         </div>
       </div>
-
       <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -611,10 +473,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
     <div class="section-header">
       <p class="label">01 — About</p>
       <h2 class="section-heading">Fashion House Group</h2>
-      <p class="about-intro">
-        A leading outlet centre developer and operator in Russia and the CIS.
-        We create spaces where premium shopping meets architectural excellence.
-      </p>
+      <p class="about-intro">A leading outlet centre developer and operator in Russia and the CIS. We create spaces where premium shopping meets architectural excellence.</p>
     </div>
 
     <div class="metrics-row">
@@ -636,7 +495,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
   <div class="about-image-banner">
     <img src="autumn_013-Edit_fullres.jpg" alt="Shopping with benefits">
     <div class="about-banner-text">
-      <h3>Shopping with value</h3>
+      <h3>Shopping with benefits</h3>
     </div>
   </div>
 
@@ -644,28 +503,13 @@ footer { background: var(--black); padding: 80px 0 56px; }
     <div class="about-columns">
       <div>
         <p class="about-col-label">Our Role</p>
-        <p class="about-col-text">
-          Fashion House Group acts as full-cycle developer, operator and asset manager.
-          We handle master planning, architectural concept, leasing and day-to-day
-          operations — from the first sketch to the opening day and beyond.
-        </p>
-        <p class="about-col-text" style="margin-top:18px;">
-          Our model gives investors and partners transparent, measurable results
-          at every stage — from market analysis to real-time retail analytics.
-        </p>
+        <p class="about-col-text">Fashion House Group acts as full-cycle developer, operator and asset manager. We handle master planning, architectural concept, leasing and day-to-day operations — from the first sketch to the opening day and beyond.</p>
+        <p class="about-col-text" style="margin-top:18px;">Our model gives investors and partners transparent, measurable results at every stage — from market analysis to real-time retail analytics.</p>
       </div>
       <div>
         <p class="about-col-label">Operating Model</p>
-        <p class="about-col-text">
-          Our leasing team builds tenant mixes focused on international fashion brands
-          and Russian designers. Deep knowledge of the outlet market allows us to
-          attract anchor tenants and deliver consistent footfall.
-        </p>
-        <p class="about-col-text" style="margin-top:18px;">
-          All assets are managed through our proprietary retail analytics platform,
-          tracking conversion rates, average basket size and shopper behaviour
-          in real time.
-        </p>
+        <p class="about-col-text">Our leasing team builds tenant mixes focused on international fashion brands and Russian designers. Deep knowledge of the outlet market allows us to attract anchor tenants and deliver consistent footfall.</p>
+        <p class="about-col-text" style="margin-top:18px;">All assets are managed through our proprietary retail analytics platform, tracking conversion rates, average basket size and shopper behaviour in real time.</p>
       </div>
     </div>
   </div>
@@ -679,64 +523,39 @@ footer { background: var(--black); padding: 80px 0 56px; }
 </section>
 
 <!-- ══════════════ PROJECTS ══════════════ -->
-<section class="section-projects" id="projects">
+<section class="section-featuring" id="projects">
   <div class="container">
+    <h2 class="featuring-heading">Our Projects</h2>
+    <div class="featuring-grid">
 
-    <div class="section-header">
-      <p class="label">02 — Projects</p>
-      <h2 class="section-heading">Our Projects</h2>
-    </div>
-
-    <!-- PROJECT 01 — SHEREMETYEVO -->
-    <div class="project-block">
-      <div class="project-grid">
-        <div class="project-photo-cell">
+      <div class="feat-card">
+        <a href="project-sheremetyevo.html" class="feat-card-img-link">
           <img src="OZ0_5769.JPG" alt="Fashion House Outlet Sheremetyevo">
-        </div>
-        <div class="project-info-cell right-cell">
-          <div>
-            <p class="project-number">Project 01</p>
-            <h3 class="project-name">Fashion House Outlet<br>Sheremetyevo</h3>
-            <p class="project-location">Moscow</p>
-          </div>
-          <div class="project-metrics">
-            <div class="project-metric"><div class="project-metric-value">2013</div><div class="project-metric-label">Opening year</div></div>
-            <div class="project-metric"><div class="project-metric-value">20,269 m²</div><div class="project-metric-label">GLA</div></div>
-            <div class="project-metric"><div class="project-metric-value">27,122 m²</div><div class="project-metric-label">GBA</div></div>
-            <div class="project-metric"><div class="project-metric-value">1,800</div><div class="project-metric-label">Parking spaces</div></div>
-            <div class="project-metric"><div class="project-metric-value">110</div><div class="project-metric-label">Tenants</div></div>
-            <div class="project-metric"><div class="project-metric-value">1 floor</div><div class="project-metric-label">Enclosed format</div></div>
-          </div>
-        </div>
+        </a>
+        <h3 class="feat-card-title">Fashion House Outlet<br>Sheremetyevo</h3>
+        <p class="feat-card-text">Russia's first premium outlet centre, opened in 2013 near Sheremetyevo International Airport. 110 brands, discounts of 30–70% on past-season collections, year-round shopping in an enclosed format.</p>
+        <a href="project-sheremetyevo.html" class="feat-card-btn">View project &rsaquo;</a>
       </div>
-    </div>
 
-    <div class="project-gap"></div>
-
-    <!-- PROJECT 02 — TALLINSKOE -->
-    <div class="project-block">
-      <div class="project-grid reverse">
-        <div class="project-info-cell left-cell">
-          <div>
-            <p class="project-number">Project 02</p>
-            <h3 class="project-name">Fashion House Outlet<br>Tallinskoe</h3>
-            <p class="project-location">Saint Petersburg</p>
-          </div>
-          <div class="project-metrics">
-            <div class="project-metric"><div class="project-metric-value">2019</div><div class="project-metric-label">Opening year</div></div>
-            <div class="project-metric"><div class="project-metric-value">10,873 m²</div><div class="project-metric-label">GLA</div></div>
-            <div class="project-metric"><div class="project-metric-value">15,120 m²</div><div class="project-metric-label">GBA</div></div>
-            <div class="project-metric"><div class="project-metric-value">1,100</div><div class="project-metric-label">Parking spaces</div></div>
-            <div class="project-metric"><div class="project-metric-value">56</div><div class="project-metric-label">Tenants</div></div>
-            <div class="project-metric"><div class="project-metric-value">1 floor</div><div class="project-metric-label">Enclosed format</div></div>
-          </div>
-        </div>
-        <div class="project-photo-cell">
+      <div class="feat-card">
+        <a href="project-tallinskoe.html" class="feat-card-img-link">
           <img src="tallinskoe.jpg" alt="Fashion House Outlet Tallinskoe">
-        </div>
+        </a>
+        <h3 class="feat-card-title">Fashion House Outlet<br>Tallinskoe</h3>
+        <p class="feat-card-text">A premium outlet centre in Saint Petersburg, opened in 2019 on Tallinskoe Highway. 56 brands, discounts of 30–70%, excellent transport links for residents of the North-West region.</p>
+        <a href="project-tallinskoe.html" class="feat-card-btn">View project &rsaquo;</a>
       </div>
-    </div>
 
+      <div class="feat-card feat-card--upcoming">
+        <a href="#news" class="feat-card-img-link">
+          <img src="almaty6.jpg" alt="Fashion House Outlet Alatau — Almaty">
+        </a>
+        <h3 class="feat-card-title">Fashion House Outlet<br>Alatau, Almaty</h3>
+        <p class="feat-card-text">Fashion House Group's first outlet centre in Central Asia. Opening planned for 2028. GLA 24,000 m², up to 4 million visitors per year, catchment area of 3.8 million people. A new standard for premium shopping in Kazakhstan.</p>
+        <a href="#news" class="feat-card-btn">Learn more &rsaquo;</a>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -762,7 +581,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
       <div class="ticker-item"><img src="logos/U.S._Polo_Assn_1.png" alt="U.S. Polo Assn"></div>
       <div class="ticker-item"><img src="logos/PaperShop_Logo_70mm-01-01.jpg" alt="Paper Shop"></div>
       <div class="ticker-item"><img src="logos/noone.png" alt="Noone"></div>
-      <!-- duplicate -->
+      <!-- duplicate for seamless loop -->
       <div class="ticker-item"><img src="logos/Calvin_Klein_logo.png" alt="Calvin Klein"></div>
       <div class="ticker-item"><img src="logos/Tom_Tailor_logo_logotype.png" alt="Tom Tailor"></div>
       <div class="ticker-item"><img src="logos/Marc-OPolo.png" alt="Marc O'Polo"></div>
@@ -788,20 +607,15 @@ footer { background: var(--black); padding: 80px 0 56px; }
         <div class="news-tag">New Project</div>
         <img src="almaty6.jpg" alt="Fashion House Outlet Alatau — Almaty">
       </div>
-      <div class="news-text-cell">
+      <div>
         <p class="news-date">2025</p>
-        <h3 class="news-headline">
-          Fashion House Group expands into Central Asia: first outlet centre to open in Almaty
-        </h3>
-        <p class="news-lead">
-          The new Fashion House Outlet Alatau will be Kazakhstan's first full-format
-          outlet centre. Opening is planned for 2028.
-        </p>
+        <h3 class="news-headline">Fashion House Group expands into Central Asia: first outlet centre to open in Almaty</h3>
+        <p class="news-lead">The new Fashion House Outlet Alatau will become Kazakhstan's first full-format outlet centre. Opening is planned for 2028.</p>
         <div class="news-facts">
           <div class="news-fact"><div class="news-fact-value">24,000 m²</div><div class="news-fact-label">GLA</div></div>
-          <div class="news-fact"><div class="news-fact-value">3.8M+</div><div class="news-fact-label">People in catchment area</div></div>
+          <div class="news-fact"><div class="news-fact-value">3.8M+</div><div class="news-fact-label">Catchment population</div></div>
           <div class="news-fact"><div class="news-fact-value">up to 4M</div><div class="news-fact-label">Visitors per year</div></div>
-          <div class="news-fact"><div class="news-fact-value">2028</div><div class="news-fact-label">Opening</div></div>
+          <div class="news-fact"><div class="news-fact-value">2028</div><div class="news-fact-label">Opening year</div></div>
           <div class="news-fact full"><div class="news-fact-value">22,000 KZT</div><div class="news-fact-label">Projected average spend</div></div>
         </div>
         <a href="#" class="news-cta">Read more &nbsp;→</a>
@@ -831,6 +645,19 @@ footer { background: var(--black); padding: 80px 0 56px; }
         <a href="tel:+79269377893" class="contact-detail">+7 926 937 78 93</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══════════════ SUBSCRIBE ══════════════ -->
+<section class="subscribe-section">
+  <img class="sub-bg" src="subscribe-bg.jpg" alt="">
+  <div class="subscribe-inner">
+    <p class="sub-label">Newsletter</p>
+    <h2 class="sub-heading">Subscribe to Fashion House Group news</h2>
+    <form class="sub-form" onsubmit="return false;">
+      <input type="email" placeholder="Your e-mail">
+      <button type="submit">Subscribe</button>
+    </form>
   </div>
 </section>
 
