@@ -6,7 +6,7 @@
 <title>FASHION HOUSE Group</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -18,13 +18,23 @@
   --grey-text: #888880;
 }
 
-html { font-size: 20px; }
+html { font-size: 18px; }
 
 body {
-  font-family: 'Cormorant', Georgia, serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background: var(--white);
   color: var(--black);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Cormorant — только для заголовков и акцентных элементов */
+h1, h2, h3, h4,
+.section-heading, .hero-tagline, .about-banner-text h3,
+.wide-photo-text p, .featuring-heading, .sub-heading,
+.feat-card-title, .news-headline, .tenants-heading,
+.contact-name, .project-name, .footer-phone,
+.about-intro, .metric-number {
+  font-family: 'Cormorant', Georgia, serif;
 }
 
 img { display: block; max-width: 100%; }
@@ -104,7 +114,7 @@ nav {
 }
 
 nav a {
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--black);
@@ -192,20 +202,13 @@ nav a:hover { color: var(--grey-text); }
 .section-header .label { margin-bottom: 22px; }
 
 .section-heading {
-  font-size: clamp(44px, 4vw, 62px);
+  font-size: clamp(48px, 4.5vw, 72px);
   font-weight: 300;
   letter-spacing: 0.04em;
   line-height: 1.08;
 }
 
-.about-intro {
-  font-size: 22px;
-  line-height: 1.7;
-  color: #444;
-  max-width: 700px;
-  margin-top: 30px;
-  font-weight: 400;
-}
+.about-intro { font-size: 24px; line-height: 1.75; color: #444; max-width: 700px; margin-top: 30px; font-weight: 300; }
 
 /* Metrics */
 .metrics-row {
@@ -296,12 +299,8 @@ nav a:hover { color: var(--grey-text); }
   margin-bottom: 20px;
 }
 
-.about-col-text {
-  font-size: 19px;
-  line-height: 1.8;
-  color: #333;
-}
-.about-col-text + .about-col-text { margin-top: 18px; }
+.about-col-text { font-size: 20px; line-height: 1.85; color: #333; }
+.about-col-text + .about-col-text { font-size: 20px; line-height: 1.85; color: #333; }
 
 /* Wide photo with overlay */
 .about-wide-photo {
@@ -554,12 +553,7 @@ nav a:hover { color: var(--grey-text); }
   margin-bottom: 26px;
 }
 
-.news-lead {
-  font-size: 19px;
-  line-height: 1.75;
-  color: #555;
-  margin-bottom: 44px;
-}
+.news-lead { font-size: 20px; line-height: 1.85; color: #555; margin-bottom: 44px; }
 
 .news-facts {
   display: grid;
@@ -613,7 +607,7 @@ nav a:hover { color: var(--grey-text); }
 .section-tenants { padding: 130px 0; }
 
 .tenants-heading {
-  font-size: clamp(44px, 4vw, 62px);
+  font-size: clamp(48px, 4.5vw, 72px);
   font-weight: 300;
   letter-spacing: 0.04em;
   line-height: 1.1;
@@ -661,16 +655,7 @@ nav a:hover { color: var(--grey-text); }
   color: var(--grey-text);
   margin-bottom: 30px;
 }
-.contact-detail {
-  font-size: 17px;
-  letter-spacing: 0.04em;
-  color: var(--black);
-  text-decoration: none;
-  display: block;
-  margin-bottom: 8px;
-  line-height: 1.6;
-  transition: color 0.2s;
-}
+.contact-detail { font-size: 19px; letter-spacing: 0.02em; color: var(--black); text-decoration: none; display: block; margin-bottom: 8px; line-height: 1.7; transition: color 0.2s; }
 .contact-detail:hover { color: var(--grey-text); }
 
 /* ═══════════════════════════
@@ -799,13 +784,7 @@ footer {
   color: var(--black);
 }
 
-.feat-card-text {
-  font-size: 17px;
-  line-height: 1.75;
-  color: #555;
-  flex: 1;
-  margin-bottom: 24px;
-}
+.feat-card-text { font-size: 18px; line-height: 1.85; color: #555; flex: 1; margin-bottom: 24px; }
 
 .feat-card-btn {
   display: inline-block;
@@ -942,7 +921,7 @@ footer {
    RESPONSIVE — MOBILE 600px
 ═══════════════════════════ */
 @media (max-width: 600px) {
-  html { font-size: 17px; }
+  html { font-size: 16px; }
 
   /* Header: logo left + social right on same row, nav below */
   header { height: auto; padding: 12px 0 10px; }
