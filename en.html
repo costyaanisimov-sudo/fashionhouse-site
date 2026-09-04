@@ -439,6 +439,15 @@ footer { background: var(--black); padding: 80px 0 56px; }
   .featuring-grid { grid-template-columns: 1fr; gap: 36px; }
   .feat-card-img-link img { height: 240px; }
 }
+
+/* DROPDOWN */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { cursor: pointer; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--grey-mid); min-width: 220px; z-index: 300; padding: 8px 0; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); text-decoration: none; white-space: nowrap; }
+.dropdown-menu a:hover { color: var(--grey-text); }
+.dropdown-menu a.active { color: var(--grey-text); }
 </style>
 </head>
 <body>
@@ -469,7 +478,15 @@ footer { background: var(--black); padding: 80px 0 56px; }
         </div>
       </div>
       <nav>
-        <a href="#about">About</a>
+        <div class="nav-dropdown">
+          <a href="en.html#about">About</a>
+          <div class="dropdown-menu">
+            <a href="en-our-mission.html">Our Mission</a>
+            <a href="en-our-team.html">Our Team</a>
+            <a href="#">Company Profile</a>
+            <a href="#">Our Stories</a>
+          </div>
+        </div>
         <a href="#projects">Projects</a>
         <a href="#news">News</a>
         <a href="#tenants">Leasing</a>
@@ -691,7 +708,15 @@ footer { background: var(--black); padding: 80px 0 56px; }
       <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
     </div>
     <div class="footer-nav">
-      <a href="#about">About</a>
+      <div class="nav-dropdown">
+          <a href="en.html#about">About</a>
+          <div class="dropdown-menu">
+            <a href="en-our-mission.html">Our Mission</a>
+            <a href="en-our-team.html">Our Team</a>
+            <a href="#">Company Profile</a>
+            <a href="#">Our Stories</a>
+          </div>
+        </div>
       <a href="#projects">Projects</a>
       <a href="#news">News</a>
       <a href="#tenants">Leasing</a>
