@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team — Fashion House Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --black:#111111; --white:#fff; --grey-light:#f5f5f3; --grey-mid:#d0cfc9; --grey-text:#888880; }
+html { font-size: 18px; }
+body { font-family: 'Roboto', Arial, sans-serif; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: 'Cormorant', Georgia, serif; }
+img { display: block; max-width: 100%; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 80px; }
+header { position: sticky; top: 0; z-index: 200; background: var(--white); border-bottom: 1px solid var(--grey-mid); height: 130px; }
+.header-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.logo { text-decoration: none; flex-shrink: 0; }
+.logo img { height: 110px; width: auto; object-fit: contain; }
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.header-top-row { display: flex; align-items: center; gap: 24px; justify-content: flex-end; }
+.lang-switch { display: flex; align-items: center; gap: 6px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
+.lang-switch a { color: var(--grey-text); text-decoration: none; transition: color 0.2s; }
+.lang-switch a.active { color: var(--black); font-weight: 500; }
+.lang-switch span { color: var(--grey-mid); }
+.social-row { display: flex; align-items: center; gap: 18px; }
+.social-row a { display: flex; align-items: center; text-decoration: none; color: var(--grey-text); transition: color 0.2s; }
+.social-row a:hover { color: var(--black); }
+.social-row svg { width: 18px; height: 18px; }
+nav { display: flex; align-items: center; gap: 44px; }
+nav a { font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); text-decoration: none; font-weight: 400; transition: color 0.2s; }
+nav a:hover { color: var(--grey-text); }
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { cursor: pointer; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--grey-mid); min-width: 220px; z-index: 300; padding: 8px 0; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); text-decoration: none; white-space: nowrap; font-family: 'Roboto', sans-serif; }
+.dropdown-menu a:hover { color: var(--grey-text); }
+.dropdown-menu a.active { color: var(--grey-text); }
+.page-intro { padding: 100px 0 60px; }
+.page-intro-label { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-text); font-family: 'Roboto', sans-serif; }
+.page-intro-title { font-size: clamp(56px, 6vw, 90px); font-weight: 300; font-family: 'Cormorant', serif; margin-top: 20px; letter-spacing: 0.04em; line-height: 1.05; }
+.page-intro-text { font-size: 20px; color: var(--grey-text); max-width: 580px; margin-top: 28px; line-height: 1.7; }
+.team-section { padding-bottom: 120px; }
+.team-section-label { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 48px; font-family: 'Roboto', sans-serif; }
+.team-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; }
+.team-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; max-width: 1100px; }
+.team-grid-2b { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 720px; }
+.team-card .photo-wrap { overflow: hidden; }
+.team-card .photo-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: transform 0.4s ease; display: block; }
+.team-card .photo-wrap:hover img { transform: scale(1.02); }
+.team-card-name { font-size: 30px; font-weight: 400; font-family: 'Cormorant', serif; margin-top: 20px; letter-spacing: 0.02em; }
+.team-card-pos { font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-text); margin-top: 8px; font-family: 'Roboto', sans-serif; }
+.ops-section { padding-top: 160px; padding-bottom: 120px; }
+.leasing-section { padding-top: 160px; padding-bottom: 120px; }
+footer { background: var(--black); padding: 80px 0 56px; }
+.footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; display: grid; grid-template-columns: auto 1fr auto; gap: 80px; align-items: start; }
+.footer-logo img { height: 96px; width: auto; background: var(--white); padding: 10px 16px; display: block; }
+.footer-nav a { display: block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 14px; transition: color 0.2s; padding-top: 4px; }
+.footer-nav a:hover { color: rgba(255,255,255,0.9); }
+.footer-contact { text-align: right; }
+.footer-phone { font-size: 30px; font-weight: 300; letter-spacing: 0.06em; color: var(--white); text-decoration: none; display: block; margin-bottom: 14px; font-family: 'Cormorant', serif; }
+.footer-address { font-size: 14px; letter-spacing: 0.05em; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 280px; margin-left: auto; }
+.footer-bottom { max-width: 1280px; margin: 56px auto 0; padding: 28px 80px 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; }
+.footer-copy { font-size: 12px; letter-spacing: 0.12em; color: rgba(255,255,255,0.25); }
+@media (max-width: 900px) {
+  .container { padding: 0 32px; }
+  .header-inner { padding: 0 20px; }
+  .team-grid-2, .team-grid-3, .team-grid-2b { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-contact { text-align: left; }
+  .footer-address { margin-left: 0; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+}
+@media (max-width: 600px) {
+  html { font-size: 16px; }
+  header { height: auto; padding: 12px 0 10px; }
+  .header-inner { flex-direction: column; align-items: stretch; gap: 10px; padding: 0 18px; position: relative; }
+  .logo img { height: 60px; }
+  .header-right { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; }
+  .social-row { position: absolute; top: 0; right: 18px; gap: 16px; }
+  .social-row svg { width: 22px; height: 22px; }
+  nav { gap: 0; justify-content: space-between; border-top: 1px solid var(--grey-mid); padding-top: 10px; }
+  nav a { font-size: 11px; letter-spacing: 0.10em; }
+  .container { padding: 0 18px; }
+  .team-grid-2, .team-grid-3, .team-grid-2b { grid-template-columns: 1fr; }
+  .page-intro { padding: 60px 0 40px; }
+  .ops-section, .leasing-section { padding-top: 80px; }
+  .footer-inner { padding: 0 18px; gap: 28px; }
+  .footer-bottom { padding: 20px 18px 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="en.html" class="logo">
+      <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
+    </a>
+    <div class="header-right">
+      <div class="header-top-row">
+        <div class="lang-switch">
+          <a href="our-team.html">RU</a>
+          <span>/</span>
+          <a href="en-our-team.html" class="active">EN</a>
+        </div>
+        <div class="social-row">
+          <a href="#" title="Telegram" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.613c-.152.674-.548.84-1.11.522l-3.06-2.254-1.476 1.42c-.163.163-.3.3-.616.3l.22-3.11 5.666-5.116c.247-.22-.053-.342-.383-.122L6.44 14.334l-3.01-.94c-.653-.204-.665-.653.137-.965l11.74-4.526c.546-.197 1.024.133.855.345h-.6z"/></svg></a>
+          <a href="#" title="VKontakte" aria-label="VKontakte"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.6-.19 1.37 1.26 2.186 1.815.617.416 1.086.325 1.086.325l2.183-.03s1.14-.071.6-.966c-.044-.073-.314-.661-1.618-1.87-1.365-1.265-1.182-1.06.462-3.248.999-1.33 1.399-2.142 1.274-2.49-.12-.332-.852-.244-.852-.244l-2.455.015s-.182-.025-.317.056c-.132.08-.217.267-.217.267s-.388 1.034-.905 1.913c-1.09 1.85-1.526 1.948-1.704 1.834-.414-.268-.31-1.075-.31-1.648 0-1.793.271-2.54-.529-2.733-.266-.064-.461-.107-1.141-.114-.872-.009-1.609.003-2.028.207-.278.136-.492.439-.362.456.161.022.527.098.72.362.249.34.24 1.104.24 1.104s.143 2.11-.333 2.372c-.327.178-.775-.185-1.737-1.843-.493-.854-.866-1.8-.866-1.8s-.072-.18-.202-.277c-.156-.115-.375-.152-.375-.152l-2.33.015s-.35.01-.478.162c-.114.135-.009.414-.009.414s1.826 4.27 3.892 6.423c1.895 1.973 4.047 1.843 4.047 1.843h.975z"/></svg></a>
+          <a href="#" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-dropdown">
+          <a href="en.html#about">About Us</a>
+          <div class="dropdown-menu">
+            <a href="en-our-mission.html">Our Mission</a>
+            <a href="en-our-team.html" class="active">Our Team</a>
+            <a href="#">Company Profile</a>
+            <a href="#">Our Stories</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="en.html#news">News</a>
+        <a href="en.html#tenants">Leasing</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="page-intro">
+  <div class="container">
+    <p class="page-intro-label">Fashion House Group</p>
+    <h1 class="page-intro-title">OUR TEAM</h1>
+    <p class="page-intro-text">A team of professionals with extensive experience in outlet development, management and retail real estate.</p>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="container">
+    <p class="team-section-label">MANAGEMENT</p>
+    <div class="team-grid-2">
+      <div class="team-card">
+        <div class="photo-wrap"><img src="staff-brendon.jpg" alt="Brendon O'Reilly"></div>
+        <p class="team-card-name">Brendon O'Reilly</p>
+        <p class="team-card-pos">Managing Director</p>
+      </div>
+      <div class="team-card">
+        <div class="photo-wrap"><img src="staff-cezary.jpg" alt="Cezary Poltorak"></div>
+        <p class="team-card-name">Cezary Poltorak</p>
+        <p class="team-card-pos">Head of Operations</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ops-section">
+  <div class="container">
+    <p class="team-section-label">OPERATIONS</p>
+    <div class="team-grid-3">
+      <div class="team-card">
+        <div class="photo-wrap"><img src="staff-marina.jpg" alt="Marina Dombrovskaya"></div>
+        <p class="team-card-name">Marina Dombrovskaya</p>
+        <p class="team-card-pos">Head of Retail</p>
+      </div>
+      <div class="team-card">
+        <div class="photo-wrap"><img src="staff-anisimov.jpg" alt="Konstantin Anisimov"></div>
+        <p class="team-card-name">Konstantin Anisimov</p>
+        <p class="team-card-pos">Head of Marketing</p>
+      </div>
+      <div class="team-card">
+        <div class="photo-wrap"><img src="staff-oschepkov.jpg" alt="Grigorii Oschepkov"></div>
+        <p class="team-card-name">Grigorii Oschepkov</p>
+        <p class="team-card-pos">Head of Facility Management</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="leasing-section">
+  <div class="container">
+    <p class="team-section-label">LEASING &amp; BROKERAGE</p>
+    <div class="team-grid-2b">
+      <div class="team-card">
+        <div class="photo-wrap"><img src="staff-solovyova.jpg" alt="Anna Solovyeva"></div>
+        <p class="team-card-name">Anna Solovyeva</p>
+        <p class="team-card-pos">Senior Leasing Manager</p>
+      </div>
+      <div class="team-card">
+        <div class="photo-wrap"><img src="staff-nikiforova.jpg" alt="Ekaterina Sofonova"></div>
+        <p class="team-card-name">Ekaterina Sofonova</p>
+        <p class="team-card-pos">Senior Leasing Manager</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
+    </div>
+    <div class="footer-nav">
+      <a href="en.html#about">About Us</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="en.html#news">News</a>
+      <a href="en.html#tenants">Leasing</a>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+74955445543" class="footer-phone">+7 495 544-55-43</a>
+      <p class="footer-address">Russia, Khimki,<br>Novoe Leningradskoe shosse, 6</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Fashion House Group. All rights reserved.</span>
+    <span class="footer-copy">Privacy Policy</span>
+  </div>
+</footer>
+
+</body>
+</html>
