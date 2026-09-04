@@ -1023,6 +1023,15 @@ footer {
   .footer-phone { font-size: 22px; }
   .footer-logo img { height: 64px; }
 }
+
+/* DROPDOWN */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { cursor: pointer; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--grey-mid); min-width: 220px; z-index: 300; padding: 8px 0; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); text-decoration: none; white-space: nowrap; }
+.dropdown-menu a:hover { color: var(--grey-text); }
+.dropdown-menu a.active { color: var(--grey-text); }
 </style>
 </head>
 <body>
@@ -1061,7 +1070,15 @@ footer {
 
       <!-- Navigation -->
       <nav>
-        <a href="#about">О нас</a>
+        <div class="nav-dropdown">
+          <a href="index.html#about">О нас</a>
+          <div class="dropdown-menu">
+            <a href="our-mission.html">Наша миссия</a>
+            <a href="our-team.html">Наша команда</a>
+            <a href="#">Профиль компании</a>
+            <a href="#">Наши истории</a>
+          </div>
+        </div>
         <a href="portfolio.html">Портфолио</a>
         <a href="#news">Новости</a>
         <a href="#tenants">Арендаторам</a>
@@ -1330,7 +1347,15 @@ footer {
       <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
     </div>
     <div class="footer-nav">
-      <a href="#about">О нас</a>
+      <div class="nav-dropdown">
+          <a href="index.html#about">О нас</a>
+          <div class="dropdown-menu">
+            <a href="our-mission.html">Наша миссия</a>
+            <a href="our-team.html">Наша команда</a>
+            <a href="#">Профиль компании</a>
+            <a href="#">Наши истории</a>
+          </div>
+        </div>
       <a href="portfolio.html">Портфолио</a>
       <a href="#news">Новости</a>
       <a href="#tenants">Арендаторам</a>
