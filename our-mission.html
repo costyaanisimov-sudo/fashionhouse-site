@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наша миссия — Fashion House Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --black:#111111; --white:#fff; --grey-light:#f5f5f3; --grey-mid:#d0cfc9; --grey-text:#888880; }
+html { font-size: 18px; }
+body { font-family: 'Roboto', Arial, sans-serif; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: 'Cormorant', Georgia, serif; }
+img { display: block; max-width: 100%; }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 80px; }
+
+/* HEADER */
+header { position: sticky; top: 0; z-index: 200; background: var(--white); border-bottom: 1px solid var(--grey-mid); height: 130px; }
+.header-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.logo { text-decoration: none; flex-shrink: 0; }
+.logo img { height: 110px; width: auto; object-fit: contain; }
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.header-top-row { display: flex; align-items: center; gap: 24px; justify-content: flex-end; }
+.lang-switch { display: flex; align-items: center; gap: 6px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
+.lang-switch a { color: var(--grey-text); text-decoration: none; transition: color 0.2s; }
+.lang-switch a.active { color: var(--black); font-weight: 500; }
+.lang-switch span { color: var(--grey-mid); }
+.social-row { display: flex; align-items: center; gap: 18px; }
+.social-row a { display: flex; align-items: center; text-decoration: none; color: var(--grey-text); transition: color 0.2s; }
+.social-row a:hover { color: var(--black); }
+.social-row svg { width: 18px; height: 18px; }
+nav { display: flex; align-items: center; gap: 44px; }
+nav a { font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); text-decoration: none; font-weight: 400; transition: color 0.2s; }
+nav a:hover { color: var(--grey-text); }
+
+/* DROPDOWN */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { cursor: pointer; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--grey-mid); min-width: 220px; z-index: 300; padding: 8px 0; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); text-decoration: none; white-space: nowrap; font-family: 'Roboto', sans-serif; }
+.dropdown-menu a:hover { color: var(--grey-text); }
+.dropdown-menu a.active { color: var(--grey-text); }
+
+/* HERO */
+.page-hero { position: relative; width: 100%; height: 500px; overflow: hidden; background: #111; display: flex; align-items: center; justify-content: center; }
+.page-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.page-hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.page-hero-text { position: relative; z-index: 2; text-align: center; color: var(--white); }
+.page-hero-label { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 20px; font-family: 'Roboto', sans-serif; }
+.page-hero-title { font-size: clamp(56px, 6vw, 96px); font-weight: 300; font-family: 'Cormorant', serif; letter-spacing: 0.06em; line-height: 1.0; }
+
+/* MISSION STATEMENT */
+.mission-statement { padding: 120px 0; }
+.mission-cols { display: grid; grid-template-columns: 35% 65%; gap: 80px; align-items: start; }
+.mission-left-heading { font-size: clamp(42px, 4vw, 64px); font-weight: 300; font-style: italic; font-family: 'Cormorant', serif; line-height: 1.15; letter-spacing: 0.02em; }
+.mission-body p { font-size: 20px; line-height: 1.8; color: #333; max-width: 600px; }
+.mission-body p + p { margin-top: 24px; }
+
+/* STATEMENT BLOCK */
+.statement-block { background: var(--black); padding: 140px 0; text-align: center; }
+.statement-heading { font-size: clamp(48px, 5vw, 80px); font-weight: 300; letter-spacing: 0.05em; color: var(--white); font-family: 'Cormorant', serif; line-height: 1.1; }
+.statement-body { font-size: 19px; color: rgba(255,255,255,0.7); max-width: 680px; margin: 40px auto 0; line-height: 1.8; }
+.statement-body p + p { margin-top: 20px; }
+
+/* EXPERTISE PHOTO */
+.expertise-photo { width: 100%; height: 600px; object-fit: cover; object-position: center; display: block; }
+
+/* EXPERTISE SERVICES */
+.service-block { display: grid; grid-template-columns: 1fr 1fr; min-height: 400px; }
+.service-block.reverse .service-text { order: 2; }
+.service-block.reverse .service-accent { order: 1; }
+.service-text { background: var(--white); padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; }
+.service-accent { background: var(--grey-light); }
+.service-number { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; font-family: 'Roboto', sans-serif; }
+.service-title { font-size: clamp(36px, 3.5vw, 56px); font-weight: 300; font-family: 'Cormorant', serif; letter-spacing: 0.03em; line-height: 1.1; margin-bottom: 32px; }
+.service-desc { font-size: 19px; line-height: 1.8; color: #333; max-width: 520px; }
+
+/* CTA */
+.cta-section { background: var(--black); padding: 160px 0; text-align: center; }
+.cta-heading { font-size: clamp(52px, 5.5vw, 84px); font-weight: 300; color: var(--white); font-family: 'Cormorant', serif; line-height: 1.05; }
+.cta-heading.italic { font-style: italic; }
+.cta-body { font-size: 19px; color: rgba(255,255,255,0.65); max-width: 640px; margin: 36px auto 0; line-height: 1.8; }
+.cta-link { display: inline-block; margin-top: 56px; font-size: 15px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 4px; font-family: 'Roboto', sans-serif; transition: border-color 0.2s; }
+.cta-link:hover { border-color: rgba(255,255,255,0.8); }
+
+/* FOOTER */
+footer { background: var(--black); padding: 80px 0 56px; }
+.footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; display: grid; grid-template-columns: auto 1fr auto; gap: 80px; align-items: start; }
+.footer-logo img { height: 96px; width: auto; background: var(--white); padding: 10px 16px; display: block; }
+.footer-nav a { display: block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 14px; transition: color 0.2s; padding-top: 4px; }
+.footer-nav a:hover { color: rgba(255,255,255,0.9); }
+.footer-contact { text-align: right; }
+.footer-phone { font-size: 30px; font-weight: 300; letter-spacing: 0.06em; color: var(--white); text-decoration: none; display: block; margin-bottom: 14px; font-family: 'Cormorant', serif; }
+.footer-address { font-size: 14px; letter-spacing: 0.05em; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 280px; margin-left: auto; }
+.footer-bottom { max-width: 1280px; margin: 56px auto 0; padding: 28px 80px 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; }
+.footer-copy { font-size: 12px; letter-spacing: 0.12em; color: rgba(255,255,255,0.25); }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .container { padding: 0 32px; }
+  .header-inner { padding: 0 20px; }
+  .mission-cols { grid-template-columns: 1fr; gap: 40px; }
+  .service-block, .service-block.reverse { grid-template-columns: 1fr; }
+  .service-accent { display: none; }
+  .service-block.reverse .service-text { order: 1; }
+  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-contact { text-align: left; }
+  .footer-address { margin-left: 0; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+}
+@media (max-width: 600px) {
+  html { font-size: 16px; }
+  header { height: auto; padding: 12px 0 10px; }
+  .header-inner { flex-direction: column; align-items: stretch; gap: 10px; padding: 0 18px; position: relative; }
+  .logo img { height: 60px; }
+  .header-right { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; }
+  .social-row { position: absolute; top: 0; right: 18px; gap: 16px; align-items: center; }
+  .social-row svg { width: 22px; height: 22px; }
+  nav { gap: 0; justify-content: space-between; border-top: 1px solid var(--grey-mid); padding-top: 10px; }
+  nav a { font-size: 11px; letter-spacing: 0.10em; }
+  .container { padding: 0 18px; }
+  .mission-statement { padding: 60px 0; }
+  .statement-block { padding: 80px 0; }
+  .service-text { padding: 60px 24px; }
+  .cta-section { padding: 80px 0; }
+  .footer-inner { padding: 0 18px; gap: 28px; }
+  .footer-bottom { padding: 20px 18px 0; }
+  .page-hero { height: 360px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
+    </a>
+    <div class="header-right">
+      <div class="header-top-row">
+        <div class="lang-switch">
+          <a href="our-mission.html" class="active">RU</a>
+          <span>/</span>
+          <a href="en-our-mission.html">EN</a>
+        </div>
+        <div class="social-row">
+          <a href="#" title="Telegram" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.613c-.152.674-.548.84-1.11.522l-3.06-2.254-1.476 1.42c-.163.163-.3.3-.616.3l.22-3.11 5.666-5.116c.247-.22-.053-.342-.383-.122L6.44 14.334l-3.01-.94c-.653-.204-.665-.653.137-.965l11.74-4.526c.546-.197 1.024.133.855.345h-.6z"/></svg></a>
+          <a href="#" title="VKontakte" aria-label="VKontakte"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.6-.19 1.37 1.26 2.186 1.815.617.416 1.086.325 1.086.325l2.183-.03s1.14-.071.6-.966c-.044-.073-.314-.661-1.618-1.87-1.365-1.265-1.182-1.06.462-3.248.999-1.33 1.399-2.142 1.274-2.49-.12-.332-.852-.244-.852-.244l-2.455.015s-.182-.025-.317.056c-.132.08-.217.267-.217.267s-.388 1.034-.905 1.913c-1.09 1.85-1.526 1.948-1.704 1.834-.414-.268-.31-1.075-.31-1.648 0-1.793.271-2.54-.529-2.733-.266-.064-.461-.107-1.141-.114-.872-.009-1.609.003-2.028.207-.278.136-.492.439-.362.456.161.022.527.098.72.362.249.34.24 1.104.24 1.104s.143 2.11-.333 2.372c-.327.178-.775-.185-1.737-1.843-.493-.854-.866-1.8-.866-1.8s-.072-.18-.202-.277c-.156-.115-.375-.152-.375-.152l-2.33.015s-.35.01-.478.162c-.114.135-.009.414-.009.414s1.826 4.27 3.892 6.423c1.895 1.973 4.047 1.843 4.047 1.843h.975z"/></svg></a>
+          <a href="#" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-dropdown">
+          <a href="index.html#about">О нас</a>
+          <div class="dropdown-menu">
+            <a href="our-mission.html" class="active">Наша миссия</a>
+            <a href="our-team.html">Наша команда</a>
+            <a href="#">Профиль компании</a>
+            <a href="#">Наши истории</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="index.html#news">Новости</a>
+        <a href="index.html#tenants">Арендаторам</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <img src="mission-banner.jpg" alt="Fashion House Group — Наша миссия">
+  <div class="page-hero-text">
+    <p class="page-hero-label">Fashion House Group</p>
+    <h1 class="page-hero-title">НАША МИССИЯ</h1>
+  </div>
+</section>
+
+<!-- MISSION STATEMENT -->
+<section class="mission-statement">
+  <div class="container">
+    <div class="mission-cols">
+      <div>
+        <h2 class="mission-left-heading">«Мы выстраиваем эффективные деловые и долгосрочные партнёрские отношения»</h2>
+      </div>
+      <div class="mission-body">
+        <p>Мы выстраиваем эффективные деловые и долгосрочные партнёрские отношения и создаём условия, которые помогают нашим арендаторам успешно развивать бизнес в аутлет-центрах.</p>
+        <p>Наша команда ориентирована на высокий уровень сервиса и тесное взаимодействие с брендами. Мы помогаем арендаторам повышать эффективность бизнеса и вместе с ними создаём для посетителей качественный и комфортный покупательский опыт.</p>
+        <p>Успех наших арендаторов лежит в основе успеха каждого аутлет-центра. Именно поэтому наша задача — создавать устойчивую ценность для брендов, собственников, инвесторов и других партнёров Fashion House Group.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT BLOCK -->
+<section class="statement-block">
+  <div class="container">
+    <h2 class="statement-heading">МЫ ЗНАЕМ АУТЛЕТ-БИЗНЕС ИЗНУТРИ</h2>
+    <div class="statement-body">
+      <p>Fashion House Group обладает практической экспертизой создания и управления аутлет-центрами — от первоначальной идеи и оценки потенциала проекта до открытия объекта и его дальнейшего операционного развития.</p>
+      <p>Мы работаем с инвесторами, девелоперами и собственниками коммерческой недвижимости и можем подключаться как на отдельных этапах проекта, так и обеспечивать комплексное сопровождение на протяжении всего жизненного цикла объекта.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE PHOTO -->
+<img class="expertise-photo" src="expertise-photo.jpg" alt="Fashion House Group — экспертиза">
+
+<!-- SERVICE 01 -->
+<div class="service-block">
+  <div class="service-text">
+    <p class="service-number">01</p>
+    <h2 class="service-title">ДЕВЕЛОПМЕНТ И КОНСАЛТИНГ</h2>
+    <p class="service-desc">Помогаем определить потенциал будущего аутлет-проекта, сформировать его концепцию и разработать оптимальную модель развития. Экспертиза Fashion House Group включает анализ рынка и зоны охвата, позиционирование проекта, разработку концепции, рекомендации по master plan и архитектурным решениям, формирование товарной и брендовой стратегии, а также сопровождение проекта на этапе подготовки к открытию.</p>
+  </div>
+  <div class="service-accent"></div>
+</div>
+
+<!-- SERVICE 02 -->
+<div class="service-block reverse">
+  <div class="service-accent"></div>
+  <div class="service-text">
+    <p class="service-number">02</p>
+    <h2 class="service-title">УПРАВЛЕНИЕ АУТЛЕТ-ЦЕНТРАМИ</h2>
+    <p class="service-desc">Берём на себя комплексное управление действующими аутлет-центрами и помогаем собственникам повышать операционную эффективность и долгосрочную стоимость объекта. Наша модель управления объединяет коммерческое управление, работу с арендаторами, операционную деятельность, маркетинг, анализ показателей и развитие клиентского опыта.</p>
+  </div>
+</div>
+
+<!-- SERVICE 03 -->
+<div class="service-block">
+  <div class="service-text">
+    <p class="service-number">03</p>
+    <h2 class="service-title">БРОКЕРИДЖ И ЛИЗИНГ</h2>
+    <p class="service-desc">Формируем сбалансированный tenant mix с учётом позиционирования объекта, его целевой аудитории и коммерческих задач. Мы сопровождаем весь процесс — от разработки leasing-стратегии и поиска потенциальных арендаторов до переговоров с брендами, заключения договоров и последующей работы с арендаторами. Многолетнее сотрудничество Fashion House Group с российскими и международными fashion-брендами позволяет нам хорошо понимать требования операторов и специфику работы брендов в аутлет-формате.</p>
+  </div>
+  <div class="service-accent"></div>
+</div>
+
+<!-- SERVICE 04 -->
+<div class="service-block reverse">
+  <div class="service-accent"></div>
+  <div class="service-text">
+    <p class="service-number">04</p>
+    <h2 class="service-title">МАРКЕТИНГ</h2>
+    <p class="service-desc">Разрабатываем маркетинговые стратегии, направленные не только на узнаваемость объекта, но прежде всего на рост посещаемости, продаж арендаторов и коммерческих показателей аутлет-центра. Мы объединяем стратегическое позиционирование, медиапланирование, рекламные кампании, мероприятия, digital-коммуникации и аналитику, адаптируя инструменты под конкретный рынок и задачи каждого проекта.</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta-heading">ЕСТЬ ПРОЕКТ?</h2>
+    <h2 class="cta-heading italic">ДАВАЙТЕ ОБСУДИМ.</h2>
+    <p class="cta-body">Каждый аутлет-проект требует индивидуального подхода. Fashion House Group может выступать консультантом, взять на себя отдельное направление проекта или сформировать комплексную команду для его запуска и дальнейшего управления.</p>
+    <a href="index.html#tenants" class="cta-link">ОБСУДИТЬ ПРОЕКТ &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
+    </div>
+    <div class="footer-nav">
+      <a href="index.html#about">О нас</a>
+      <a href="portfolio.html">Портфолио</a>
+      <a href="index.html#news">Новости</a>
+      <a href="index.html#tenants">Арендаторам</a>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+74955445543" class="footer-phone">+7 495 544-55-43</a>
+      <p class="footer-address">РФ, г. Химки, Новая<br>Ленинградское шоссе, д. 6</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Fashion House Group. Все права защищены.</span>
+    <span class="footer-copy">Политика конфиденциальности</span>
+  </div>
+</footer>
+
+</body>
+</html>
