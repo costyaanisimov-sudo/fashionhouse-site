@@ -135,6 +135,15 @@
     .hero h1 { font-size: 40px; }
     .footer-grid { grid-template-columns: 1fr; }
   }
+
+/* DROPDOWN */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { cursor: pointer; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--grey-mid); min-width: 220px; z-index: 300; padding: 8px 0; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); text-decoration: none; white-space: nowrap; }
+.dropdown-menu a:hover { color: var(--grey-text); }
+.dropdown-menu a.active { color: var(--grey-text); }
 </style>
 </head>
 <body>
@@ -161,7 +170,7 @@
       </a>
     </div>
     <nav>
-      <a href="index.html#about">О нас</a>
+      <div class="nav-dropdown"><a href="index.html#about">О нас</a><div class="dropdown-menu"><a href="our-mission.html">Наша миссия</a><a href="our-team.html">Наша команда</a><a href="#">Профиль компании</a><a href="#">Наши истории</a></div></div>
       <a href="portfolio.html" class="active">Портфолио</a>
       <a href="index.html#news">Новости</a>
       <a href="index.html#tenants">Арендаторам</a>
@@ -272,7 +281,7 @@
     <div class="footer-nav">
       <h4>Навигация</h4>
       <ul>
-        <li><a href="index.html#about">О нас</a></li>
+        <li><div class="nav-dropdown"><a href="index.html#about">О нас</a><div class="dropdown-menu"><a href="our-mission.html">Наша миссия</a><a href="our-team.html">Наша команда</a><a href="#">Профиль компании</a><a href="#">Наши истории</a></div></div></li>
         <li><a href="portfolio.html">Портфолио</a></li>
         <li><a href="index.html#news">Новости</a></li>
         <li><a href="index.html#tenants">Арендаторам</a></li>
