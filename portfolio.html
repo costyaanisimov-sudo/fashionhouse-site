@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Портфолио — Fashion House Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #111111;
+    --white: #fff;
+    --grey-light: #f5f5f3;
+    --grey-mid: #d0cfc9;
+    --grey-text: #888880;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Roboto', sans-serif; font-weight: 300; color: var(--black); background: var(--white); }
+  a { text-decoration: none; color: inherit; }
+
+  /* HEADER */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    height: 130px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    border-bottom: 1px solid var(--grey-mid);
+  }
+  .header-logo img { height: 110px; display: block; }
+  .header-right { display: flex; align-items: center; gap: 32px; }
+  .lang-switch { display: flex; gap: 8px; font-size: 12px; letter-spacing: 0.12em; }
+  .lang-switch a { color: var(--grey-text); }
+  .lang-switch a.active { color: var(--black); font-weight: 500; border-bottom: 1px solid var(--black); }
+  .social-icons { display: flex; gap: 16px; align-items: center; }
+  .social-icons a { color: var(--grey-text); transition: color 0.2s; }
+  .social-icons a:hover { color: var(--black); }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a { font-size: 13px; letter-spacing: 0.1em; color: var(--grey-text); text-transform: uppercase; transition: color 0.2s; }
+  nav a:hover, nav a.active { color: var(--black); }
+
+  /* HERO */
+  .hero {
+    width: 100%; height: 420px;
+    background: var(--black);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; position: relative;
+  }
+  .hero-content { position: relative; z-index: 2; }
+  .hero-label {
+    font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 400;
+    letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey-mid);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant', serif; font-size: 72px; font-weight: 300;
+    color: var(--white); line-height: 1.05; margin-bottom: 20px;
+  }
+  .hero-subtitle {
+    font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 300;
+    color: var(--grey-mid); letter-spacing: 0.05em; max-width: 540px;
+  }
+
+  /* GRID */
+  .portfolio-section { padding: 4px; }
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+  }
+  .portfolio-card {
+    position: relative; overflow: hidden; display: block;
+    cursor: pointer;
+  }
+  .portfolio-card img {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+    transition: transform 0.5s ease;
+  }
+  .portfolio-card:hover img { transform: scale(1.04); }
+  .card-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.75));
+    padding: 32px 28px 28px;
+  }
+  .card-country {
+    position: absolute; top: 20px; left: 20px;
+    background: rgba(0,0,0,0.5); color: var(--white);
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 5px 12px;
+  }
+  .card-name {
+    font-family: 'Cormorant', serif; font-size: 26px; font-weight: 300;
+    color: var(--white); line-height: 1.2; margin: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black); color: var(--white);
+    padding: 64px 48px 40px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px;
+    margin-bottom: 48px;
+  }
+  .footer-logo img { height: 70px; display: block; filter: brightness(0) invert(1); margin-bottom: 20px; }
+  .footer-logo p { font-size: 12px; color: var(--grey-text); line-height: 1.7; }
+  .footer-nav h4, .footer-contact h4 {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--grey-text); margin-bottom: 20px; font-weight: 400;
+  }
+  .footer-nav ul { list-style: none; }
+  .footer-nav ul li { margin-bottom: 12px; }
+  .footer-nav ul li a { font-size: 13px; color: var(--grey-mid); transition: color 0.2s; }
+  .footer-nav ul li a:hover { color: var(--white); }
+  .footer-contact p { font-size: 13px; color: var(--grey-mid); line-height: 1.8; }
+  .footer-contact a { color: var(--grey-mid); transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 11px; color: var(--grey-text); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    header { padding: 0 24px; }
+    nav { gap: 16px; }
+    .hero h1 { font-size: 52px; }
+  }
+  @media (max-width: 600px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .header-right { gap: 16px; }
+    nav { display: none; }
+    .hero h1 { font-size: 40px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-logo">
+    <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
+  </a>
+  <div class="header-right">
+    <div class="lang-switch">
+      <a href="portfolio.html" class="active">RU</a>
+      <span style="color:var(--grey-mid)">/</span>
+      <a href="#">EN</a>
+    </div>
+    <div class="social-icons">
+      <a href="#" aria-label="Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+      </a>
+      <a href="#" aria-label="VK">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.6-.19 1.37 1.26 2.186 1.815.617.416 1.086.325 1.086.325l2.182-.03s1.141-.071.6-.968c-.044-.073-.314-.661-1.618-1.869-1.366-1.265-1.184-1.06.462-3.246.999-1.332 1.398-2.145 1.273-2.493-.12-.332-.854-.244-.854-.244l-2.455.015s-.182-.025-.317.056c-.132.079-.217.264-.217.264s-.387 1.028-.903 1.903c-1.088 1.848-1.524 1.946-1.703 1.831-.414-.267-.311-1.075-.311-1.648 0-1.792.272-2.539-.529-2.732-.266-.064-.461-.107-1.141-.114-.872-.009-1.609.003-2.027.207-.278.135-.492.437-.361.454.161.021.526.098.72.362.25.341.241 1.107.241 1.107s.144 2.11-.335 2.372c-.328.18-.778-.187-1.745-1.866-.496-.858-.871-1.808-.871-1.808s-.072-.178-.202-.274c-.157-.115-.376-.152-.376-.152l-2.332.015s-.35.01-.478.162c-.114.135-.009.414-.009.414s1.826 4.271 3.894 6.422c1.897 1.976 4.05 1.846 4.05 1.846h.977z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+    </div>
+    <nav>
+      <a href="index.html#about">О нас</a>
+      <a href="portfolio.html" class="active">Портфолио</a>
+      <a href="index.html#news">Новости</a>
+      <a href="index.html#tenants">Арендаторам</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-label">Международные проекты</p>
+    <h1>Портфолио</h1>
+    <p class="hero-subtitle">Аутлет-центры под управлением и консультированием Fashion House Group</p>
+  </div>
+</section>
+
+<section class="portfolio-section">
+  <div class="portfolio-grid">
+
+    <a href="portfolio-detail.html?id=prague" class="portfolio-card">
+      <img src="https://sspark.genspark.ai/i/lolKFQf2BpxU5MV7?width=1200" alt="Fashion Arena Prague" loading="lazy">
+      <span class="card-country">Чехия</span>
+      <div class="card-overlay">
+        <p class="card-name">Fashion Arena Prague</p>
+      </div>
+    </a>
+
+    <a href="portfolio-detail.html?id=warsaw" class="portfolio-card">
+      <img src="https://sspark.genspark.ai/i/LffUUuMEHe4d3XkG?width=1200" alt="Designer Outlet Warszawa" loading="lazy">
+      <span class="card-country">Польша</span>
+      <div class="card-overlay">
+        <p class="card-name">Designer Outlet Warszawa</p>
+      </div>
+    </a>
+
+    <a href="portfolio-detail.html?id=gdansk" class="portfolio-card">
+      <img src="https://sspark.genspark.ai/i/CzYAMCtqaDmjWoIT?width=1200" alt="Designer Outlet Gdańsk" loading="lazy">
+      <span class="card-country">Польша</span>
+      <div class="card-overlay">
+        <p class="card-name">Designer Outlet Gdańsk</p>
+      </div>
+    </a>
+
+    <a href="portfolio-detail.html?id=krakow" class="portfolio-card">
+      <img src="https://sspark.genspark.ai/i/r66Fe3SnzgHhZvic?width=1200" alt="Designer Outlet Kraków" loading="lazy">
+      <span class="card-country">Польша</span>
+      <div class="card-overlay">
+        <p class="card-name">Designer Outlet Kraków</p>
+      </div>
+    </a>
+
+    <a href="portfolio-detail.html?id=landquart" class="portfolio-card">
+      <img src="https://sspark.genspark.ai/i/zsV0RZge66KDYE0Y?width=1200" alt="Landquart Fashion Outlet" loading="lazy">
+      <span class="card-country">Швейцария</span>
+      <div class="card-overlay">
+        <p class="card-name">Landquart Fashion Outlet</p>
+      </div>
+    </a>
+
+    <a href="portfolio-detail.html?id=ringsted" class="portfolio-card">
+      <img src="https://sspark.genspark.ai/i/tdVsEWNIedjaO7KU?width=1200" alt="Ringsted Designer Outlet" loading="lazy">
+      <span class="card-country">Дания</span>
+      <div class="card-overlay">
+        <p class="card-name">Ringsted Designer Outlet</p>
+      </div>
+    </a>
+
+    <a href="portfolio-detail.html?id=indjija" class="portfolio-card">
+      <img src="https://sspark.genspark.ai/i/8rH1Z56s77FixpAt?width=1200" alt="Fashion Park Outlet Inđija" loading="lazy">
+      <span class="card-country">Сербия</span>
+      <div class="card-overlay">
+        <p class="card-name">Fashion Park Outlet Inđija</p>
+      </div>
+    </a>
+
+    <a href="portfolio-detail.html?id=budapest" class="portfolio-card">
+      <img src="https://sspark.genspark.ai/i/2OzJT1ZJ30D5lFBw?width=1200" alt="Premier Outlet Budapest" loading="lazy">
+      <span class="card-country">Венгрия</span>
+      <div class="card-overlay">
+        <p class="card-name">Premier Outlet Budapest</p>
+      </div>
+    </a>
+
+    <a href="portfolio-detail.html?id=sterling" class="portfolio-card">
+      <img src="https://sspark.genspark.ai/i/d2iIcncw2YHplQTh?width=1200" alt="Sterling Mills Scotland" loading="lazy">
+      <span class="card-country">Великобритания</span>
+      <div class="card-overlay">
+        <p class="card-name">Sterling Mills Scotland</p>
+      </div>
+    </a>
+
+    <a href="portfolio-detail.html?id=berlin" class="portfolio-card">
+      <img src="https://sspark.genspark.ai/i/ALDu9CMURhbkylrK?width=1200" alt="Designer Outlet Berlin" loading="lazy">
+      <span class="card-country">Германия</span>
+      <div class="card-overlay">
+        <p class="card-name">Designer Outlet Berlin</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
+      <p>Международная компания по управлению<br>аутлет-центрами премиум-класса</p>
+    </div>
+    <div class="footer-nav">
+      <h4>Навигация</h4>
+      <ul>
+        <li><a href="index.html#about">О нас</a></li>
+        <li><a href="portfolio.html">Портфолио</a></li>
+        <li><a href="index.html#news">Новости</a></li>
+        <li><a href="index.html#tenants">Арендаторам</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Контакты</h4>
+      <p>
+        +7 495 775 90 36<br>
+        <a href="mailto:info@fashionhouse.ru">info@fashionhouse.ru</a><br><br>
+        Москва, Новинский бульвар, 31
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Fashion House Group. Все права защищены.</p>
+    <p>Политика конфиденциальности</p>
+  </div>
+</footer>
+
+</body>
+</html>
