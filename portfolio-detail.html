@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Проект — Fashion House Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #111111;
+    --white: #fff;
+    --grey-light: #f5f5f3;
+    --grey-mid: #d0cfc9;
+    --grey-text: #888880;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Roboto', sans-serif; font-weight: 300; color: var(--black); background: var(--white); }
+  a { text-decoration: none; color: inherit; }
+
+  /* HEADER */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    height: 130px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    border-bottom: 1px solid var(--grey-mid);
+  }
+  .header-logo img { height: 110px; display: block; }
+  .header-right { display: flex; align-items: center; gap: 32px; }
+  .lang-switch { display: flex; gap: 8px; font-size: 12px; letter-spacing: 0.12em; }
+  .lang-switch a { color: var(--grey-text); }
+  .lang-switch a.active { color: var(--black); font-weight: 500; border-bottom: 1px solid var(--black); }
+  .social-icons { display: flex; gap: 16px; align-items: center; }
+  .social-icons a { color: var(--grey-text); transition: color 0.2s; }
+  .social-icons a:hover { color: var(--black); }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a { font-size: 13px; letter-spacing: 0.1em; color: var(--grey-text); text-transform: uppercase; transition: color 0.2s; }
+  nav a:hover, nav a.active { color: var(--black); }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 580px; overflow: hidden;
+  }
+  #hero-img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
+  }
+  .hero-content {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 0 80px 56px;
+    color: var(--white);
+  }
+  .breadcrumb {
+    font-size: 12px; letter-spacing: 0.1em; color: rgba(255,255,255,0.65);
+    margin-bottom: 16px; text-transform: uppercase;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.65); transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--white); }
+  .hero-content h1 {
+    font-family: 'Cormorant', serif; font-size: 64px; font-weight: 300;
+    line-height: 1.05; margin-bottom: 16px;
+  }
+  .hero-location {
+    font-size: 13px; letter-spacing: 0.15em; color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+  }
+
+  /* METRICS */
+  .metrics {
+    background: var(--grey-light);
+    border-top: 1px solid var(--grey-mid);
+    border-bottom: 1px solid var(--grey-mid);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .metric-item {
+    padding: 40px 32px; text-align: center;
+    border-right: 1px solid var(--grey-mid);
+  }
+  .metric-item:last-child { border-right: none; }
+  .metric-label {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--grey-text); margin-bottom: 12px;
+  }
+  .metric-value {
+    font-family: 'Cormorant', serif; font-size: 32px; font-weight: 300;
+    color: var(--black);
+  }
+
+  /* MAIN BODY */
+  .main-body {
+    padding: 100px 80px;
+    display: grid; grid-template-columns: 55% 45%;
+    gap: 80px;
+  }
+  .main-left {}
+  .main-subtitle {
+    font-family: 'Cormorant', serif; font-size: 40px; font-weight: 300;
+    font-style: italic; line-height: 1.2; margin-bottom: 40px;
+    color: var(--black);
+  }
+  .main-left p {
+    font-size: 15px; line-height: 1.8; color: #333; margin-bottom: 24px;
+  }
+  .main-right {}
+  .facts-table { width: 100%; border-collapse: collapse; }
+  .facts-table tr { border-bottom: 1px solid var(--grey-mid); }
+  .facts-table td {
+    padding: 18px 0; font-size: 13px;
+  }
+  .facts-table td:first-child {
+    color: var(--grey-text); letter-spacing: 0.08em; width: 50%;
+  }
+  .facts-table td:last-child { font-weight: 500; color: var(--black); }
+
+  /* LEASING */
+  .leasing-section {
+    background: var(--grey-light);
+    border-top: 1px solid var(--grey-mid);
+    border-bottom: 1px solid var(--grey-mid);
+    padding: 80px;
+  }
+  .leasing-section h2 {
+    font-family: 'Cormorant', serif; font-size: 48px; font-weight: 300;
+    margin-bottom: 56px; color: var(--black);
+  }
+  .contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 720px; }
+  .contact-card { display: flex; gap: 24px; align-items: flex-start; }
+  .contact-photo {
+    width: 80px; height: 80px; object-fit: cover; flex-shrink: 0;
+  }
+  .contact-info {}
+  .contact-name { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+  .contact-role { font-size: 12px; color: var(--grey-text); letter-spacing: 0.05em; margin-bottom: 12px; }
+  .contact-detail { font-size: 13px; color: var(--grey-text); line-height: 1.8; }
+  .contact-detail a { color: var(--grey-text); transition: color 0.2s; }
+  .contact-detail a:hover { color: var(--black); }
+
+  /* SUBSCRIBE */
+  .subscribe-section {
+    position: relative; padding: 100px 80px; text-align: center;
+    overflow: hidden;
+  }
+  .subscribe-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: url('subscribe-bg.jpg');
+    background-size: cover; background-position: center;
+  }
+  .subscribe-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(0,0,0,0.65);
+  }
+  .subscribe-content { position: relative; z-index: 2; }
+  .subscribe-content h2 {
+    font-family: 'Cormorant', serif; font-size: 52px; font-weight: 300;
+    color: var(--white); margin-bottom: 40px;
+  }
+  .subscribe-form { display: flex; justify-content: center; gap: 0; max-width: 500px; margin: 0 auto; }
+  .subscribe-form input {
+    flex: 1; padding: 16px 20px; border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.1); color: var(--white); font-size: 14px;
+    font-family: 'Roboto', sans-serif; outline: none;
+  }
+  .subscribe-form input::placeholder { color: rgba(255,255,255,0.5); }
+  .subscribe-form button {
+    padding: 16px 32px; background: var(--white); color: var(--black);
+    border: none; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+    cursor: pointer; font-family: 'Roboto', sans-serif; font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+  }
+  .subscribe-form button:hover { background: var(--grey-mid); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black); color: var(--white);
+    padding: 64px 48px 40px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px;
+    margin-bottom: 48px;
+  }
+  .footer-logo img { height: 70px; display: block; filter: brightness(0) invert(1); margin-bottom: 20px; }
+  .footer-logo p { font-size: 12px; color: var(--grey-text); line-height: 1.7; }
+  .footer-nav h4, .footer-contact h4 {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--grey-text); margin-bottom: 20px; font-weight: 400;
+  }
+  .footer-nav ul { list-style: none; }
+  .footer-nav ul li { margin-bottom: 12px; }
+  .footer-nav ul li a { font-size: 13px; color: var(--grey-mid); transition: color 0.2s; }
+  .footer-nav ul li a:hover { color: var(--white); }
+  .footer-contact p { font-size: 13px; color: var(--grey-mid); line-height: 1.8; }
+  .footer-contact a { color: var(--grey-mid); transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 11px; color: var(--grey-text); }
+
+  @media (max-width: 900px) {
+    header { padding: 0 24px; }
+    .hero-content { padding: 0 32px 40px; }
+    .hero-content h1 { font-size: 44px; }
+    .main-body { grid-template-columns: 1fr; padding: 60px 32px; gap: 48px; }
+    .leasing-section { padding: 60px 32px; }
+    .contact-cards { grid-template-columns: 1fr; }
+    .subscribe-section { padding: 60px 32px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    nav { display: none; }
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .metric-item:nth-child(2) { border-right: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-logo">
+    <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
+  </a>
+  <div class="header-right">
+    <div class="lang-switch">
+      <a href="#" class="active">RU</a>
+      <span style="color:var(--grey-mid)">/</span>
+      <a href="#">EN</a>
+    </div>
+    <div class="social-icons">
+      <a href="#" aria-label="Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+      </a>
+      <a href="#" aria-label="VK">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.6-.19 1.37 1.26 2.186 1.815.617.416 1.086.325 1.086.325l2.182-.03s1.141-.071.6-.968c-.044-.073-.314-.661-1.618-1.869-1.366-1.265-1.184-1.06.462-3.246.999-1.332 1.398-2.145 1.273-2.493-.12-.332-.854-.244-.854-.244l-2.455.015s-.182-.025-.317.056c-.132.079-.217.264-.217.264s-.387 1.028-.903 1.903c-1.088 1.848-1.524 1.946-1.703 1.831-.414-.267-.311-1.075-.311-1.648 0-1.792.272-2.539-.529-2.732-.266-.064-.461-.107-1.141-.114-.872-.009-1.609.003-2.027.207-.278.135-.492.437-.361.454.161.021.526.098.72.362.25.341.241 1.107.241 1.107s.144 2.11-.335 2.372c-.328.18-.778-.187-1.745-1.866-.496-.858-.871-1.808-.871-1.808s-.072-.178-.202-.274c-.157-.115-.376-.152-.376-.152l-2.332.015s-.35.01-.478.162c-.114.135-.009.414-.009.414s1.826 4.271 3.894 6.422c1.897 1.976 4.05 1.846 4.05 1.846h.977z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+    </div>
+    <nav>
+      <a href="index.html#about">О нас</a>
+      <a href="portfolio.html" class="active">Портфолио</a>
+      <a href="index.html#news">Новости</a>
+      <a href="index.html#tenants">Арендаторам</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img id="hero-img" src="" alt="">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="breadcrumb">
+      <a href="index.html">Главная</a> &nbsp;→&nbsp;
+      <a href="portfolio.html">Портфолио</a> &nbsp;→&nbsp;
+      <span id="breadcrumb-name"></span>
+    </p>
+    <h1><span id="proj-name-hero"></span></h1>
+    <p class="hero-location"><span id="proj-city"></span>, <span id="proj-country-hero"></span></p>
+  </div>
+</section>
+
+<!-- METRICS -->
+<div class="metrics">
+  <div class="metric-item">
+    <p class="metric-label">Год открытия</p>
+    <p class="metric-value"><span id="proj-year"></span></p>
+  </div>
+  <div class="metric-item">
+    <p class="metric-label">Площадь GLA</p>
+    <p class="metric-value"><span id="proj-gla"></span></p>
+  </div>
+  <div class="metric-item">
+    <p class="metric-label">Магазинов</p>
+    <p class="metric-value"><span id="proj-shops"></span></p>
+  </div>
+  <div class="metric-item">
+    <p class="metric-label">Страна</p>
+    <p class="metric-value" style="font-size:22px"><span id="proj-country"></span></p>
+  </div>
+</div>
+
+<!-- MAIN BODY -->
+<section class="main-body">
+  <div class="main-left">
+    <p class="main-subtitle"><span id="proj-subtitle"></span></p>
+    <p id="proj-desc1"></p>
+    <p id="proj-desc2"></p>
+  </div>
+  <div class="main-right">
+    <table class="facts-table">
+      <tr><td>Название</td><td><span id="proj-name-table"></span></td></tr>
+      <tr><td>Страна</td><td><span id="proj-country-table"></span></td></tr>
+      <tr><td>Город</td><td><span id="proj-city-table"></span></td></tr>
+      <tr><td>Год открытия</td><td><span id="proj-year-table"></span></td></tr>
+      <tr><td>Площадь GLA</td><td><span id="proj-gla-table"></span></td></tr>
+      <tr><td>Количество магазинов</td><td><span id="proj-shops-table"></span></td></tr>
+      <tr><td>Парковка</td><td><span id="proj-parking"></span> мест</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- LEASING -->
+<section class="leasing-section">
+  <h2>Арендаторам</h2>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <img class="contact-photo" src="DER_7218.jpg" alt="Anna Solovyeva">
+      <div class="contact-info">
+        <p class="contact-name">Anna Solovyeva</p>
+        <p class="contact-role">Senior Leasing Manager</p>
+        <div class="contact-detail">
+          <a href="mailto:anna.solovyeva@fashionhouse.com">anna.solovyeva@fashionhouse.com</a><br>
+          <a href="tel:+79152393698">+7 915 239 36 98</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-card">
+      <img class="contact-photo" src="DSC_3052_Classic-portrait.jpg" alt="Ekaterina Safonova">
+      <div class="contact-info">
+        <p class="contact-name">Ekaterina Safonova</p>
+        <p class="contact-role">Senior Leasing Manager</p>
+        <div class="contact-detail">
+          <a href="mailto:ekaterina.nikiforova@fashionhouse.com">ekaterina.nikiforova@fashionhouse.com</a><br>
+          <a href="tel:+79269377893">+7 926 937 78 93</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section class="subscribe-section">
+  <div class="subscribe-bg"></div>
+  <div class="subscribe-content">
+    <h2>Подпишитесь на новости</h2>
+    <form class="subscribe-form" onsubmit="return false;">
+      <input type="email" placeholder="Ваш email">
+      <button type="submit">Подписаться</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
+      <p>Международная компания по управлению<br>аутлет-центрами премиум-класса</p>
+    </div>
+    <div class="footer-nav">
+      <h4>Навигация</h4>
+      <ul>
+        <li><a href="index.html#about">О нас</a></li>
+        <li><a href="portfolio.html">Портфолио</a></li>
+        <li><a href="index.html#news">Новости</a></li>
+        <li><a href="index.html#tenants">Арендаторам</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Контакты</h4>
+      <p>
+        +7 495 775 90 36<br>
+        <a href="mailto:info@fashionhouse.ru">info@fashionhouse.ru</a><br><br>
+        Москва, Новинский бульвар, 31
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Fashion House Group. Все права защищены.</p>
+    <p>Политика конфиденциальности</p>
+  </div>
+</footer>
+
+<script>
+const projects = {
+  prague: { name:"Fashion Arena Prague", subtitle:"Крупнейший аутлет-центр Чехии", country:"Чехия", city:"Прага", year:2007, gla:"25 000 м²", shops:"200+", parking:"1 200", img:"https://sspark.genspark.ai/i/lolKFQf2BpxU5MV7?width=2560", desc1:"Fashion Arena Prague — крупнейший и наиболее посещаемый аутлет-центр Чехии, расположенный в непосредственной близости от исторического центра Праги. Открытый в 2007 году и расширенный в 2010-м, центр предлагает более 200 международных брендов со скидками 30–70%.", desc2:"Стратегическое расположение вблизи аэропорта Вацлава Гавела и развитая транспортная инфраструктура обеспечивают постоянный поток покупателей из числа жителей чешской столицы и туристов. Центр работает 362 дня в году." },
+  warsaw: { name:"Designer Outlet Warszawa", subtitle:"Флагманский аутлет Польши", country:"Польша", city:"Варшава", year:2004, gla:"23 000 м²", shops:"130+", parking:"2 000", img:"https://sspark.genspark.ai/i/LffUUuMEHe4d3XkG?width=2560", desc1:"Designer Outlet Warszawa — флагманский аутлет Польши. После масштабного расширения в 2021 году площадь центра достигла 23 000 м² GLA, а количество арендаторов превысило 130 премиальных fashion и lifestyle брендов.", desc2:"Удобное расположение вблизи центра Варшавы и международного аэропорта Шопена делает торговый центр доступным как для жителей столицы, так и для туристов. Центр предлагает скидки 30–70% круглый год." },
+  gdansk: { name:"Designer Outlet Gdańsk", subtitle:"Один из первых аутлет-центров Польши", country:"Польша", city:"Гданьск", year:2005, gla:"19 500 м²", shops:"110", parking:"1 000", img:"https://sspark.genspark.ai/i/CzYAMCtqaDmjWoIT?width=2560", desc1:"Designer Outlet Gdańsk открылся в 2005 году и стал одним из первых аутлет-центров в Польше. Расположенный на улице Пшивидзкая в районе Шадолки, центр находится рядом с кольцевой дорогой С6 (E28).", desc2:"На площади 19 500 м² GLA размещены 110 магазинов с широким портфелем международных fashion, спортивных и lifestyle брендов. Центр ежегодно принимает миллионы покупателей из Гданьска, Гдыни, Сопота и всего Поморского воеводства." },
+  krakow: { name:"Designer Outlet Kraków", subtitle:"Новейший аутлет Польши, открыт в 2025 году", country:"Польша", city:"Краков", year:2025, gla:"19 000 м²", shops:"100+", parking:"2 000", img:"https://sspark.genspark.ai/i/r66Fe3SnzgHhZvic?width=2560", desc1:"Designer Outlet Kraków торжественно открылся 22 мая 2025 года и в первые выходные принял более 50 000 посетителей. Новейший аутлет-центр Польши стал важнейшим торговым событием страны в 2025 году.", desc2:"На площади 19 000 м² GLA представлены более 100 брендов класса премиум и contemporary. Центр расположен с удобным доступом с автострады, связывающей Гданьск, Варшаву и Краков." },
+  landquart: { name:"Landquart Fashion Outlet", subtitle:"Ведущий аутлет-центр Швейцарии", country:"Швейцария", city:"Ландкварт, Граубюнден", year:2000, gla:"27 000 м²", shops:"80+", parking:"1 500", img:"https://sspark.genspark.ai/i/zsV0RZge66KDYE0Y?width=2560", desc1:"Landquart Fashion Outlet расположен на юго-востоке Цюриха в живописном регионе Граубюнден. В апреле 2026 года центр завершил масштабное расширение на 20%, доведя площадь GLA до 27 000 м².", desc2:"Более 80 магазинов в формате premium outlet с 160+ брендами работают 7 дней в неделю. Расположение в самом сердце Альп превращает шопинг в особое destination-experience для покупателей из Германии, Австрии и всей Швейцарии." },
+  ringsted: { name:"Ringsted Designer Outlet", subtitle:"Единственный аутлет-вилладж Дании", country:"Дания", city:"Рингстед (близ Копенгагена)", year:2008, gla:"15 000 м²", shops:"51", parking:"800", img:"https://sspark.genspark.ai/i/tdVsEWNIedjaO7KU?width=2560", desc1:"Ringsted Designer Outlet — единственный настоящий аутлет-вилладж Дании, открытый в 2008 году. Расположенный в часе езды от Копенгагена, центр является ведущим outlet-направлением Скандинавии.", desc2:"51 магазин с крупнейшими мировыми брендами предлагает скидки до 70% круглый год. Удобная транспортная доступность из Копенгагена и Мальмё обеспечивает широкую зону охвата по всей Скандинавии." },
+  indjija: { name:"Fashion Park Outlet Inđija", subtitle:"Первый аутлет-центр Сербии", country:"Сербия", city:"Инджия (близ Белграда)", year:2012, gla:"15 000 м²", shops:"60+", parking:"800", img:"https://sspark.genspark.ai/i/8rH1Z56s77FixpAt?width=2560", desc1:"Fashion Park Outlet Inđija открылся в апреле 2012 года и стал первым настоящим аутлет-центром в Сербии и всём регионе Западных Балкан. 15 000 м² современного торгового пространства с ведущими мировыми брендами.", desc2:"Расположенный в городе Инджия в 35 км от Белграда, центр предлагает ежедневные скидки 30–70%. Fashion Park стал точкой притяжения для покупателей из Сербии, Хорватии, Боснии и других стран региона." },
+  budapest: { name:"Premier Outlet Budapest", subtitle:"Крупнейший аутлет-центр Венгрии", country:"Венгрия", city:"Биаторбадь (близ Будапешта)", year:2004, gla:"23 000 м²", shops:"100+", parking:"1 200", img:"https://sspark.genspark.ai/i/2OzJT1ZJ30D5lFBw?width=2560", desc1:"Premier Outlet Budapest — крупнейший и наиболее престижный аутлет-центр Венгрии, открытый в 2004 году в Биаторбади, в 20 минутах от центра Будапешта. Центр прошёл несколько этапов расширения, достигнув 23 000 м² GLA.", desc2:"Более 100 магазинов и портфель из 150+ fashion, спортивных и lifestyle брендов ежегодно привлекают свыше 2 миллионов покупателей из Венгрии и соседних стран. Центр является ключевым outlet-направлением Центральной Европы." },
+  sterling: { name:"Sterling Mills Scotland", subtitle:"Ведущий аутлет-центр Шотландии", country:"Великобритания", city:"Тиллькалтри, Шотландия", year:2004, gla:"15 000 м²", shops:"50+", parking:"1 000", img:"https://sspark.genspark.ai/i/d2iIcncw2YHplQTh?width=2560", desc1:"Sterling Mills расположен у подножия живописных холмов Охил в Тиллькалтри — в нескольких минутах езды от Стерлинга и в шаговой доступности от большинства городов центральной Шотландии.", desc2:"Более 50 магазинов ведущих fashion, lifestyle и спортивных брендов предлагают скидки до 70% круглый год. Формат outlet-вилладжа с особой атмосферой делает Sterling Mills излюбленным местом шопинга для жителей Эдинбурга, Глазго и Стерлинга." },
+  berlin: { name:"Designer Outlet Berlin", subtitle:"Единственный premium outlet Берлина и Бранденбурга", country:"Германия", city:"Вустермарк, Бранденбург", year:2000, gla:"21 200 м²", shops:"100+", parking:"2 500", img:"https://sspark.genspark.ai/i/ALDu9CMURhbkylrK?width=2560", desc1:"Designer Outlet Berlin — единственный премиальный аутлет-вилладж Берлина и Бранденбурга. Расположенный в Вустермарке в 30 минутах от центра Берлина, центр занимает стратегическую позицию в одном из наиболее динамичных мегаполисов Германии.", desc2:"На площади 21 200 м² GLA представлено более 100 международных fashion, lifestyle и спортивных брендов: Adidas, Boss, Hugo, Lacoste, Michael Kors, Polo Ralph Lauren. Зона охвата включает более 6,5 миллиона жителей и 12,7 миллиона туристов в год." }
+};
+
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('id') || 'berlin';
+  var p = projects[id] || projects['berlin'];
+
+  document.title = p.name + ' — Fashion House Group';
+
+  document.getElementById('hero-img').src = p.img;
+  document.getElementById('hero-img').alt = p.name;
+  document.getElementById('breadcrumb-name').textContent = p.name;
+  document.getElementById('proj-name-hero').textContent = p.name;
+  document.getElementById('proj-city').textContent = p.city;
+  document.getElementById('proj-country-hero').textContent = p.country;
+
+  document.getElementById('proj-year').textContent = p.year;
+  document.getElementById('proj-gla').textContent = p.gla;
+  document.getElementById('proj-shops').textContent = p.shops;
+  document.getElementById('proj-country').textContent = p.country;
+
+  document.getElementById('proj-subtitle').textContent = p.subtitle;
+  document.getElementById('proj-desc1').textContent = p.desc1;
+  document.getElementById('proj-desc2').textContent = p.desc2;
+
+  document.getElementById('proj-name-table').textContent = p.name;
+  document.getElementById('proj-country-table').textContent = p.country;
+  document.getElementById('proj-city-table').textContent = p.city;
+  document.getElementById('proj-year-table').textContent = p.year;
+  document.getElementById('proj-gla-table').textContent = p.gla;
+  document.getElementById('proj-shops-table').textContent = p.shops;
+  document.getElementById('proj-parking').textContent = p.parking;
+})();
+</script>
+</body>
+</html>
