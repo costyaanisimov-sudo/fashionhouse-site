@@ -146,7 +146,12 @@ footer { background: var(--black); padding: 80px 0 56px; }
   .footer-bottom { padding: 20px 18px 0; flex-direction: column; gap: 8px; }
   .metrics-inner { grid-template-columns: 1fr 1fr; }
 }
-</style>
+        .nav-dropdown { position: relative; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #d0cfc9; min-width: 220px; z-index: 300; padding: 8px 0; }
+        .nav-dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #111; text-decoration: none; white-space: nowrap; font-weight: 400; }
+        .dropdown-menu a:hover { color: #888880; }
+    </style>
 </head>
 <body>
 
@@ -168,9 +173,17 @@ footer { background: var(--black); padding: 80px 0 56px; }
         </div>
       </div>
       <nav>
-        <a href="index.html#about">О нас</a>
-        <a href="index.html#projects">Проекты</a>
-        <a href="index.html#news">Новости</a>
+        <div class="nav-dropdown">
+          <a href="index.html#about">О нас</a>
+          <div class="dropdown-menu">
+            <a href="our-mission.html">Наша миссия</a>
+            <a href="our-team.html">Наша команда</a>
+            <a href="#">Профиль компании</a>
+            <a href="#">Наши истории</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="news.html">Новости</a>
         <a href="index.html#tenants">Арендаторам</a>
       </nav>
     </div>
