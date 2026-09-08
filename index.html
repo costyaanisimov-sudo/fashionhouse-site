@@ -1025,22 +1025,23 @@ footer {
 }
 
 /* NEWS SECTION */
-.section-news { padding: 120px 0; }
-.news-header { text-align: center; margin-bottom: 64px; }
-.news-header .section-heading { font-size: clamp(40px,4vw,64px); font-weight: 300; margin: 16px 0; }
+.section-news { padding: 120px 0 140px; }
+.news-header { text-align: center; margin-bottom: 72px; }
+.news-header .section-heading { font-size: clamp(40px,4vw,64px); font-weight: 300; font-style: italic; letter-spacing: 0.04em; margin: 16px 0; }
 .news-subtitle { font-size: 18px; color: var(--grey-text); max-width: 560px; margin: 0 auto; line-height: 1.7; }
-.news-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-.news-card { text-decoration: none; color: var(--black); display: block; }
-.news-card-img { overflow: hidden; aspect-ratio: 3/2; }
-.news-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.news-card:hover .news-card-img img { transform: scale(1.04); }
-.news-card-body { padding: 20px 0 0; }
+.news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+.news-card { text-decoration: none; color: var(--black); display: flex; flex-direction: column; }
+.news-card-img { overflow: hidden; }
+.news-card-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.5s ease; display: block; }
+.news-card:hover .news-card-img img { transform: scale(1.03); }
+.news-card-body { padding: 24px 0 0; }
 .news-date { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-text); }
-.news-headline { font-family: 'Cormorant', Georgia, serif; font-size: 20px; font-weight: 400; line-height: 1.4; margin-top: 8px; }
+.news-headline { font-family: 'Cormorant', Georgia, serif; font-size: 26px; font-weight: 400; line-height: 1.3; margin-top: 10px; color: var(--black); }
+.news-card:hover .news-headline { color: var(--grey-text); }
 .news-cta { text-align: center; margin-top: 64px; }
 .btn-outline { display: inline-block; border: 1px solid var(--black); padding: 14px 44px; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; text-decoration: none; color: var(--black); transition: background 0.2s, color 0.2s; }
 .btn-outline:hover { background: var(--black); color: var(--white); }
-@media (max-width: 900px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .news-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; } }
 @media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } .section-news { padding: 80px 0; } }
 </style>
 </head>
@@ -1218,6 +1219,41 @@ footer {
 </section>
 
 <!-- ══════════════ НАШИ ПАРТНЕРЫ ══════════════ -->
+<section class="section-news" id="news">
+  <div class="container">
+    <div class="news-header">
+      <span class="label">Последние события</span>
+      <h2 class="section-heading">Новости</h2>
+      <p class="news-subtitle">Следите за событиями в наших аутлет-центрах — открытия новых брендов, специальные мероприятия и важные новости Fashion House Group</p>
+    </div>
+    <div class="news-grid">
+  <a href="news-anta.html" class="news-card">
+    <div class="news-card-img"><img src="news-anta.jpg" alt="Открытие ANTA"></div>
+    <div class="news-card-body">
+      <span class="news-date">03 сентября 2026</span>
+      <h3 class="news-headline">Спорт в ритме города: ANTA открылся в аутлете FASHION HOUSE Таллинское</h3>
+    </div>
+  </a>
+  <a href="news-garage.html" class="news-card">
+    <div class="news-card-img"><img src="news-garage1.jpg" alt="Гаражная распродажа"></div>
+    <div class="news-card-body">
+      <span class="news-date">31 августа 2026</span>
+      <h3 class="news-headline">Находки до −90%: в FASHION HOUSE Таллинское прошла гаражная распродажа</h3>
+    </div>
+  </a>
+  <a href="news-catwalk.html" class="news-card">
+    <div class="news-card-img"><img src="news-catwalk.jpg" alt="Уличное фешн шоу"></div>
+    <div class="news-card-body">
+      <span class="news-date">20 августа 2026</span>
+      <h3 class="news-headline">Город как подиум: FASHION HOUSE представил финальную распродажу на улицах двух столиц</h3>
+    </div>
+  </a>
+</div>
+  </div>
+</section>
+
+<!-- ══════════════ НОВОСТИ ══════════════ -->
+<!-- NEWS SECTION -->
 <section class="section-partners" id="partners">
   <div class="container">
     <div class="section-header">
@@ -1254,51 +1290,6 @@ footer {
       <div class="ticker-item"><img src="logos/U.S._Polo_Assn_1.png" alt="U.S. Polo Assn"></div>
       <div class="ticker-item"><img src="logos/PaperShop_Logo_70mm-01-01.jpg" alt="Paper Shop"></div>
       <div class="ticker-item"><img src="logos/noone.png" alt="Noone"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════ НОВОСТИ ══════════════ -->
-<!-- NEWS SECTION -->
-<section class="section-news" id="news">
-  <div class="container">
-    <div class="news-header">
-      <span class="label">Последние события</span>
-      <h2 class="section-heading">Новости</h2>
-      <p class="news-subtitle">Следите за событиями в наших аутлет-центрах — открытия новых брендов, специальные мероприятия и важные новости Fashion House Group</p>
-    </div>
-    <div class="news-grid">
-      <a href="news-anta.html" class="news-card">
-        <div class="news-card-img"><img src="news-anta.jpg" alt="Открытие ANTA"></div>
-        <div class="news-card-body">
-          <span class="news-date">03 сентября 2026</span>
-          <h3 class="news-headline">Спорт в ритме города: ANTA открылся в аутлете FASHION HOUSE Таллинское</h3>
-        </div>
-      </a>
-      <a href="news-garage.html" class="news-card">
-        <div class="news-card-img"><img src="news-garage1.jpg" alt="Гаражная распродажа"></div>
-        <div class="news-card-body">
-          <span class="news-date">31 августа 2026</span>
-          <h3 class="news-headline">Находки до −90%: в FASHION HOUSE Таллинское прошла гаражная распродажа</h3>
-        </div>
-      </a>
-      <a href="news-catwalk.html" class="news-card">
-        <div class="news-card-img"><img src="news-catwalk.jpg" alt="Уличное фешн шоу"></div>
-        <div class="news-card-body">
-          <span class="news-date">20 августа 2026</span>
-          <h3 class="news-headline">Город как подиум: FASHION HOUSE представил финальную распродажу на улицах двух столиц</h3>
-        </div>
-      </a>
-      <a href="news-unicredit.html" class="news-card">
-        <div class="news-card-img"><img src="news-unicredit.jpg" alt="UniCredit"></div>
-        <div class="news-card-body">
-          <span class="news-date">14 августа 2026</span>
-          <h3 class="news-headline">Fashion House выиграл судебный спор с UniCredit Bank в трёх инстанциях</h3>
-        </div>
-      </a>
-    </div>
-    <div class="news-cta">
-      <a href="news.html" class="btn-outline">Больше новостей</a>
     </div>
   </div>
 </section>
