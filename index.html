@@ -1024,14 +1024,24 @@ footer {
   .footer-logo img { height: 64px; }
 }
 
-/* DROPDOWN */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { cursor: pointer; }
-.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--grey-mid); min-width: 220px; z-index: 300; padding: 8px 0; }
-.nav-dropdown:hover .dropdown-menu { display: block; }
-.dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); text-decoration: none; white-space: nowrap; }
-.dropdown-menu a:hover { color: var(--grey-text); }
-.dropdown-menu a.active { color: var(--grey-text); }
+/* NEWS SECTION */
+.section-news { padding: 120px 0; }
+.news-header { text-align: center; margin-bottom: 64px; }
+.news-header .section-heading { font-size: clamp(40px,4vw,64px); font-weight: 300; margin: 16px 0; }
+.news-subtitle { font-size: 18px; color: var(--grey-text); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+.news-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.news-card { text-decoration: none; color: var(--black); display: block; }
+.news-card-img { overflow: hidden; aspect-ratio: 3/2; }
+.news-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.news-card:hover .news-card-img img { transform: scale(1.04); }
+.news-card-body { padding: 20px 0 0; }
+.news-date { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-text); }
+.news-headline { font-family: 'Cormorant', Georgia, serif; font-size: 20px; font-weight: 400; line-height: 1.4; margin-top: 8px; }
+.news-cta { text-align: center; margin-top: 64px; }
+.btn-outline { display: inline-block; border: 1px solid var(--black); padding: 14px 44px; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; text-decoration: none; color: var(--black); transition: background 0.2s, color 0.2s; }
+.btn-outline:hover { background: var(--black); color: var(--white); }
+@media (max-width: 900px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } .section-news { padding: 80px 0; } }
 </style>
 </head>
 <body>
@@ -1070,18 +1080,10 @@ footer {
 
       <!-- Navigation -->
       <nav>
-        <div class="nav-dropdown">
-          <a href="index.html#about">О нас</a>
-          <div class="dropdown-menu">
-            <a href="our-mission.html">Наша миссия</a>
-            <a href="our-team.html">Наша команда</a>
-            <a href="#">Профиль компании</a>
-            <a href="#">Наши истории</a>
-          </div>
-        </div>
+        <a href="index.html#about">О нас</a>
         <a href="portfolio.html">Портфолио</a>
-        <a href="#news">Новости</a>
-        <a href="#tenants">Арендаторам</a>
+        <a href="news.html">Новости</a>
+        <a href="index.html#tenants">Арендаторам</a>
       </nav>
     </div>
   </div>
@@ -1257,47 +1259,46 @@ footer {
 </section>
 
 <!-- ══════════════ НОВОСТИ ══════════════ -->
+<!-- NEWS SECTION -->
 <section class="section-news" id="news">
   <div class="container">
-    <p class="label">03 — Новости</p>
+    <div class="news-header">
+      <span class="label">Последние события</span>
+      <h2 class="section-heading">Новости</h2>
+      <p class="news-subtitle">Следите за событиями в наших аутлет-центрах — открытия новых брендов, специальные мероприятия и важные новости Fashion House Group</p>
+    </div>
     <div class="news-grid">
-      <div class="news-photo-cell">
-        <div class="news-tag">Новый проект</div>
-        <img src="almaty6.jpg" alt="Fashion House Outlet Alatau — Алматы">
-      </div>
-      <div class="news-text-cell">
-        <p class="news-date">2025</p>
-        <h3 class="news-headline">
-          Fashion House Group расширяет присутствие в Центральной Азии: в Алматы откроется первый аутлет-центр Группы
-        </h3>
-        <p class="news-lead">
-          Новый проект Fashion House Outlet Alatau станет первым полноформатным аутлет-центром
-          в Казахстане. Открытие запланировано на 2028 год.
-        </p>
-        <div class="news-facts">
-          <div class="news-fact">
-            <div class="news-fact-value">24 000 м²</div>
-            <div class="news-fact-label">GLA</div>
-          </div>
-          <div class="news-fact">
-            <div class="news-fact-value">3,8 млн+</div>
-            <div class="news-fact-label">Человек в зоне охвата</div>
-          </div>
-          <div class="news-fact">
-            <div class="news-fact-value">до 4 млн</div>
-            <div class="news-fact-label">Посетителей в год</div>
-          </div>
-          <div class="news-fact">
-            <div class="news-fact-value">2028</div>
-            <div class="news-fact-label">Открытие</div>
-          </div>
-          <div class="news-fact full">
-            <div class="news-fact-value">22 000 KZT</div>
-            <div class="news-fact-label">Прогнозируемый средний чек</div>
-          </div>
+      <a href="news-anta.html" class="news-card">
+        <div class="news-card-img"><img src="news-anta.jpg" alt="Открытие ANTA"></div>
+        <div class="news-card-body">
+          <span class="news-date">03 сентября 2026</span>
+          <h3 class="news-headline">Спорт в ритме города: ANTA открылся в аутлете FASHION HOUSE Таллинское</h3>
         </div>
-        <a href="#" class="news-cta">Читать полностью &nbsp;→</a>
-      </div>
+      </a>
+      <a href="news-garage.html" class="news-card">
+        <div class="news-card-img"><img src="news-garage1.jpg" alt="Гаражная распродажа"></div>
+        <div class="news-card-body">
+          <span class="news-date">31 августа 2026</span>
+          <h3 class="news-headline">Находки до −90%: в FASHION HOUSE Таллинское прошла гаражная распродажа</h3>
+        </div>
+      </a>
+      <a href="news-catwalk.html" class="news-card">
+        <div class="news-card-img"><img src="news-catwalk.jpg" alt="Уличное фешн шоу"></div>
+        <div class="news-card-body">
+          <span class="news-date">20 августа 2026</span>
+          <h3 class="news-headline">Город как подиум: FASHION HOUSE представил финальную распродажу на улицах двух столиц</h3>
+        </div>
+      </a>
+      <a href="news-unicredit.html" class="news-card">
+        <div class="news-card-img"><img src="news-unicredit.jpg" alt="UniCredit"></div>
+        <div class="news-card-body">
+          <span class="news-date">14 августа 2026</span>
+          <h3 class="news-headline">Fashion House выиграл судебный спор с UniCredit Bank в трёх инстанциях</h3>
+        </div>
+      </a>
+    </div>
+    <div class="news-cta">
+      <a href="news.html" class="btn-outline">Больше новостей</a>
     </div>
   </div>
 </section>
@@ -1347,18 +1348,10 @@ footer {
       <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
     </div>
     <div class="footer-nav">
-      <div class="nav-dropdown">
-          <a href="index.html#about">О нас</a>
-          <div class="dropdown-menu">
-            <a href="our-mission.html">Наша миссия</a>
-            <a href="our-team.html">Наша команда</a>
-            <a href="#">Профиль компании</a>
-            <a href="#">Наши истории</a>
-          </div>
-        </div>
+      <a href="index.html#about">О нас</a>
       <a href="portfolio.html">Портфолио</a>
-      <a href="#news">Новости</a>
-      <a href="#tenants">Арендаторам</a>
+      <a href="news.html">Новости</a>
+      <a href="index.html#tenants">Арендаторам</a>
     </div>
     <div class="footer-contact">
       <a href="tel:+74955445543" class="footer-phone">+7 495 544-55-43</a>
