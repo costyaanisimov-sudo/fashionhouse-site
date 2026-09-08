@@ -1043,7 +1043,13 @@ footer {
 .btn-outline:hover { background: var(--black); color: var(--white); }
 @media (max-width: 900px) { .news-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; } }
 @media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } .section-news { padding: 80px 0; } }
-</style>
+    /* === DROPDOWN NAV === */
+    .nav-dropdown { position: relative; }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #d0cfc9; min-width: 220px; z-index: 300; padding: 8px 0; }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #111; text-decoration: none; white-space: nowrap; font-weight: 400; }
+    .dropdown-menu a:hover { color: #888880; }
+    </style>
 </head>
 <body>
 
