@@ -1025,7 +1025,7 @@ footer {
 }
 
 /* NEWS SECTION */
-.section-news { padding: 120px 0 140px; }
+.section-news { padding: 120px 0 140px; background: var(--white); border-top: 1px solid var(--grey-mid); }
 .news-header { text-align: center; margin-bottom: 72px; }
 .news-header .section-heading { font-size: clamp(40px,4vw,64px); font-weight: 300; font-style: italic; letter-spacing: 0.04em; margin: 16px 0; }
 .news-subtitle { font-size: 18px; color: var(--grey-text); max-width: 560px; margin: 0 auto; line-height: 1.7; }
@@ -1081,7 +1081,15 @@ footer {
 
       <!-- Navigation -->
       <nav>
-        <a href="index.html#about">О нас</a>
+        <div class="nav-dropdown">
+          <a href="index.html#about">О нас</a>
+          <div class="dropdown-menu">
+            <a href="our-mission.html">Наша миссия</a>
+            <a href="our-team.html">Наша команда</a>
+            <a href="#">Профиль компании</a>
+            <a href="#">Наши истории</a>
+          </div>
+        </div>
         <a href="portfolio.html">Портфолио</a>
         <a href="news.html">Новости</a>
         <a href="index.html#tenants">Арендаторам</a>
