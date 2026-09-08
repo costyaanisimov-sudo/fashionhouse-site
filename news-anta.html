@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Спорт в ритме города — Fashion House Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --black:#111111; --white:#fff; --grey-light:#f5f5f3; --grey-mid:#d0cfc9; --grey-text:#888880; }
+body { font-family: 'Roboto', Arial, sans-serif; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 80px; }
+header { position: sticky; top: 0; z-index: 200; background: #fff; border-bottom: 1px solid #d0cfc9; height: 130px; }
+.header-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.logo { text-decoration: none; flex-shrink: 0; }
+.logo img { height: 110px; width: auto; object-fit: contain; }
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.header-top-row { display: flex; align-items: center; gap: 24px; }
+.lang-switch { display: flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.1em; }
+.lang-switch a { text-decoration: none; color: #888880; }
+.lang-switch a.active { color: #111; font-weight: 500; }
+.lang-switch span { color: #d0cfc9; }
+.social-row { display: flex; align-items: center; gap: 18px; }
+.social-row a { color: #888880; text-decoration: none; transition: color 0.2s; }
+.social-row a:hover { color: #111; }
+.social-row svg { width: 18px; height: 18px; }
+nav { display: flex; align-items: center; gap: 44px; }
+nav a { font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #111; text-decoration: none; font-weight: 400; transition: color 0.2s; }
+nav a:hover, nav a.nav-active { color: #888880; }
+.nav-dropdown { position: relative; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #d0cfc9; min-width: 220px; z-index: 300; padding: 8px 0; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #111; text-decoration: none; white-space: nowrap; font-weight: 400; }
+.dropdown-menu a:hover { color: #888880; }
+footer { background: #111; color: rgba(255,255,255,0.6); padding: 60px 0 0; }
+.footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px 60px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; align-items: start; }
+.footer-logo-wrap { background: #fff; display: inline-block; padding: 8px; }
+.footer-logo-wrap img { height: 80px; width: auto; }
+.footer-nav { display: flex; flex-direction: column; gap: 12px; }
+.footer-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; }
+.footer-nav a:hover { color: #fff; }
+.footer-phone { font-family: 'Cormorant', Georgia, serif; font-size: 22px; color: #fff; text-decoration: none; display: block; margin-bottom: 12px; }
+.footer-contact p { font-size: 14px; line-height: 1.7; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 80px; font-size: 12px; letter-spacing: 0.1em; }
+.article-hero { position: relative; height: 520px; overflow: hidden; }
+.article-hero img { width: 100%; height: 100%; object-fit: cover; }
+.article-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 60px 80px; }
+.article-breadcrumb { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+.article-breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.article-breadcrumb a:hover { color: #fff; }
+.article-date { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
+.article-title { font-family: 'Cormorant', Georgia, serif; font-size: clamp(32px,3.5vw,56px); font-weight: 300; color: #fff; line-height: 1.2; max-width: 800px; }
+.article-body { max-width: 760px; margin: 0 auto; padding: 80px 40px; }
+.article-body p { font-size: 19px; line-height: 1.85; color: #111; margin-bottom: 28px; }
+.article-body p:first-child::first-letter { font-family: 'Cormorant', Georgia, serif; font-size: 72px; font-weight: 300; float: left; line-height: 0.8; margin-right: 12px; margin-top: 8px; }
+.article-img-inline { width: 100%; margin: 40px 0; }
+.article-img-inline img { width: 100%; height: auto; object-fit: cover; }
+.article-quote { border-left: 3px solid #111; padding: 0 0 0 32px; margin: 48px 0; font-family: 'Cormorant', Georgia, serif; font-size: clamp(22px,2.2vw,32px); font-style: italic; font-weight: 300; line-height: 1.5; color: #111; }
+.article-nav { border-top: 1px solid #d0cfc9; margin-top: 80px; padding-top: 48px; display: flex; justify-content: space-between; align-items: center; }
+.article-nav a { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #111; text-decoration: none; }
+.article-nav a:hover { color: #888880; }
+.article-nav .next-arrow { font-family: 'Cormorant', Georgia, serif; font-size: 18px; }
+@media (max-width: 700px) { .article-hero { height: 360px; } .article-hero-overlay { padding: 32px 24px; } .article-body { padding: 48px 20px; } .container { padding: 0 24px; } .footer-inner { padding: 0 24px 40px; grid-template-columns: 1fr; } .footer-bottom { padding: 20px 24px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group"></a>
+    <div class="header-right">
+      <div class="header-top-row">
+        <div class="lang-switch">
+          <a href="news-anta.html" class="active">RU</a>
+          <span>/</span>
+          <a href="en-news-anta.html">EN</a>
+        </div>
+        <div class="social-row">
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.48 14.46l-2.95-.924c-.64-.203-.653-.64.136-.953l11.527-4.448c.533-.194 1.002.131.37.113z"/></svg></a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.547 7h-3.29a.743.743 0 0 0-.655.392 2.263 2.263 0 0 1-2.053 1.258C13.8 8.65 13 7.5 13 6.5V3.75A.75.75 0 0 0 12.25 3h-4.5A.75.75 0 0 0 7 3.75V6.5C7 10.651 10.258 14 14.5 14H15v2.5a.75.75 0 0 0 1.5 0V14h2.547a2.453 2.453 0 0 0 2.453-2.453V9.453A2.453 2.453 0 0 0 21.547 7z"/></svg></a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-dropdown">
+          <a href="index.html#about">О нас</a>
+          <div class="dropdown-menu">
+            <a href="our-mission.html">Наша миссия</a>
+            <a href="our-team.html">Наша команда</a>
+            <a href="#">Профиль компании</a>
+            <a href="#">Наши истории</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="news.html" class="nav-active">Новости</a>
+        <a href="index.html#tenants">Арендаторам</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="article-hero">
+  <img src="news-anta.jpg" alt="Спорт в ритме города">
+  <div class="article-hero-overlay">
+    <p class="article-breadcrumb"><a href="index.html">Главная</a> &nbsp;—&nbsp; <a href="news.html">Новости</a> &nbsp;—&nbsp; Спорт в ритме города</p>
+    <p class="article-date">03 сентября 2026</p>
+    <h1 class="article-title">Спорт в ритме города: ANTA открылся в аутлете FASHION HOUSE Таллинское</h1>
+  </div>
+</div>
+<div class="article-body">
+  <p>В аутлете FASHION HOUSE Таллинское в Санкт-Петербурге открылся магазин китайского спортивного бренда ANTA. Новый арендатор дополнил спортивное направление центра, расширив выбор одежды, обуви и аксессуаров для активного образа жизни.</p>
+  <p>В магазине представлены высокотехнологичная спортивная одежда, обувь для бега и тренировок, экипировка, а также повседневные коллекции и аксессуары для мужчин и женщин. Ассортимент объединяет решения для занятий спортом и образы для городского гардероба — от тренировочной площадки до повседневных маршрутов.</p>
+  <p>Магазин расположился в торговой галерее аутлета. Его открытие стало очередным шагом в развитии розничной сети ANTA и расширении присутствия бренда в аутлет-формате на российском рынке.</p>
+  <blockquote class="article-quote">«Появление бренда Anta в аутлете Fashion House Group Таллинское усиливает наше спортивное направление, расширяет пул международных брендов и делает центр еще более привлекательным для аудитории, выбирающей активный образ жизни»<br><br>— Цезарий Полторак, Head of Operations</blockquote>
+  <p>FASHION HOUSE Таллинское продолжает развивать состав арендаторов, дополняя предложение международными и российскими марками. Появление ANTA даёт жителям и гостям Санкт-Петербурга ещё больше возможностей подобрать спортивный и повседневный гардероб в одном месте.</p>
+  <div class="article-nav">
+    <a href="news.html">← Все новости</a>
+    <a href="news-garage.html" class="next-arrow">Следующая новость →</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo-wrap"><img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group"></div>
+    <div class="footer-nav">
+      <a href="index.html#about">О нас</a>
+      <a href="portfolio.html">Портфолио</a>
+      <a href="news.html">Новости</a>
+      <a href="index.html#tenants">Арендаторам</a>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+74955445543" class="footer-phone">+7 495 544-55-43</a>
+      <p>МО, д. Черная Грязь,<br>Торгово-промышленная, д. 6</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Fashion House Group. Все права защищены.</span></div>
+</footer>
+</body>
+</html>
