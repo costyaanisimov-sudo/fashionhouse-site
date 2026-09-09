@@ -51,7 +51,7 @@ nav a:hover { color: var(--grey-text); }
 .team-card .photo-wrap { overflow: hidden; }
 .photo-wrap img { filter: grayscale(100%); transition: filter 0.4s ease; }
 .photo-wrap:hover img { filter: grayscale(0%); }
-.team-card .photo-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: transform 0.4s ease; display: block; }
+.team-card .photo-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top center; transition: transform 0.4s ease; display: block; }
 .team-card .photo-wrap:hover img { transform: scale(1.02); }
 .team-card-name { font-size: 30px; font-weight: 400; font-family: 'Cormorant', serif; margin-top: 20px; letter-spacing: 0.02em; }
 .team-card-pos { font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-text); margin-top: 8px; font-family: 'Roboto', sans-serif; }
@@ -93,6 +93,9 @@ footer { background: var(--black); padding: 80px 0 56px; }
   .footer-inner { padding: 0 18px; gap: 28px; }
   .footer-bottom { padding: 20px 18px 0; }
 }
+/* Individual photo positioning */
+img[src="staff-brendon.jpg"] { object-position: top center; }
+img[src="staff-marina.jpg"] { object-position: 50% 15%; }
 </style>
 </head>
 <body>
