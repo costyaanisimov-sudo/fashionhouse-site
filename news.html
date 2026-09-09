@@ -56,7 +56,7 @@ footer { background: #111; color: rgba(255,255,255,0.6); padding: 60px 0 0; }
 /* NEWS LIST */
 .news-list-section { padding: 100px 0; }
 .news-list-label { font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 60px; }
-.news-row { border-top: 1px solid #d0cfc9; padding: 48px 0; display: grid; grid-template-columns: 25% 75%; gap: 40px; text-decoration: none; color: var(--black); }
+.news-row { border-top: 1px solid #d0cfc9; padding: 48px 0; display: grid; grid-template-columns: 200px 1fr 280px; gap: 40px; text-decoration: none; color: var(--black); }
 .news-row:last-child { border-bottom: 1px solid #d0cfc9; }
 .news-row-left { display: flex; flex-direction: column; gap: 8px; }
 .news-row-date { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-text); }
@@ -75,6 +75,10 @@ footer { background: #111; color: rgba(255,255,255,0.6); padding: 60px 0 0; }
   .footer-bottom { padding: 20px 24px; }
   .news-list-section { padding: 60px 0; }
 }
+.news-row-thumb { overflow: hidden; height: 180px; }
+.news-row-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.news-row:hover .news-row-thumb img { transform: scale(1.04); }
+@media (max-width: 900px) { .news-row { grid-template-columns: 1fr; } .news-row-thumb { height: 220px; } }
 </style>
 </head>
 <body>
@@ -134,7 +138,7 @@ footer { background: #111; color: rgba(255,255,255,0.6); padding: 60px 0 0; }
         <p class="news-row-lead">В аутлете FASHION HOUSE Таллинское в Санкт-Петербурге открылся магазин китайского спортивного бренда ANTA. Новый арендатор дополнил спортивное направление центра.</p>
         <span class="news-row-read">Читать →</span>
       </div>
-    </a>
+    <div class="news-row-thumb"><img src="news-anta.jpg" alt="ANTA"></div></a>
 
     <a href="news-garage.html" class="news-row">
       <div class="news-row-left">
@@ -146,7 +150,7 @@ footer { background: #111; color: rgba(255,255,255,0.6); padding: 60px 0 0; }
         <p class="news-row-lead">29–30 августа в аутлете FASHION HOUSE Таллинское состоялась гаражная распродажа. По итогам выручка участников выросла более чем на 70%.</p>
         <span class="news-row-read">Читать →</span>
       </div>
-    </a>
+    <div class="news-row-thumb"><img src="news-garage1.jpg" alt="Гаражная распродажа"></div></a>
 
     <a href="news-catwalk.html" class="news-row">
       <div class="news-row-left">
@@ -158,7 +162,7 @@ footer { background: #111; color: rgba(255,255,255,0.6); padding: 60px 0 0; }
         <p class="news-row-lead">В преддверии финальной распродажи модели в одежде брендов аутлетов вышли на улицы Москвы и Санкт-Петербурга.</p>
         <span class="news-row-read">Читать →</span>
       </div>
-    </a>
+    <div class="news-row-thumb"><img src="news-catwalk.jpg" alt="Город как подиум"></div></a>
 
     <a href="news-unicredit.html" class="news-row">
       <div class="news-row-left">
@@ -170,7 +174,7 @@ footer { background: #111; color: rgba(255,255,255,0.6); padding: 60px 0 0; }
         <p class="news-row-lead">Fashion House Group сообщает о победе в судебном споре с UniCredit Bank. Суды трёх инстанций последовательно отклонили требования банка.</p>
         <span class="news-row-read">Читать →</span>
       </div>
-    </a>
+    <div class="news-row-thumb"><img src="news-unicredit.jpg" alt="UniCredit"></div></a>
   </div>
 </section>
 
