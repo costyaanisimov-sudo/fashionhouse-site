@@ -265,14 +265,7 @@ nav a:hover { color: var(--grey-text); }
   background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
 }
 
-.about-banner-text {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  padding: 60px 80px;
-}
+.about-banner-text { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 80px; }
 
 .about-banner-text h3 {
   font-size: clamp(48px, 5vw, 80px);
@@ -329,7 +322,7 @@ nav a:hover { color: var(--grey-text); }
   inset: 0;
   z-index: 2;
   display: flex;
-  align-items: center;
+  align-items: center; justify-content: center; text-align: center;
   padding: 0 80px;
 }
 
@@ -1049,7 +1042,10 @@ footer {
     .nav-dropdown:hover .dropdown-menu { display: block; }
     .dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #111; text-decoration: none; white-space: nowrap; font-weight: 400; }
     .dropdown-menu a:hover { color: #888880; }
-    </style>
+    .hero-subtitle { font-size: clamp(14px,1.4vw,18px); letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 48px; font-weight: 300; }
+.hero-expertise { display: flex; gap: 40px; margin-bottom: 48px; }
+.hero-expertise span { font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.5); border-top: 1px solid rgba(255,255,255,0.25); padding-top: 12px; }
+</style>
 </head>
 <body>
 
@@ -1112,6 +1108,13 @@ footer {
   </video>
   <div class="hero-overlay">
     <p class="hero-tagline">Мы делаем аутлет-бизнес проще</p>
+    <p class="hero-subtitle">девелопмент · управление · брокеридж аутлет-центров</p>
+    <div class="hero-expertise">
+      <span>Девелопмент</span>
+      <span>Управление</span>
+      <span>Брокеридж</span>
+      <span>Маркетинг</span>
+    </div>
     <p class="hero-cities">Москва &nbsp;·&nbsp; Санкт-Петербург &nbsp;·&nbsp; Алматы</p>
   </div>
 </section>
@@ -1220,7 +1223,7 @@ footer {
       </div>
 
       <div class="feat-card feat-card--upcoming">
-        <a href="index.html#news" class="feat-card-img-link">
+        <a href="project-almaty.html" class="feat-card-img-link">
           <img src="almaty6.jpg" alt="Fashion House Outlet Alatau — Алматы">
         </a>
         <h3 class="feat-card-title">Fashion House Outlet<br>Alatau, Алматы</h3>
@@ -1236,7 +1239,7 @@ footer {
 <section class="section-news" id="news">
   <div class="container">
     <div class="news-header">
-      <span class="label">Последние события</span>
+      
       <h2 class="section-heading">Новости</h2>
       <p class="news-subtitle">Следите за событиями в наших аутлет-центрах — открытия новых брендов, специальные мероприятия и важные новости Fashion House Group</p>
     </div>
@@ -1269,12 +1272,6 @@ footer {
 <!-- ══════════════ НОВОСТИ ══════════════ -->
 <!-- NEWS SECTION -->
 <section class="section-partners" id="partners">
-  <div class="container">
-    <div class="section-header">
-      <p class="label">Наши партнёры</p>
-      <h2 class="section-heading" style="margin-top:18px;">Бренды в Fashion House</h2>
-    </div>
-  </div>
 
   <div class="ticker-wrap">
     <div class="ticker-track" id="tickerTrack">
@@ -1335,7 +1332,7 @@ footer {
 
 <!-- ══════════════ ПОДПИСКА ══════════════ -->
 <section class="subscribe-section">
-  <img class="sub-bg" src="subscribe-bg.jpg" alt="">
+  <img class="sub-bg" src="cta-bg.jpg" alt="">
   <div class="subscribe-inner">
     <p class="sub-label">Новости</p>
     <h2 class="sub-heading">Подпишитесь на новости Fashion House Group</h2>
