@@ -268,7 +268,7 @@ nav a:hover { color: var(--grey-text); }
 .about-banner-text { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 80px; }
 
 .about-banner-text h3 {
-  font-size: clamp(48px, 5vw, 80px);
+  font-size: clamp(32px,3.2vw,52px);
   font-weight: 300;
   font-style: italic;
   color: var(--white);
@@ -327,7 +327,7 @@ nav a:hover { color: var(--grey-text); }
 }
 
 .wide-photo-text p {
-  font-size: clamp(32px, 3vw, 52px);
+  font-size: clamp(32px,3.2vw,52px);
   font-weight: 300;
   font-style: italic;
   color: var(--white);
@@ -967,9 +967,9 @@ footer {
   /* Containers */
   .container { padding: 0 18px; }
   .about-banner-text { padding: 32px 18px; }
-  .about-banner-text h3 { font-size: 38px; }
+  .about-banner-text h3 { font-size: clamp(32px,3.2vw,52px); }
   .wide-photo-text { padding: 0 18px; }
-  .wide-photo-text p { font-size: 24px; }
+  .wide-photo-text p { font-size: clamp(32px,3.2vw,52px); }
 
   /* Sections spacing */
   .section-about { padding: 72px 0 0; }
@@ -1043,8 +1043,8 @@ footer {
     .dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #111; text-decoration: none; white-space: nowrap; font-weight: 400; }
     .dropdown-menu a:hover { color: #888880; }
     .hero-subtitle { font-size: clamp(14px,1.4vw,18px); letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 48px; font-weight: 300; }
-.hero-expertise { display: flex; gap: 40px; margin-bottom: 48px; }
-.hero-expertise span { font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.5); border-top: 1px solid rgba(255,255,255,0.25); padding-top: 12px; }
+$160px; margin-bottom: 48px; }
+.hero-expertise span { font-size: clamp(15px,1.5vw,20px); letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.5); border-top: 1px solid rgba(255,255,255,0.25); padding-top: 12px; }
 </style>
 </head>
 <body>
@@ -1108,7 +1108,6 @@ footer {
   </video>
   <div class="hero-overlay">
     <p class="hero-tagline">Мы делаем аутлет-бизнес проще</p>
-    <p class="hero-subtitle">девелопмент · управление · брокеридж аутлет-центров</p>
     <div class="hero-expertise">
       <span>Девелопмент</span>
       <span>Управление</span>
@@ -1192,7 +1191,7 @@ footer {
   <div class="about-wide-photo">
     <img src="OZ0_5757_1.JPG" alt="Fashion House Outlet">
     <div class="wide-photo-text">
-      <p>Создаём возможность шопинга со скидками до −70% в России и СНГ</p>
+      <p>Пособиеляем пространства для шопинга.<br>Развиваем бизнес брендов.</p>
     </div>
   </div>
 
@@ -1228,7 +1227,7 @@ footer {
         </a>
         <h3 class="feat-card-title">Fashion House Outlet<br>Alatau, Алматы</h3>
         <p class="feat-card-text">Первый аутлет-центр Fashion House Group в Центральной Азии. Открытие запланировано на 2028 год. GLA 24 000 м², до 4 млн посетителей в год, зона охвата — 3,8 млн человек. Новый стандарт premium-шопинга для Казахстана.</p>
-        <a href="index.html#news" class="feat-card-btn">Узнать больше &rsaquo;</a>
+        <a href="project-almaty.html" class="feat-card-btn">&#8250;</a>
       </div>
 
     </div>
@@ -1332,7 +1331,7 @@ footer {
 
 <!-- ══════════════ ПОДПИСКА ══════════════ -->
 <section class="subscribe-section">
-  <img class="sub-bg" src="cta-bg.jpg" alt="">
+  <img class="sub-bg" src="sub-bg-new.jpg" alt="">
   <div class="subscribe-inner">
     <p class="sub-label">Новости</p>
     <h2 class="sub-heading">Подпишитесь на новости Fashion House Group</h2>
