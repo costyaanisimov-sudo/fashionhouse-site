@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion House Outlet Alatau — Алматы | Fashion House Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --black:#111111; --white:#fff; --grey-light:#f5f5f3; --grey-mid:#d0cfc9; --grey-text:#888880; }
+  body { font-family: 'Roboto', Arial, sans-serif; font-weight: 300; font-size: 18px; color: var(--black); background: var(--white); }
+  img { display: block; max-width: 100%; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 80px; }
+  header { position: sticky; top: 0; z-index: 200; background: #fff; border-bottom: 1px solid #d0cfc9; height: 130px; }
+  .header-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .logo { text-decoration: none; flex-shrink: 0; }
+  .logo img { height: 110px; width: auto; object-fit: contain; }
+  .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+  .header-top-row { display: flex; align-items: center; gap: 24px; }
+  .lang-switch { display: flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.1em; }
+  .lang-switch a { text-decoration: none; color: #888880; }
+  .lang-switch a.active { color: #111; font-weight: 500; }
+  .lang-switch span { color: #d0cfc9; }
+  .social-row { display: flex; align-items: center; gap: 18px; }
+  .social-row a { color: #888880; text-decoration: none; transition: color 0.2s; }
+  .social-row a:hover { color: #111; }
+  .social-row svg { width: 18px; height: 18px; }
+  nav { display: flex; align-items: center; gap: 44px; }
+  nav a { font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #111; text-decoration: none; font-weight: 400; transition: color 0.2s; }
+  nav a:hover { color: #888880; }
+  .nav-dropdown { position: relative; }
+  .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #d0cfc9; min-width: 220px; z-index: 300; padding: 8px 0; }
+  .nav-dropdown:hover .dropdown-menu { display: block; }
+  .dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #111; text-decoration: none; white-space: nowrap; font-weight: 400; }
+  .dropdown-menu a:hover { color: #888880; }
+  .project-hero { position: relative; height: 600px; overflow: hidden; }
+  .project-hero img { width: 100%; height: 100%; object-fit: cover; }
+  .project-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 60px 80px; }
+  .project-tag { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+  .project-title { font-family: 'Cormorant', Georgia, serif; font-size: clamp(36px,4vw,64px); font-weight: 300; color: #fff; line-height: 1.15; }
+  .project-subtitle { font-size: 16px; color: rgba(255,255,255,0.65); margin-top: 12px; letter-spacing: 0.08em; }
+  .project-stats { border-bottom: 1px solid var(--grey-mid); }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat-item { padding: 48px 40px; border-right: 1px solid var(--grey-mid); text-align: center; }
+  .stat-item:last-child { border-right: none; }
+  .stat-number { font-family: 'Cormorant', Georgia, serif; font-size: clamp(36px,3.5vw,56px); font-weight: 300; color: var(--black); line-height: 1; }
+  .stat-label { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-text); margin-top: 10px; }
+  .project-about { padding: 100px 0; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-text p { font-size: 19px; line-height: 1.85; color: var(--black); margin-bottom: 24px; }
+  .about-text .section-label { font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 24px; }
+  .about-text h2 { font-family: 'Cormorant', Georgia, serif; font-size: clamp(32px,3vw,48px); font-weight: 300; margin-bottom: 32px; line-height: 1.2; }
+  .about-img img { width: 100%; height: 520px; object-fit: cover; }
+  .project-gallery { background: var(--grey-light); padding: 0; }
+  .gallery-full img { width: 100%; height: 480px; object-fit: cover; display: block; }
+  .project-details { padding: 100px 0; }
+  .details-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--grey-mid); }
+  .detail-item { padding: 40px 40px 40px 0; border-right: 1px solid var(--grey-mid); }
+  .detail-item:last-child { border-right: none; padding-right: 0; padding-left: 40px; }
+  .detail-item:nth-child(2) { padding: 40px 40px; }
+  .detail-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 12px; }
+  .detail-value { font-family: 'Cormorant', Georgia, serif; font-size: 28px; font-weight: 300; }
+  .project-cta { background: var(--black); padding: 80px 0; text-align: center; }
+  .project-cta h2 { font-family: 'Cormorant', Georgia, serif; font-size: clamp(32px,3vw,52px); font-weight: 300; color: var(--white); margin-bottom: 32px; }
+  .btn-white { display: inline-block; border: 1px solid var(--white); padding: 16px 52px; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; text-decoration: none; color: var(--white); transition: background 0.2s, color 0.2s; }
+  .btn-white:hover { background: var(--white); color: var(--black); }
+  footer { background: #111; color: rgba(255,255,255,0.6); padding: 60px 0 0; }
+  .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px 60px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; align-items: start; }
+  .footer-logo-wrap { background: #fff; display: inline-block; padding: 8px; }
+  .footer-logo-wrap img { height: 80px; width: auto; }
+  .footer-nav { display: flex; flex-direction: column; gap: 12px; }
+  .footer-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; }
+  .footer-nav a:hover { color: #fff; }
+  .footer-phone { font-family: 'Cormorant', Georgia, serif; font-size: 22px; color: #fff; text-decoration: none; display: block; margin-bottom: 12px; }
+  .footer-contact p { font-size: 14px; line-height: 1.7; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 80px; font-size: 12px; letter-spacing: 0.1em; }
+  @media (max-width: 900px) { .stats-row { grid-template-columns: repeat(2,1fr); } .about-grid { grid-template-columns: 1fr; gap: 40px; } .details-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .container { padding: 0 24px; } .project-hero { height: 420px; } .project-hero-overlay { padding: 40px 24px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group"></a>
+    <div class="header-right">
+      <div class="header-top-row">
+        <div class="lang-switch">
+          <a href="project-almaty.html" class="active">RU</a>
+          <span>/</span>
+          <a href="en.html">EN</a>
+        </div>
+        <div class="social-row">
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.48 14.46l-2.95-.924c-.64-.203-.653-.64.136-.953l11.527-4.448c.533-.194 1.002.131.37.113z"/></svg></a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.547 7h-3.29a.743.743 0 0 0-.655.392 2.263 2.263 0 0 1-2.053 1.258C13.8 8.65 13 7.5 13 6.5V3.75A.75.75 0 0 0 12.25 3h-4.5A.75.75 0 0 0 7 3.75V6.5C7 10.651 10.258 14 14.5 14H15v2.5a.75.75 0 0 0 1.5 0V14h2.547a2.453 2.453 0 0 0 2.453-2.453V9.453A2.453 2.453 0 0 0 21.547 7z"/></svg></a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-dropdown">
+          <a href="index.html#about">О нас</a>
+          <div class="dropdown-menu">
+            <a href="our-mission.html">Наша миссия</a>
+            <a href="our-team.html">Наша команда</a>
+            <a href="company-profile.html">Профиль компании</a>
+            <a href="#">Наши истории</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="news.html">Новости</a>
+        <a href="index.html#tenants">Арендаторам</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="project-hero">
+  <img src="almaty2.jpg" alt="Fashion House Outlet Alatau">
+  <div class="project-hero-overlay">
+    <p class="project-tag">Казахстан · Алматы · 2028</p>
+    <h1 class="project-title">Fashion House Outlet Alatau</h1>
+    <p class="project-subtitle">Новый аутлет-центр в Центральной Азии</p>
+  </div>
+</div>
+<section class="project-stats">
+  <div class="stats-row">
+    <div class="stat-item"><div class="stat-number">24 000</div><div class="stat-label">м² GLA</div></div>
+    <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Брендов</div></div>
+    <div class="stat-item"><div class="stat-number">4+ млн</div><div class="stat-label">Посетителей в год</div></div>
+    <div class="stat-item"><div class="stat-number">2028</div><div class="stat-label">Планируемое открытие</div></div>
+  </div>
+</section>
+<section class="project-about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label">О проекте</p>
+        <h2>Аутлет-центр под открытым небом в самом сердце Алматы</h2>
+        <p>Fashion House Outlet Alatau — новый центр аутлет-шопинга в Казахстане, создаваемый Fashion House Group совместно с местными партнёрами. Проект расположен в Алматы и ориентирован на широкую аудиторию казахстанских покупателей и туристов.</p>
+        <p>Концепция предполагает открытый формат с развитой инфраструктурой: рестораны, зоны отдыха и entertainment-пространства. Catchment area — более 3,8 млн человек, средний чек — 22 000 KZT.</p>
+        <p>Арендаторам предлагаются площади от 50 до 500 м² с гибкими условиями аренды и маркетинговой поддержкой Fashion House Group.</p>
+      </div>
+      <div class="about-img">
+        <img src="almaty-fhk1.jpg" alt="Fashion House Outlet Alatau — концепция">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="project-gallery">
+  <div class="gallery-full">
+    <img src="almaty-fhk2.jpg" alt="Fashion House Outlet Alatau — визуализация">
+  </div>
+</section>
+<section class="project-details">
+  <div class="container">
+    <div class="details-grid">
+      <div class="detail-item"><p class="detail-label">Формат</p><p class="detail-value">Аутлет под открытым небом</p></div>
+      <div class="detail-item"><p class="detail-label">Зона охвата</p><p class="detail-value">3,8+ млн человек</p></div>
+      <div class="detail-item"><p class="detail-label">Средний чек</p><p class="detail-value">22 000 KZT</p></div>
+    </div>
+  </div>
+</section>
+<section class="project-cta">
+  <div class="container">
+    <h2>Стать арендатором<br>Fashion House Outlet Alatau</h2>
+    <a href="mailto:anna.solovyeva@fashionhouse.com" class="btn-white">Обсудить аренду</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo-wrap"><img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group"></div>
+    <div class="footer-nav">
+      <a href="index.html#about">О нас</a>
+      <a href="portfolio.html">Портфолио</a>
+      <a href="news.html">Новости</a>
+      <a href="index.html#tenants">Арендаторам</a>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+74955445543" class="footer-phone">+7 495 544-55-43</a>
+      <p>МО, д. Черная Грязь,<br>Торгово-промышленная, д. 6</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Fashion House Group. Все права защищены.</span></div>
+</footer>
+</body>
+</html>
