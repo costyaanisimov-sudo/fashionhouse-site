@@ -57,9 +57,9 @@ nav a:hover { color: var(--grey-text); }
 .expertise-photo { width: 100%; height: 600px; object-fit: cover; object-position: center; display: block; }
 .service-block { display: grid; grid-template-columns: 1fr 1fr; min-height: 400px; }
 .service-block.reverse .service-text { order: 2; }
-.service-block.reverse .service-accent { order: 1; }
+.service-block.reverse 
 .service-text { background: var(--white); padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; }
-.service-accent { background: var(--grey-light); }
+
 .service-number { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; font-family: 'Roboto', sans-serif; }
 .service-title { font-size: clamp(36px, 3.5vw, 56px); font-weight: 300; font-family: 'Cormorant', serif; letter-spacing: 0.03em; line-height: 1.1; margin-bottom: 32px; }
 .service-desc { font-size: 19px; line-height: 1.8; color: #333; max-width: 520px; }
@@ -84,7 +84,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
   .header-inner { padding: 0 20px; }
   .mission-cols { grid-template-columns: 1fr; gap: 40px; }
   .service-block, .service-block.reverse { grid-template-columns: 1fr; }
-  .service-accent { display: none; }
+  
   .service-block.reverse .service-text { order: 1; }
   .footer-inner { grid-template-columns: 1fr; gap: 40px; }
   .footer-contact { text-align: left; }
@@ -117,8 +117,11 @@ footer { background: var(--black); padding: 80px 0 56px; }
 .expertise-body-section { background: var(--grey-light); padding: 80px 0; }
 .expertise-body-section .container { max-width: 900px; }
 .expertise-body-section p { font-size: 19px; line-height: 1.85; color: var(--black); margin-bottom: 24px; }
-.service-icon { margin-bottom: 24px; }
+
 .service-icon svg { display: block; }
+.service-accent { display: flex; align-items: center; justify-content: center; background: var(--grey-light); }
+.service-icon { display: flex; align-items: center; justify-content: center; }
+.service-icon svg { display: block; opacity: 0.85; }
 </style>
 </head>
 <body>
@@ -196,36 +199,32 @@ footer { background: var(--black); padding: 80px 0 56px; }
 </section>
 
 <div class="service-block">
-  <div class="service-text">
-    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="16" width="20" height="28" /><rect x="28" y="24" width="12" height="20" /><line x1="4" y1="44" x2="44" y2="44" /><rect x="13" y="22" width="5" height="6" /><rect x="13" y="32" width="5" height="6" /><rect x="22" y="22" width="5" height="6" /><rect x="33" y="30" width="4" height="5" /></svg></div><p class="service-number">01</p>
+  <div class="service-text"><p class="service-number">01</p>
     <h2 class="service-title">DEVELOPMENT &amp; CONSULTING</h2>
     <p class="service-desc">We help define the potential of a future outlet project, shape its concept and develop an optimal development model. Fashion House Group's expertise includes market and catchment area analysis, project positioning, concept development, master plan and architectural recommendations, merchandise and brand strategy, and pre-opening support.</p>
   </div>
-  <div class="service-accent"></div>
+  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon"><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="16" width="20" height="28" /><rect x="28" y="24" width="12" height="20" /><line x1="4" y1="44" x2="44" y2="44" /><rect x="13" y="22" width="5" height="6" /><rect x="13" y="32" width="5" height="6" /><rect x="22" y="22" width="5" height="6" /><rect x="33" y="30" width="4" height="5" /></svg></div></div>
 </div>
 
 <div class="service-block reverse">
-  <div class="service-accent"></div>
-  <div class="service-text">
-    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="6" /><path d="M24 4v4M24 40v4M4 24h4M40 24h4M8.34 8.34l2.83 2.83M36.83 36.83l2.83 2.83M8.34 39.66l2.83-2.83M36.83 11.17l2.83-2.83" /><circle cx="24" cy="24" r="10" stroke-dasharray="3 3" /></svg></div><p class="service-number">02</p>
+  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon"><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="6" /><path d="M24 4v4M24 40v4M4 24h4M40 24h4M8.34 8.34l2.83 2.83M36.83 36.83l2.83 2.83M8.34 39.66l2.83-2.83M36.83 11.17l2.83-2.83" /><circle cx="24" cy="24" r="10" stroke-dasharray="3 3" /></svg></div></div>
+  <div class="service-text"><p class="service-number">02</p>
     <h2 class="service-title">OUTLET CENTRE MANAGEMENT</h2>
     <p class="service-desc">We take on comprehensive management of operating outlet centres and help owners increase operational efficiency and long-term asset value. Our management model combines commercial management, tenant relations, operations, marketing, performance analytics and customer experience development.</p>
   </div>
 </div>
 
 <div class="service-block">
-  <div class="service-text">
-    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28l8-8 6 4 8-8 6 4 8-8" /><path d="M16 36l4-4 4 4 4-4 4 4" /><line x1="24" y1="20" x2="24" y2="32" /><circle cx="24" cy="18" r="3" /><circle cx="14" cy="28" r="2" /><circle cx="34" cy="28" r="2" /></svg></div><p class="service-number">03</p>
+  <div class="service-text"><p class="service-number">03</p>
     <h2 class="service-title">BROKERAGE &amp; LEASING</h2>
     <p class="service-desc">We create a balanced tenant mix that reflects the positioning of the property, its target audience and commercial objectives. We manage the entire process — from developing a leasing strategy and identifying potential tenants to brand negotiations, lease execution and ongoing tenant relations. Fashion House Group's longstanding relationships with Russian and international fashion brands give us a deep understanding of operator requirements and the specifics of brand operations in the outlet format.</p>
   </div>
-  <div class="service-accent"></div>
+  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon"><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28l8-8 6 4 8-8 6 4 8-8" /><path d="M16 36l4-4 4 4 4-4 4 4" /><line x1="24" y1="20" x2="24" y2="32" /><circle cx="24" cy="18" r="3" /><circle cx="14" cy="28" r="2" /><circle cx="34" cy="28" r="2" /></svg></div></div>
 </div>
 
 <div class="service-block reverse">
-  <div class="service-accent"></div>
-  <div class="service-text">
-    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="8,36 16,24 24,30 32,16 40,20" /><line x1="8" y1="44" x2="40" y2="44" /><line x1="8" y1="36" x2="8" y2="44" /><line x1="40" y1="20" x2="40" y2="44" /><circle cx="16" cy="24" r="2" fill="#111111" /><circle cx="24" cy="30" r="2" fill="#111111" /><circle cx="32" cy="16" r="2" fill="#111111" /></svg></div><p class="service-number">04</p>
+  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon"><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8,36 16,24 24,30 32,16 40,20" /><line x1="8" y1="44" x2="40" y2="44" /><line x1="8" y1="36" x2="8" y2="44" /><line x1="40" y1="20" x2="40" y2="44" /><circle cx="16" cy="24" r="2" fill="#111111" /><circle cx="24" cy="30" r="2" fill="#111111" /><circle cx="32" cy="16" r="2" fill="#111111" /></svg></div></div>
+  <div class="service-text"><p class="service-number">04</p>
     <h2 class="service-title">MARKETING</h2>
     <p class="service-desc">We develop marketing strategies aimed not only at brand awareness, but primarily at growing footfall, tenant sales and the commercial performance of the outlet centre. We combine strategic positioning, media planning, advertising campaigns, events, digital communications and analytics, adapting tools to each market and the objectives of each project.</p>
   </div>
