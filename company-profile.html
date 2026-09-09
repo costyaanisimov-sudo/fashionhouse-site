@@ -53,10 +53,10 @@
   .profile-geo { padding: 100px 0; }
   .geo-header { text-align: center; margin-bottom: 64px; }
   .geo-header h2 { font-family: 'Cormorant', Georgia, serif; font-size: clamp(32px,3vw,52px); font-weight: 300; }
-  .geo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--grey-mid); }
-  .geo-item { padding: 48px 40px 48px 0; border-right: 1px solid var(--grey-mid); }
-  .geo-item:last-child { border-right: none; padding-right: 0; padding-left: 40px; }
-  .geo-item:nth-child(2) { padding: 48px 40px; }
+  .geo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-top: 48px; border-top: 1px solid var(--grey-mid); }
+  .geo-item { padding: 0; border-right: none; }
+  
+  
   .geo-country { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 12px; }
   .geo-name { font-family: 'Cormorant', Georgia, serif; font-size: 28px; font-weight: 300; margin-bottom: 12px; }
   .geo-detail { font-size: 16px; color: var(--grey-text); line-height: 1.6; }
@@ -70,12 +70,15 @@
   .footer-phone { font-family: 'Cormorant', Georgia, serif; font-size: 22px; color: #fff; text-decoration: none; display: block; margin-bottom: 12px; }
   .footer-contact p { font-size: 14px; line-height: 1.7; }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 80px; font-size: 12px; letter-spacing: 0.1em; }
-  @media (max-width: 900px) { .numbers-grid { grid-template-columns: repeat(2,1fr); } .intro-grid { grid-template-columns: 1fr; gap: 40px; } .geo-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .numbers-grid { grid-template-columns: repeat(2,1fr); } .intro-grid { grid-template-columns: 1fr; gap: 40px; } .geo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-top: 48px; border-top: 1px solid var(--grey-mid); } }
   @media (max-width: 600px) { .container { padding: 0 24px; } }
 .number-icon { margin-bottom: 16px; display: flex; justify-content: center; }
 .number-icon svg { display: block; }
 .number-icon { margin-bottom: 16px; display: flex; justify-content: center; }
 .number-icon svg { display: block; }
+.geo-photo { width: 100%; height: 220px; overflow: hidden; margin-bottom: 20px; }
+.geo-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.geo-item:hover .geo-photo img { transform: scale(1.03); }
 </style>
 </head>
 <body>
@@ -163,23 +166,23 @@
       <h2>Наши объекты</h2>
     </div>
     <div class="geo-grid">
-      <div class="geo-item">
+      <div class="geo-item"><div class="geo-photo"><img src="sheremetyevo-ext.jpg" alt="Fashion House Outlet Шереметьево"></div>
         <p class="geo-country">Россия · Москва</p>
         <p class="geo-name">Fashion House Outlet Шереметьево</p>
         <p class="geo-detail">20 269 м² GLA · 110 арендаторов · с 2013 года</p>
       </div>
-      <div class="geo-item">
+      <div class="geo-item"><div class="geo-photo"><img src="tallinskoe-ext.jpg" alt="Fashion House Outlet Таллинское"></div>
         <p class="geo-country">Россия · Санкт-Петербург</p>
         <p class="geo-name">Fashion House Outlet Таллинское</p>
         <p class="geo-detail">10 873 м² GLA · 56 арендаторов · с 2019 года</p>
       </div>
-      <div class="geo-item">
+      <div class="geo-item"><div class="geo-photo"><img src="almaty2.jpg" alt="Fashion House Outlet Alatau"></div>
         <p class="geo-country">Казахстан · Алматы</p>
         <p class="geo-name">Fashion House Outlet Alatau</p>
         <p class="geo-detail">24 000 м² GLA · открытие 2028</p>
       </div>
     </div>
-  </div>
+  <div style="text-align:center;padding:60px 0 0 0;"><img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group" style="height:80px;width:auto;display:inline-block;"></div></div>
 </section>
 <footer>
   <div class="footer-inner">
