@@ -80,7 +80,7 @@ nav a:hover { color: var(--grey-text); }
 .service-desc { font-size: 19px; line-height: 1.8; color: #333; max-width: 520px; }
 
 /* CTA */
-.cta-section { background: var(--black); padding: 160px 0; text-align: center; }
+.cta-section { position: relative; overflow: hidden; background: transparent; padding: 160px 0; text-align: center; }
 .cta-heading { font-size: clamp(52px, 5.5vw, 84px); font-weight: 300; color: var(--white); font-family: 'Cormorant', serif; line-height: 1.05; }
 .cta-heading.italic { font-style: italic; }
 .cta-body { font-size: 19px; color: rgba(255,255,255,0.65); max-width: 640px; margin: 36px auto 0; line-height: 1.8; }
@@ -131,6 +131,15 @@ footer { background: var(--black); padding: 80px 0 56px; }
   .footer-bottom { padding: 20px 18px 0; }
   .page-hero { height: 360px; }
 }
+.expertise-banner { position: relative; height: 600px; overflow: hidden; }
+.expertise-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.expertise-banner-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 80px; }
+.expertise-banner-heading { font-family: 'Cormorant', Georgia, serif; font-size: clamp(32px,3.5vw,56px); font-weight: 300; color: #fff; letter-spacing: 0.06em; line-height: 1.2; }
+.expertise-body-section { background: var(--grey-light); padding: 80px 0; }
+.expertise-body-section .container { max-width: 900px; }
+.expertise-body-section p { font-size: 19px; line-height: 1.85; color: var(--black); margin-bottom: 24px; }
+.service-icon { margin-bottom: 24px; }
+.service-icon svg { display: block; }
 </style>
 </head>
 <body>
@@ -197,23 +206,24 @@ footer { background: var(--black); padding: 80px 0 56px; }
 </section>
 
 <!-- STATEMENT BLOCK -->
-<section class="statement-block">
-  <div class="container">
-    <h2 class="statement-heading">МЫ ЗНАЕМ АУТЛЕТ-БИЗНЕС ИЗНУТРИ</h2>
-    <div class="statement-body">
-      <p>Fashion House Group обладает практической экспертизой создания и управления аутлет-центрами — от первоначальной идеи и оценки потенциала проекта до открытия объекта и его дальнейшего операционного развития.</p>
-      <p>Мы работаем с инвесторами, девелоперами и собственниками коммерческой недвижимости и можем подключаться как на отдельных этапах проекта, так и обеспечивать комплексное сопровождение на протяжении всего жизненного цикла объекта.</p>
-    </div>
+<div class="expertise-banner">
+  <img src="expertise-photo.jpg" alt="Fashion House Group expertise">
+  <div class="expertise-banner-overlay">
+    <h2 class="expertise-banner-heading">МЫ ЗНАЕМ АУТЛЕТ-БИЗНЕС ИЗНУТРИ</h2>
   </div>
-</section>
-
-<!-- EXPERTISE PHOTO -->
+</div>
+<section class="expertise-body-section">
+  <div class="container">
+    <p>Fashion House Group обладает практической экспертизой создания и управления аутлет-центрами — от первоначальной идеи и оценки потенциала проекта до открытия объекта и его дальнейшего операционного развития.</p>
+    <p>Мы работаем с инвесторами, девелоперами и собственниками коммерческой недвижимости и можем подключаться как на отдельных этапах проекта, так и обеспечивать комплексное сопровождение на протяжении всего жизненного цикла объекта.</p>
+  </div>
+</section><!-- EXPERTISE PHOTO -->
 <img class="expertise-photo" src="expertise-photo.jpg" alt="Fashion House Group — экспертиза">
 
 <!-- SERVICE 01 -->
 <div class="service-block">
   <div class="service-text">
-    <p class="service-number">01</p>
+    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="16" width="20" height="28" /><rect x="28" y="24" width="12" height="20" /><line x1="4" y1="44" x2="44" y2="44" /><rect x="13" y="22" width="5" height="6" /><rect x="13" y="32" width="5" height="6" /><rect x="22" y="22" width="5" height="6" /><rect x="33" y="30" width="4" height="5" /></svg></div><p class="service-number">01</p>
     <h2 class="service-title">ДЕВЕЛОПМЕНТ И КОНСАЛТИНГ</h2>
     <p class="service-desc">Помогаем определить потенциал будущего аутлет-проекта, сформировать его концепцию и разработать оптимальную модель развития. Экспертиза Fashion House Group включает анализ рынка и зоны охвата, позиционирование проекта, разработку концепции, рекомендации по master plan и архитектурным решениям, формирование товарной и брендовой стратегии, а также сопровождение проекта на этапе подготовки к открытию.</p>
   </div>
@@ -224,7 +234,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
 <div class="service-block reverse">
   <div class="service-accent"></div>
   <div class="service-text">
-    <p class="service-number">02</p>
+    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="6" /><path d="M24 4v4M24 40v4M4 24h4M40 24h4M8.34 8.34l2.83 2.83M36.83 36.83l2.83 2.83M8.34 39.66l2.83-2.83M36.83 11.17l2.83-2.83" /><circle cx="24" cy="24" r="10" stroke-dasharray="3 3" /></svg></div><p class="service-number">02</p>
     <h2 class="service-title">УПРАВЛЕНИЕ АУТЛЕТ-ЦЕНТРАМИ</h2>
     <p class="service-desc">Берём на себя комплексное управление действующими аутлет-центрами и помогаем собственникам повышать операционную эффективность и долгосрочную стоимость объекта. Наша модель управления объединяет коммерческое управление, работу с арендаторами, операционную деятельность, маркетинг, анализ показателей и развитие клиентского опыта.</p>
   </div>
@@ -233,7 +243,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
 <!-- SERVICE 03 -->
 <div class="service-block">
   <div class="service-text">
-    <p class="service-number">03</p>
+    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28l8-8 6 4 8-8 6 4 8-8" /><path d="M16 36l4-4 4 4 4-4 4 4" /><line x1="24" y1="20" x2="24" y2="32" /><circle cx="24" cy="18" r="3" /><circle cx="14" cy="28" r="2" /><circle cx="34" cy="28" r="2" /></svg></div><p class="service-number">03</p>
     <h2 class="service-title">БРОКЕРИДЖ И ЛИЗИНГ</h2>
     <p class="service-desc">Формируем сбалансированный tenant mix с учётом позиционирования объекта, его целевой аудитории и коммерческих задач. Мы сопровождаем весь процесс — от разработки leasing-стратегии и поиска потенциальных арендаторов до переговоров с брендами, заключения договоров и последующей работы с арендаторами. Многолетнее сотрудничество Fashion House Group с российскими и международными fashion-брендами позволяет нам хорошо понимать требования операторов и специфику работы брендов в аутлет-формате.</p>
   </div>
@@ -244,7 +254,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
 <div class="service-block reverse">
   <div class="service-accent"></div>
   <div class="service-text">
-    <p class="service-number">04</p>
+    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="8,36 16,24 24,30 32,16 40,20" /><line x1="8" y1="44" x2="40" y2="44" /><line x1="8" y1="36" x2="8" y2="44" /><line x1="40" y1="20" x2="40" y2="44" /><circle cx="16" cy="24" r="2" fill="#111111" /><circle cx="24" cy="30" r="2" fill="#111111" /><circle cx="32" cy="16" r="2" fill="#111111" /></svg></div><p class="service-number">04</p>
     <h2 class="service-title">МАРКЕТИНГ</h2>
     <p class="service-desc">Разрабатываем маркетинговые стратегии, направленные не только на узнаваемость объекта, но прежде всего на рост посещаемости, продаж арендаторов и коммерческих показателей аутлет-центра. Мы объединяем стратегическое позиционирование, медиапланирование, рекламные кампании, мероприятия, digital-коммуникации и аналитику, адаптируя инструменты под конкретный рынок и задачи каждого проекта.</p>
   </div>
@@ -252,7 +262,9 @@ footer { background: var(--black); padding: 80px 0 56px; }
 
 <!-- CTA -->
 <section class="cta-section">
-  <div class="container">
+  <img src="cta-bg.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:1;"></div>
+  <div class="container" style="position:relative;z-index:2;">
     <h2 class="cta-heading">ЕСТЬ ПРОЕКТ?</h2>
     <h2 class="cta-heading italic">ДАВАЙТЕ ОБСУДИМ.</h2>
     <p class="cta-body">Каждый аутлет-проект требует индивидуального подхода. Fashion House Group может выступать консультантом, взять на себя отдельное направление проекта или сформировать комплексную команду для его запуска и дальнейшего управления.</p>
