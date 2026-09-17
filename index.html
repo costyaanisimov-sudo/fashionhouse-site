@@ -1056,11 +1056,11 @@ $160px; margin-bottom: 48px; }
 .testi-card { flex: 0 0 calc(33.333% - 22px); min-width: 0; background: var(--grey-light); padding: 48px 40px 40px; display: flex; flex-direction: column; gap: 28px; }
 .testi-logo { height: 48px; display: flex; align-items: center; }
 .testi-logo img { max-height: 48px; max-width: 160px; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.7; }
-.testi-logo--text { font-family: 'Cormorant', Georgia, serif; font-size: 22px; font-weight: 400; letter-spacing: 0.08em; color: var(--black); }
-.testi-quote { font-size: 17px; line-height: 1.8; color: var(--black); font-style: italic; font-family: 'Cormorant', Georgia, serif; flex: 1; margin: 0; }
+.testi-logo--text { font-family: 'Cormorant', Georgia, serif; font-size: 26px; font-weight: 400; letter-spacing: 0.08em; color: var(--black); }
+.testi-quote { font-size: clamp(19px,1.6vw,23px); line-height: 1.85; color: var(--black); font-style: italic; font-family: 'Cormorant', Georgia, serif; flex: 1; margin: 0; }
 .testi-person { border-top: 1px solid var(--grey-mid); padding-top: 20px; }
-.testi-name { font-size: 16px; font-weight: 500; color: var(--black); margin-bottom: 4px; font-family: 'Roboto', sans-serif; }
-.testi-title { font-size: 13px; color: var(--grey-text); letter-spacing: 0.05em; font-family: 'Roboto', sans-serif; }
+.testi-name { font-size: 17px; font-weight: 500; color: var(--black); margin-bottom: 5px; font-family: 'Roboto', sans-serif; }
+.testi-title { font-size: 14px; color: var(--grey-text); letter-spacing: 0.04em; font-family: 'Roboto', sans-serif; }
 .testi-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: var(--white); border: 1px solid var(--grey-mid); width: 48px; height: 48px; font-size: 28px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--black); transition: background 0.2s, color 0.2s; flex-shrink: 0; }
 .testi-arrow:hover { background: var(--black); color: var(--white); border-color: var(--black); }
 .testi-prev { left: 16px; }
@@ -1297,7 +1297,7 @@ $160px; margin-bottom: 48px; }
   <div class="container">
     <div class="section-header" style="margin-bottom:56px;">
       <p class="label">Отзывы арендаторов</p>
-      <h2 class="section-heading" style="font-family:'Cormorant',Georgia,serif;font-size:clamp(32px,3vw,48px);font-weight:300;">Нам доверяют</h2>
+      <h2 class="section-heading" style="font-family:'Cormorant',Georgia,serif;font-size:clamp(36px,3.5vw,56px);font-weight:300;">Нам доверяют</h2>
     </div>
   </div>
   <div class="testimonials-track-wrap">
@@ -1305,43 +1305,43 @@ $160px; margin-bottom: 48px; }
     <div class="testimonials-track" id="testiTrack">
       <div class="testi-card">
         <div class="testi-logo testi-logo--text">Sneakerbox</div>
-        <blockquote class="testi-quote">«Сотрудничество с Fashion House Group — это надёжное партнёрство, которое стимулирует рост бренда и эффективную работу с покупателями каждый сезон. Мы ценим готовность всегда искать новые перспективы и вместе находить пути для развития.»</blockquote>
-        <div class="testi-person"><p class="testi-name">Артём Никичев</p><p class="testi-title">Директор по развитию, Sneakerbox</p></div>
+        <blockquote class="testi-quote">«Для Sneakerbox сотрудничество с Fashion House Group — это возможность расширять присутствие бренда и эффективно работать с коллекциями прошлых сезонов. Мы ценим готовность команды видеть перспективу и вместе находить новые возможности для развития.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Артём Парщиков</p><p class="testi-title">Директор по развитию, Sneakerbox</p></div>
       </div>
       <div class="testi-card">
         <div class="testi-logo"><img src="logo-marcopolo.jpg" alt="Marc O Polo"></div>
-        <blockquote class="testi-quote">«За годы сотрудничества с Fashion House Group не раз убеждались, насколько важно понимать бренд и его партнёров. Спасибо команде за готовность искать оптимальные решения в сложные периоды и находить новые варианты, которые помогают сохранять динамику развития.»</blockquote>
-        <div class="testi-person"><p class="testi-name">Алексей Шереметьев</p><p class="testi-title">Директор по развитию, Marc&#8217;O Polo</p></div>
+        <blockquote class="testi-quote">«За годы сотрудничества с Fashion House Group мы не раз убеждались, насколько важен открытый диалог между партнёрами. Спасибо команде за готовность искать компромиссы в непростые периоды и находить решения, которые помогают двигаться вперёд.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Лилия Шереметьева</p><p class="testi-title">Директор по развитию, Marc&#8217;O Polo</p></div>
       </div>
       <div class="testi-card">
         <div class="testi-logo"><img src="logo-tomtailor.jpg" alt="Tom Tailor"></div>
-        <blockquote class="testi-quote">«Для Tom Tailor важно сохранять охват бренда с высоким уровнем покупательского трафика. С Fashion House Group мы ценим честный разговор о бренде и понимание того, как бренд представлен в аутлет-центрах.»</blockquote>
-        <div class="testi-person"><p class="testi-name">Ольга Буданова</p><p class="testi-title">Head of Business Development, Tom Tailor</p></div>
+        <blockquote class="testi-quote">«Для Tom Tailor важно сохранять характер бренда и высокий уровень покупательского опыта в любом формате торговли. В Fashion House Group мы ценим понимание этих задач и внимание к тому, как бренд представлен в аутлет-центре.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Елена Судакова</p><p class="testi-title">Head of Business Development, Tom Tailor</p></div>
       </div>
       <div class="testi-card">
         <div class="testi-logo testi-logo--text">Guess</div>
-        <blockquote class="testi-quote">«С Fashion House Group был принят активный подход к развитию трафика и продвижению аутлетов. Для нас важно, что команда не ограничивается предоставлением торгового пространства, а работает для привлечения покупателей и поддержания инициатив арендатора.»</blockquote>
-        <div class="testi-person"><p class="testi-name">Катерина Калтинина</p><p class="testi-title">Real Estate Manager Russia&amp;Kazakhstan, Guess</p></div>
+        <blockquote class="testi-quote">«В работе с Fashion House Group нам близок активный подход команды к продвижению аутлетов. Для нас важно, что партнёр не ограничивается предоставлением торгового пространства, а работает над привлечением покупателей и поддерживает инициативы брендов.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Екатерина Тверитинова</p><p class="testi-title">Real Estate Manager Russia&amp;Kazakhstan, Guess</p></div>
       </div>
       <div class="testi-card">
         <div class="testi-logo"><img src="logo-henderson.jpg" alt="Henderson"></div>
-        <blockquote class="testi-quote">«С коллективом особо ценим последовательность и терпение в работе с постоянными партнёрами. С командой Fashion House Group всегда продуктивно обсуждать планы развития и вместе находить практические решения.»</blockquote>
-        <div class="testi-person"><p class="testi-name">Светлана Баран</p><p class="testi-title">Директор по развитию, Henderson</p></div>
+        <blockquote class="testi-quote">«В долгосрочном партнёрстве мы особенно ценим последовательность и внимание к повседневным задачам бизнеса. С командой Fashion House Group можно предметно обсудить вопросы работы магазина и вместе найти практическое решение.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Татьяна Гаранян</p><p class="testi-title">Директор по развитию, Дом моды Henderson</p></div>
       </div>
       <div class="testi-card">
         <div class="testi-logo testi-logo--text">Respect</div>
-        <blockquote class="testi-quote">«Для нас важно, чтобы партнёр подходил к переговорам с открытостью и готовностью к диалогу. С Fashion House Group мы ценим открытое общение и поиск взаимовыгодных решений.»</blockquote>
-        <div class="testi-person"><p class="testi-name">Наталья Карипова</p><p class="testi-title">Development Manager, Respect</p></div>
+        <blockquote class="testi-quote">«Для нас важно, чтобы партнёр слышал арендатора и оперативно включался в решение вопросов. В сотрудничестве с Fashion House Group мы ценим прямое общение с командой и общую заинтересованность в успешной работе магазина.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Виталий Скрипник</p><p class="testi-title">Development Manager, Respect</p></div>
       </div>
       <div class="testi-card">
         <div class="testi-logo"><img src="logo-colins.jpg" alt="Colin's"></div>
-        <blockquote class="testi-quote">«Команда Fashion House Group понимает специфику fashion-ретейла и ценит работу арендаторов. Мы рады тому, что покупатели продолжают приходить в аутлет, и высоко оцениваем профессионализм команды.»</blockquote>
-        <div class="testi-person"><p class="testi-name">Андрей Кириллов</p><p class="testi-title">Senior Business Development, Colin&#8217;s</p></div>
+        <blockquote class="testi-quote">«Команда Fashion House Group понимает специфику fashion-ритейла и сезонные задачи брендов. Это помогает нам находить общий язык и вместе работать над предложением, ради которого покупатели возвращаются в аутлет.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Андрей Яковлев</p><p class="testi-title">Senior Business Development, Colin&#8217;s</p></div>
       </div>
       <div class="testi-card">
         <div class="testi-logo"><img src="logo-mezzatore.jpg" alt="Mezzatore"></div>
-        <blockquote class="testi-quote">«Для Albione и Mezzatore всегда важны высокие стандарты сервиса. Мы ценим поддержку Fashion House Group и их вклад в повышение привлекательности аутлет-центра для покупателей.»</blockquote>
-        <div class="testi-person"><p class="testi-name">Дмитрий Попков</p><p class="testi-title">Генеральный директор, Albione &amp; Mezzatore</p></div>
+        <blockquote class="testi-quote">«Для Albione и Mezzatore важны атмосфера торгового пространства и окружение, в котором покупатель знакомится с брендом. Мы ценим внимание Fashion House Group к этим деталям и стремление делать посещение аутлета комфортным и привлекательным для наших клиентов.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Дмитрий Архаров</p><p class="testi-title">Генеральный директор, Albione &amp; Mezzatore</p></div>
       </div>
     </div>
     <button class="testi-arrow testi-next" aria-label="Вперёд">&#8250;</button>
@@ -1355,10 +1355,10 @@ $160px; margin-bottom: 48px; }
   if(!track)return;
   var cards=track.querySelectorAll('.testi-card');
   var total=cards.length;
-  function perView(){return window.innerWidth>=1100?3:window.innerWidth>=700?2:1;}
+  function pv(){return window.innerWidth>=1100?3:window.innerWidth>=700?2:1;}
   var cur=0;
-  function maxIdx(){return Math.max(0,total-perView());}
-  for(var i=0;i<=maxIdx();i++){
+  function mi(){return Math.max(0,total-pv());}
+  for(var i=0;i<=mi();i++){
     var d=document.createElement('button');
     d.className='testi-dot'+(i===0?' active':'');
     d.setAttribute('data-i',i);
@@ -1366,14 +1366,14 @@ $160px; margin-bottom: 48px; }
     dotsWrap.appendChild(d);
   }
   function go(idx){
-    cur=Math.max(0,Math.min(idx,maxIdx()));
+    cur=Math.max(0,Math.min(idx,mi()));
     var cw=cards[0].offsetWidth+32;
     track.style.transform='translateX(-'+(cur*cw)+'px)';
     dotsWrap.querySelectorAll('.testi-dot').forEach(function(d,i){d.classList.toggle('active',i===cur);});
   }
   document.querySelector('.testi-prev').addEventListener('click',function(){go(cur-1);});
   document.querySelector('.testi-next').addEventListener('click',function(){go(cur+1);});
-  window.addEventListener('resize',function(){go(Math.min(cur,maxIdx()));});
+  window.addEventListener('resize',function(){go(Math.min(cur,mi()));});
 })();
 </script>
 
