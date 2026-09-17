@@ -162,11 +162,11 @@ nav a:hover { color: var(--grey-text); }
   font-style: italic;
   letter-spacing: 0.04em;
   color: var(--white);
-  margin-bottom: 36px;
+  margin-bottom: 32px;
   line-height: 1.15;
 }
 
-.hero-cities {
+.hero-cities { margin-top: 0;
   font-size: clamp(18px, 1.8vw, 28px);
   font-weight: 300;
   letter-spacing: 0.28em;
@@ -962,7 +962,7 @@ footer {
   .hero { height: 100svh; min-height: 480px; }
   .hero video { object-position: center center; }
   .hero-tagline { font-size: 26px; padding: 0 16px; text-align: center; }
-  .hero-cities { font-size: 13px; letter-spacing: 0.18em; }
+  .hero-cities { margin-top: 0; font-size: 13px; letter-spacing: 0.18em; }
 
   /* Containers */
   .container { padding: 0 18px; }
@@ -1044,8 +1044,9 @@ footer {
     .dropdown-menu a:hover { color: #888880; }
     .hero-subtitle { font-size: clamp(14px,1.4vw,18px); letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 48px; font-weight: 300; }
 $160px; margin-bottom: 48px; }
-.hero-expertise { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0; margin: 28px 0 40px; flex-wrap: wrap; }
-.hero-expertise span { font-family: 'Cormorant', Georgia, serif; font-size: clamp(18px,1.8vw,28px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.9); letter-spacing: 0.08em; line-height: 1.6; display: inline; }
+.hero-expertise { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0; margin: 0; flex-wrap: wrap; }
+.hero-expertise span { font-family: 'Cormorant', Georgia, serif; font-size: clamp(24px,2.2vw,34px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.9); letter-spacing: 0.08em; line-height: 1; }
+.hero-expertise { margin-bottom: 32px; }
 .hero-expertise span + span::before { content: " · "; color: rgba(255,255,255,0.4); font-style: normal; padding: 0 12px; }
 </style>
 </head>
