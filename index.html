@@ -1044,8 +1044,9 @@ footer {
     .dropdown-menu a:hover { color: #888880; }
     .hero-subtitle { font-size: clamp(14px,1.4vw,18px); letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 48px; font-weight: 300; }
 $160px; margin-bottom: 48px; }
-.hero-expertise { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 28px 0 40px; }
-.hero-expertise span { font-family: 'Cormorant', Georgia, serif; font-size: clamp(26px,2.6vw,42px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.92); letter-spacing: 0.06em; line-height: 1.6; display: block; }
+.hero-expertise { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0; margin: 28px 0 40px; flex-wrap: wrap; }
+.hero-expertise span { font-family: 'Cormorant', Georgia, serif; font-size: clamp(18px,1.8vw,28px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.9); letter-spacing: 0.08em; line-height: 1.6; display: inline; }
+.hero-expertise span + span::before { content: " · "; color: rgba(255,255,255,0.4); font-style: normal; padding: 0 12px; }
 </style>
 </head>
 <body>
