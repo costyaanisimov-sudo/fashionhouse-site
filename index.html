@@ -1292,6 +1292,91 @@ $160px; margin-bottom: 48px; }
 </div>
   </div>
 </section>
+<!-- TESTIMONIALS -->
+<section class="section-testimonials">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:56px;">
+      <p class="label">Отзывы арендаторов</p>
+      <h2 class="section-heading" style="font-family:'Cormorant',Georgia,serif;font-size:clamp(32px,3vw,48px);font-weight:300;">Нам доверяют</h2>
+    </div>
+  </div>
+  <div class="testimonials-track-wrap">
+    <button class="testi-arrow testi-prev" aria-label="Назад">&#8249;</button>
+    <div class="testimonials-track" id="testiTrack">
+      <div class="testi-card">
+        <div class="testi-logo testi-logo--text">Sneakerbox</div>
+        <blockquote class="testi-quote">«Сотрудничество с Fashion House Group — это надёжное партнёрство, которое стимулирует рост бренда и эффективную работу с покупателями каждый сезон. Мы ценим готовность всегда искать новые перспективы и вместе находить пути для развития.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Артём Никичев</p><p class="testi-title">Директор по развитию, Sneakerbox</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-logo"><img src="logo-marcopolo.jpg" alt="Marc O Polo"></div>
+        <blockquote class="testi-quote">«За годы сотрудничества с Fashion House Group не раз убеждались, насколько важно понимать бренд и его партнёров. Спасибо команде за готовность искать оптимальные решения в сложные периоды и находить новые варианты, которые помогают сохранять динамику развития.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Алексей Шереметьев</p><p class="testi-title">Директор по развитию, Marc&#8217;O Polo</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-logo"><img src="logo-tomtailor.jpg" alt="Tom Tailor"></div>
+        <blockquote class="testi-quote">«Для Tom Tailor важно сохранять охват бренда с высоким уровнем покупательского трафика. С Fashion House Group мы ценим честный разговор о бренде и понимание того, как бренд представлен в аутлет-центрах.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Ольга Буданова</p><p class="testi-title">Head of Business Development, Tom Tailor</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-logo testi-logo--text">Guess</div>
+        <blockquote class="testi-quote">«С Fashion House Group был принят активный подход к развитию трафика и продвижению аутлетов. Для нас важно, что команда не ограничивается предоставлением торгового пространства, а работает для привлечения покупателей и поддержания инициатив арендатора.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Катерина Калтинина</p><p class="testi-title">Real Estate Manager Russia&amp;Kazakhstan, Guess</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-logo"><img src="logo-henderson.jpg" alt="Henderson"></div>
+        <blockquote class="testi-quote">«С коллективом особо ценим последовательность и терпение в работе с постоянными партнёрами. С командой Fashion House Group всегда продуктивно обсуждать планы развития и вместе находить практические решения.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Светлана Баран</p><p class="testi-title">Директор по развитию, Henderson</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-logo testi-logo--text">Respect</div>
+        <blockquote class="testi-quote">«Для нас важно, чтобы партнёр подходил к переговорам с открытостью и готовностью к диалогу. С Fashion House Group мы ценим открытое общение и поиск взаимовыгодных решений.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Наталья Карипова</p><p class="testi-title">Development Manager, Respect</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-logo"><img src="logo-colins.jpg" alt="Colin's"></div>
+        <blockquote class="testi-quote">«Команда Fashion House Group понимает специфику fashion-ретейла и ценит работу арендаторов. Мы рады тому, что покупатели продолжают приходить в аутлет, и высоко оцениваем профессионализм команды.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Андрей Кириллов</p><p class="testi-title">Senior Business Development, Colin&#8217;s</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-logo"><img src="logo-mezzatore.jpg" alt="Mezzatore"></div>
+        <blockquote class="testi-quote">«Для Albione и Mezzatore всегда важны высокие стандарты сервиса. Мы ценим поддержку Fashion House Group и их вклад в повышение привлекательности аутлет-центра для покупателей.»</blockquote>
+        <div class="testi-person"><p class="testi-name">Дмитрий Попков</p><p class="testi-title">Генеральный директор, Albione &amp; Mezzatore</p></div>
+      </div>
+    </div>
+    <button class="testi-arrow testi-next" aria-label="Вперёд">&#8250;</button>
+  </div>
+  <div class="testi-dots" id="testiDots"></div>
+</section>
+<script>
+(function(){
+  var track=document.getElementById('testiTrack');
+  var dotsWrap=document.getElementById('testiDots');
+  if(!track)return;
+  var cards=track.querySelectorAll('.testi-card');
+  var total=cards.length;
+  function perView(){return window.innerWidth>=1100?3:window.innerWidth>=700?2:1;}
+  var cur=0;
+  function maxIdx(){return Math.max(0,total-perView());}
+  for(var i=0;i<=maxIdx();i++){
+    var d=document.createElement('button');
+    d.className='testi-dot'+(i===0?' active':'');
+    d.setAttribute('data-i',i);
+    d.addEventListener('click',function(){go(+this.getAttribute('data-i'));});
+    dotsWrap.appendChild(d);
+  }
+  function go(idx){
+    cur=Math.max(0,Math.min(idx,maxIdx()));
+    var cw=cards[0].offsetWidth+32;
+    track.style.transform='translateX(-'+(cur*cw)+'px)';
+    dotsWrap.querySelectorAll('.testi-dot').forEach(function(d,i){d.classList.toggle('active',i===cur);});
+  }
+  document.querySelector('.testi-prev').addEventListener('click',function(){go(cur-1);});
+  document.querySelector('.testi-next').addEventListener('click',function(){go(cur+1);});
+  window.addEventListener('resize',function(){go(Math.min(cur,maxIdx()));});
+})();
+</script>
+
 
 <!-- ══════════════ НОВОСТИ ══════════════ -->
 <!-- NEWS SECTION -->
