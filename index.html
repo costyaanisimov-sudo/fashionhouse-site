@@ -20,7 +20,7 @@
 
 html { font-size: 18px; }
 
-body {
+body { font-size: 18px;
   font-family: 'Roboto', Arial, sans-serif;
   background: var(--white);
   color: var(--black);
@@ -202,13 +202,13 @@ nav a:hover { color: var(--grey-text); }
 .section-header .label { margin-bottom: 22px; }
 
 .section-heading {
-  font-size: clamp(48px, 4.5vw, 72px);
+  font-size: clamp(36px,3.5vw,56px);
   font-weight: 300;
   letter-spacing: 0.04em;
   line-height: 1.08;
 }
 
-.about-intro { font-size: 24px; line-height: 1.75; color: #444; max-width: 700px; margin-top: 30px; font-weight: 300; }
+.about-intro { font-size: clamp(22px,2vw,30px); line-height: 1.75; color: #444; max-width: 700px; margin-top: 30px; font-weight: 300; }
 
 /* Metrics */
 .metrics-row {
@@ -228,7 +228,7 @@ nav a:hover { color: var(--grey-text); }
 .metric-item:last-child { border-right: none; }
 
 .metric-number {
-  font-size: clamp(42px, 4vw, 60px);
+  font-size: clamp(48px,5vw,80px);
   font-weight: 300;
   line-height: 1.0;
   margin-bottom: 12px;
@@ -539,7 +539,7 @@ nav a:hover { color: var(--grey-text); }
 }
 
 .news-headline {
-  font-size: clamp(28px, 2.8vw, 40px);
+  font-size: clamp(22px,2vw,30px);
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.2;
@@ -986,11 +986,11 @@ footer {
   .sub-form button { padding: 14px 24px; }
 
   /* Headings */
-  .section-heading { font-size: 36px; }
+  .section-heading { font-size: clamp(36px,3.5vw,56px); }
   .tenants-heading { font-size: 36px; margin-bottom: 48px; }
-  .metric-number { font-size: 42px; }
+  .metric-number { font-size: clamp(48px,5vw,80px); }
   .project-name { font-size: 30px; }
-  .news-headline { font-size: 26px; }
+  .news-headline { font-size: clamp(22px,2vw,30px); }
   .contact-name { font-size: 28px; }
 
   /* Images */
@@ -1020,16 +1020,16 @@ footer {
 /* NEWS SECTION */
 .section-news { padding: 120px 0 140px; background: var(--white); border-top: 1px solid var(--grey-mid); }
 .news-header { text-align: center; margin-bottom: 72px; }
-.news-header .section-heading { font-size: clamp(40px,4vw,64px); font-weight: 300; font-style: italic; letter-spacing: 0.04em; margin: 16px 0; }
+.news-header .section-heading { font-size: clamp(36px,3.5vw,56px); font-weight: 300; font-style: italic; letter-spacing: 0.04em; margin: 16px 0; }
 .news-subtitle { font-size: 18px; color: var(--grey-text); max-width: 560px; margin: 0 auto; line-height: 1.7; }
 .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
 .news-card { text-decoration: none; color: var(--black); display: flex; flex-direction: column; }
 .news-card-img { overflow: hidden; }
 .news-card-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.5s ease; display: block; }
 .news-card:hover .news-card-img img { transform: scale(1.03); }
-.news-card-body { padding: 24px 0 0; }
+.news-card-body { font-size: 18px; padding: 24px 0 0; }
 .news-date { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-text); }
-.news-headline { font-family: 'Cormorant', Georgia, serif; font-size: 26px; font-weight: 400; line-height: 1.3; margin-top: 10px; color: var(--black); }
+.news-headline { font-family: 'Cormorant', Georgia, serif; font-size: clamp(22px,2vw,30px); font-weight: 400; line-height: 1.3; margin-top: 10px; color: var(--black); }
 .news-card:hover .news-headline { color: var(--grey-text); }
 .news-cta { text-align: center; margin-top: 64px; }
 .btn-outline { display: inline-block; border: 1px solid var(--black); padding: 14px 44px; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; text-decoration: none; color: var(--black); transition: background 0.2s, color 0.2s; }
@@ -1055,12 +1055,12 @@ $160px; margin-bottom: 48px; }
 .testimonials-track { display: flex; gap: 32px; transition: transform 0.5s cubic-bezier(.4,0,.2,1); will-change: transform; }
 .testi-card { flex: 0 0 calc(33.333% - 22px); min-width: 0; background: var(--grey-light); padding: 48px 40px 40px; display: flex; flex-direction: column; gap: 28px; }
 .testi-logo { height: 48px; display: flex; align-items: center; }
-.testi-logo img { max-height: 48px; max-width: 160px; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.7; }
+.testi-logo img { max-height: 52px; max-width: 180px; width: auto; height: auto; object-fit: contain; display: block; }
 .testi-logo--text { font-family: 'Cormorant', Georgia, serif; font-size: 26px; font-weight: 400; letter-spacing: 0.08em; color: var(--black); }
-.testi-quote { font-size: clamp(19px,1.6vw,23px); line-height: 1.85; color: var(--black); font-style: italic; font-family: 'Cormorant', Georgia, serif; flex: 1; margin: 0; }
+.testi-quote { font-size: clamp(21px,1.8vw,26px); line-height: 1.9; color: var(--black); font-style: italic; font-family: 'Cormorant', Georgia, serif; flex: 1; margin: 0; }
 .testi-person { border-top: 1px solid var(--grey-mid); padding-top: 20px; }
-.testi-name { font-size: 17px; font-weight: 500; color: var(--black); margin-bottom: 5px; font-family: 'Roboto', sans-serif; }
-.testi-title { font-size: 14px; color: var(--grey-text); letter-spacing: 0.04em; font-family: 'Roboto', sans-serif; }
+.testi-name { font-size: 18px; font-weight: 500; color: var(--black); margin-bottom: 5px; font-family: 'Roboto', sans-serif; }
+.testi-title { font-size: 15px; color: var(--grey-text); letter-spacing: 0.03em; font-family: 'Roboto', sans-serif; }
 .testi-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: var(--white); border: 1px solid var(--grey-mid); width: 48px; height: 48px; font-size: 28px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--black); transition: background 0.2s, color 0.2s; flex-shrink: 0; }
 .testi-arrow:hover { background: var(--black); color: var(--white); border-color: var(--black); }
 .testi-prev { left: 16px; }
@@ -1309,12 +1309,12 @@ $160px; margin-bottom: 48px; }
         <div class="testi-person"><p class="testi-name">Артём Парщиков</p><p class="testi-title">Директор по развитию, Sneakerbox</p></div>
       </div>
       <div class="testi-card">
-        <div class="testi-logo"><img src="logo-marcopolo.jpg" alt="Marc O Polo"></div>
+        <div class="testi-logo"><img src="logo-marcopolo.png" alt="Marc O Polo"></div>
         <blockquote class="testi-quote">«За годы сотрудничества с Fashion House Group мы не раз убеждались, насколько важен открытый диалог между партнёрами. Спасибо команде за готовность искать компромиссы в непростые периоды и находить решения, которые помогают двигаться вперёд.»</blockquote>
         <div class="testi-person"><p class="testi-name">Лилия Шереметьева</p><p class="testi-title">Директор по развитию, Marc&#8217;O Polo</p></div>
       </div>
       <div class="testi-card">
-        <div class="testi-logo"><img src="logo-tomtailor.jpg" alt="Tom Tailor"></div>
+        <div class="testi-logo"><img src="logo-tomtailor.png" alt="Tom Tailor"></div>
         <blockquote class="testi-quote">«Для Tom Tailor важно сохранять характер бренда и высокий уровень покупательского опыта в любом формате торговли. В Fashion House Group мы ценим понимание этих задач и внимание к тому, как бренд представлен в аутлет-центре.»</blockquote>
         <div class="testi-person"><p class="testi-name">Елена Судакова</p><p class="testi-title">Head of Business Development, Tom Tailor</p></div>
       </div>
