@@ -14,7 +14,10 @@ html { font-size: 18px; }
 body { font-family: 'Roboto', Arial, sans-serif; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { font-family: 'Cormorant', Georgia, serif; }
 img { display: block; max-width: 100%; }
+
 .container { max-width: 1280px; margin: 0 auto; padding: 0 80px; }
+
+/* HEADER */
 header { position: sticky; top: 0; z-index: 200; background: var(--white); border-bottom: 1px solid var(--grey-mid); height: 130px; }
 .header-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .logo { text-decoration: none; flex-shrink: 0; }
@@ -32,6 +35,8 @@ header { position: sticky; top: 0; z-index: 200; background: var(--white); borde
 nav { display: flex; align-items: center; gap: 44px; }
 nav a { font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); text-decoration: none; font-weight: 400; transition: color 0.2s; }
 nav a:hover { color: var(--grey-text); }
+
+/* DROPDOWN */
 .nav-dropdown { position: relative; }
 .nav-dropdown > a { cursor: pointer; }
 .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--grey-mid); min-width: 220px; z-index: 300; padding: 8px 0; }
@@ -39,22 +44,32 @@ nav a:hover { color: var(--grey-text); }
 .dropdown-menu a { display: block; padding: 12px 24px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); text-decoration: none; white-space: nowrap; font-family: 'Roboto', sans-serif; }
 .dropdown-menu a:hover { color: var(--grey-text); }
 .dropdown-menu a.active { color: var(--grey-text); }
+
+/* HERO */
 .page-hero { position: relative; width: 100%; height: 500px; overflow: hidden; background: #111; display: flex; align-items: center; justify-content: center; }
 .page-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .page-hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
 .page-hero-text { position: relative; z-index: 2; text-align: center; color: var(--white); }
 .page-hero-label { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 20px; font-family: 'Roboto', sans-serif; }
 .page-hero-title { font-size: clamp(56px, 6vw, 96px); font-weight: 300; font-family: 'Cormorant', serif; letter-spacing: 0.06em; line-height: 1.0; }
+
+/* MISSION STATEMENT */
 .mission-statement { padding: 120px 0; }
 .mission-cols { display: grid; grid-template-columns: 35% 65%; gap: 80px; align-items: start; }
 .mission-left-heading { font-size: clamp(42px, 4vw, 64px); font-weight: 300; font-style: italic; font-family: 'Cormorant', serif; line-height: 1.15; letter-spacing: 0.02em; }
 .mission-body p { font-size: 20px; line-height: 1.8; color: #333; max-width: 600px; }
 .mission-body p + p { margin-top: 24px; }
+
+/* STATEMENT BLOCK */
 .statement-block { background: var(--black); padding: 140px 0; text-align: center; }
 .statement-heading { font-size: clamp(48px, 5vw, 80px); font-weight: 300; letter-spacing: 0.05em; color: var(--white); font-family: 'Cormorant', serif; line-height: 1.1; }
 .statement-body { font-size: 19px; color: rgba(255,255,255,0.7); max-width: 680px; margin: 40px auto 0; line-height: 1.8; }
 .statement-body p + p { margin-top: 20px; }
+
+/* EXPERTISE PHOTO */
 .expertise-photo { width: 100%; height: 600px; object-fit: cover; object-position: center; display: block; }
+
+/* EXPERTISE SERVICES */
 .service-block { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
 .service-block.reverse .service-text { order: 2; padding: 80px 100px; }
 .service-block.reverse .service-accent { order: 1; padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; }
@@ -62,12 +77,16 @@ nav a:hover { color: var(--grey-text); }
 .service-number { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; font-family: 'Roboto', sans-serif; }
 .service-title { font-size: clamp(36px, 3.5vw, 56px); font-weight: 300; font-family: 'Cormorant', serif; letter-spacing: 0.03em; line-height: 1.1; margin-bottom: 32px; }
 .service-desc { font-size: 19px; line-height: 1.8; color: #333; max-width: 520px; }
+
+/* CTA */
 .cta-section { position: relative; overflow: hidden; background: transparent; padding: 160px 0; text-align: center; }
 .cta-heading { font-size: clamp(52px, 5.5vw, 84px); font-weight: 300; color: var(--white); font-family: 'Cormorant', serif; line-height: 1.05; }
 .cta-heading.italic { font-style: italic; }
 .cta-body { font-size: 19px; color: rgba(255,255,255,0.65); max-width: 640px; margin: 36px auto 0; line-height: 1.8; }
 .cta-link { display: inline-block; margin-top: 56px; font-size: 15px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 4px; font-family: 'Roboto', sans-serif; transition: border-color 0.2s; }
 .cta-link:hover { border-color: rgba(255,255,255,0.8); }
+
+/* FOOTER */
 footer { background: var(--black); padding: 80px 0 56px; }
 .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 80px; display: grid; grid-template-columns: auto 1fr auto; gap: 80px; align-items: start; }
 .footer-logo img { height: 96px; width: auto; background: var(--white); padding: 10px 16px; display: block; }
@@ -78,13 +97,15 @@ footer { background: var(--black); padding: 80px 0 56px; }
 .footer-address { font-size: 14px; letter-spacing: 0.05em; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 280px; margin-left: auto; }
 .footer-bottom { max-width: 1280px; margin: 56px auto 0; padding: 28px 80px 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; }
 .footer-copy { font-size: 12px; letter-spacing: 0.12em; color: rgba(255,255,255,0.25); }
+
+/* MOBILE */
 @media (max-width: 900px) {
   .container { padding: 0 32px; }
   .header-inner { padding: 0 20px; }
   .mission-cols { grid-template-columns: 1fr; gap: 40px; }
   .service-block, .service-block.reverse { grid-template-columns: 1fr; }
   
-  .service-block.reverse .service-text { order: 1;  padding: 80px 100px;}
+  .service-block.reverse .service-text { order: 1; padding: 80px 60px; }
   .footer-inner { grid-template-columns: 1fr; gap: 40px; }
   .footer-contact { text-align: left; }
   .footer-address { margin-left: 0; }
@@ -96,14 +117,14 @@ footer { background: var(--black); padding: 80px 0 56px; }
   .header-inner { flex-direction: column; align-items: stretch; gap: 10px; padding: 0 18px; position: relative; }
   .logo img { height: 60px; }
   .header-right { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; }
-  .social-row { position: absolute; top: 0; right: 18px; gap: 16px; }
+  .social-row { position: absolute; top: 0; right: 18px; gap: 16px; align-items: center; }
   .social-row svg { width: 22px; height: 22px; }
   nav { gap: 0; justify-content: space-between; border-top: 1px solid var(--grey-mid); padding-top: 10px; }
   nav a { font-size: 11px; letter-spacing: 0.10em; }
   .container { padding: 0 18px; }
   .mission-statement { padding: 60px 0; }
   .statement-block { padding: 80px 0; }
-  $1100px 80px; }
+  .service-block .service-text, .service-block.reverse .service-text { padding: 60px 32px; }
   .cta-section { padding: 80px 0; }
   .footer-inner { padding: 0 18px; gap: 28px; }
   .footer-bottom { padding: 20px 18px 0; }
@@ -111,8 +132,8 @@ footer { background: var(--black); padding: 80px 0 56px; }
 }
 .expertise-banner { position: relative; height: 600px; overflow: hidden; }
 .expertise-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-.expertise-banner-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); display: flex; text-align: center; align-items: center; justify-content: center; text-align: center; padding: 0 80px; }
-.expertise-banner-heading { text-align: center; font-family: 'Cormorant', Georgia, serif; font-size: clamp(32px,3.5vw,56px); font-weight: 300; color: #fff; letter-spacing: 0.06em; line-height: 1.2; }
+.expertise-banner-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 80px; }
+.expertise-banner-heading { font-family: 'Cormorant', Georgia, serif; font-size: clamp(32px,3.5vw,56px); font-weight: 300; color: #fff; letter-spacing: 0.06em; line-height: 1.2; }
 .expertise-body-section { background: var(--grey-light); padding: 80px 0; }
 .expertise-body-section .container { max-width: 900px; }
 .expertise-body-section p { font-size: 19px; line-height: 1.85; color: var(--black); margin-bottom: 24px; }
@@ -131,7 +152,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
 
 <header>
   <div class="header-inner">
-    <a href="en.html" class="logo">
+    <a href="index.html" class="logo">
       <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
     </a>
     <div class="header-right">
@@ -149,7 +170,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
       </div>
       <nav>
         <div class="nav-dropdown">
-          <a href="en.html#about">About Us</a>
+          <a href="en.html#about">About</a>
           <div class="dropdown-menu">
             <a href="en-our-mission.html" class="active">Our Mission</a>
             <a href="en-our-team.html">Our Team</a>
@@ -158,13 +179,14 @@ footer { background: var(--black); padding: 80px 0 56px; }
           </div>
         </div>
         <a href="portfolio.html">Portfolio</a>
-        <a href="en.html#news">News</a>
+        <a href="news.html">News</a>
         <a href="en.html#tenants">Leasing</a>
       </nav>
     </div>
   </div>
 </header>
 
+<!-- HERO -->
 <section class="page-hero">
   <img src="mission-banner.jpg" alt="Fashion House Group — Our Mission">
   <div class="page-hero-text">
@@ -173,6 +195,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
   </div>
 </section>
 
+<!-- MISSION STATEMENT -->
 <section class="mission-statement">
   <div class="container">
     <div class="mission-cols">
@@ -180,14 +203,15 @@ footer { background: var(--black); padding: 80px 0 56px; }
         <h2 class="mission-left-heading">"We build effective business and long-term partnerships"</h2>
       </div>
       <div class="mission-body">
-        <p>We build effective business and long-term partnerships and create conditions that help our tenants successfully develop their business in outlet centres.</p>
-        <p>Our team is focused on a high level of service and close interaction with brands. We help tenants improve business performance and together we create a quality and comfortable shopping experience for visitors.</p>
-        <p>The success of our tenants is the foundation of the success of each outlet centre. That is why our goal is to create sustainable value for brands, owners, investors and other partners of Fashion House Group.</p>
+        <p>We build effective business and long-term partnerships, and create conditions that help our tenants successfully develop their businesses in outlet centres.</p>
+        <p>Наша команда ориентирована на высокий уровень сервиса и тесное взаимодействие с брендами. Мы помогаем арендаторам повышать эффективность бизнеса и вместе с ними создаём для посетителей качественный и комфортный покупательский опыт.</p>
+        <p>Успех наших арендаторов лежит в основе успеха каждого аутлет-центра. Именно поэтому наша задача — создавать устойчивую ценность для брендов, собственников, инвесторов и других партнёров Fashion House Group.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- STATEMENT BLOCK -->
 <div class="expertise-banner">
   <img src="expertise-photo.jpg" alt="Fashion House Group expertise">
   <div class="expertise-banner-overlay">
@@ -196,51 +220,57 @@ footer { background: var(--black); padding: 80px 0 56px; }
 </div>
 <section class="expertise-body-section">
   <div class="container">
-    <p>Fashion House Group has practical expertise in creating and managing outlet centres — from the initial idea and project potential assessment to the opening of the facility and its subsequent operational development.</p>
-    <p>We work with investors, developers and commercial real estate owners and can engage at individual stages of a project or provide comprehensive support throughout the entire lifecycle of the facility.</p>
+    <p>Fashion House Group обладает практической экспертизой создания и управления аутлет-центрами — от первоначальной идеи и оценки потенциала проекта до открытия объекта и его дальнейшего операционного развития.</p>
+    <p>Мы работаем с инвесторами, девелоперами и собственниками коммерческой недвижимости и можем подключаться как на отдельных этапах проекта, так и обеспечивать комплексное сопровождение на протяжении всего жизненного цикла объекта.</p>
   </div>
-</section>
+</section><!-- EXPERTISE PHOTO -->
 
+
+<!-- SERVICE 01 -->
 <div class="service-block">
   <div class="service-text"><p class="service-number">01</p>
     <h2 class="service-title">DEVELOPMENT &amp; CONSULTING</h2>
-    <p class="service-desc">We help define the potential of a future outlet project, shape its concept and develop an optimal development model. Fashion House Group's expertise includes market and catchment area analysis, project positioning, concept development, master plan and architectural recommendations, merchandise and brand strategy, and pre-opening support.</p>
+    <p class="service-desc">Помогаем определить потенциал будущего аутлет-проекта, сформировать его концепцию и разработать оптимальную модель развития. Экспертиза Fashion House Group включает анализ рынка и зоны охвата, позиционирование проекта, разработку концепции, рекомендации по master plan и архитектурным решениям, формирование товарной и брендовой стратегии, а также сопровождение проекта на этапе подготовки к открытию.</p>
   </div>
-  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon-wrap"><svg width="200" height="200" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="16" width="20" height="28" /><rect x="28" y="24" width="12" height="20" /><line x1="4" y1="44" x2="44" y2="44" /><rect x="13" y="22" width="5" height="6" /><rect x="13" y="32" width="5" height="6" /><rect x="22" y="22" width="5" height="6" /><rect x="33" y="30" width="4" height="5" /></svg><p class="service-icon-label">Development</p></div></div></div>
+  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon-wrap"><svg width="200" height="200" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="16" width="20" height="28" /><rect x="28" y="24" width="12" height="20" /><line x1="4" y1="44" x2="44" y2="44" /><rect x="13" y="22" width="5" height="6" /><rect x="13" y="32" width="5" height="6" /><rect x="22" y="22" width="5" height="6" /><rect x="33" y="30" width="4" height="5" /></svg><p class="service-icon-label">Девелопмент</p></div></div></div>
 </div>
 
+<!-- SERVICE 02 -->
 <div class="service-block reverse">
-  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon-wrap"><svg width="200" height="200" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="8" /><path d="M24 4v5M24 39v5M4 24h5M39 24h5M9.17 9.17l3.54 3.54M35.29 35.29l3.54 3.54M9.17 38.83l3.54-3.54M35.29 12.71l3.54-3.54" /><circle cx="24" cy="24" r="14" stroke-dasharray="4 3" /></svg><p class="service-icon-label">Management</p></div></div></div>
+  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon-wrap"><svg width="200" height="200" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="8" /><path d="M24 4v5M24 39v5M4 24h5M39 24h5M9.17 9.17l3.54 3.54M35.29 35.29l3.54 3.54M9.17 38.83l3.54-3.54M35.29 12.71l3.54-3.54" /><circle cx="24" cy="24" r="14" stroke-dasharray="4 3" /></svg><p class="service-icon-label">Управление</p></div></div></div>
   <div class="service-text"><p class="service-number">02</p>
     <h2 class="service-title">OUTLET CENTRE MANAGEMENT</h2>
-    <p class="service-desc">We take on comprehensive management of operating outlet centres and help owners increase operational efficiency and long-term asset value. Our management model combines commercial management, tenant relations, operations, marketing, performance analytics and customer experience development.</p>
+    <p class="service-desc">Берём на себя комплексное управление действующими аутлет-центрами и помогаем собственникам повышать операционную эффективность и долгосрочную стоимость объекта. Наша модель управления объединяет коммерческое управление, работу с арендаторами, операционную деятельность, маркетинг, анализ показателей и развитие клиентского опыта.</p>
   </div>
 </div>
 
+<!-- SERVICE 03 -->
 <div class="service-block">
   <div class="service-text"><p class="service-number">03</p>
     <h2 class="service-title">BROKERAGE &amp; LEASING</h2>
-    <p class="service-desc">We create a balanced tenant mix that reflects the positioning of the property, its target audience and commercial objectives. We manage the entire process — from developing a leasing strategy and identifying potential tenants to brand negotiations, lease execution and ongoing tenant relations. Fashion House Group's longstanding relationships with Russian and international fashion brands give us a deep understanding of operator requirements and the specifics of brand operations in the outlet format.</p>
+    <p class="service-desc">Формируем сбалансированный tenant mix с учётом позиционирования объекта, его целевой аудитории и коммерческих задач. Мы сопровождаем весь процесс — от разработки leasing-стратегии и поиска потенциальных арендаторов до переговоров с брендами, заключения договоров и последующей работы с арендаторами. Многолетнее сотрудничество Fashion House Group с российскими и международными fashion-брендами позволяет нам хорошо понимать требования операторов и специфику работы брендов в аутлет-формате.</p>
   </div>
-  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon-wrap"><svg width="200" height="200" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="18" height="14" rx="1" /><rect x="26" y="26" width="18" height="14" rx="1" /><path d="M22 15h4a4 4 0 0 1 4 4v7" /><polyline points="26,22 30,26 34,22" /></svg><p class="service-icon-label">Leasing</p></div></div></div>
+  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon-wrap"><svg width="200" height="200" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="18" height="14" rx="1" /><rect x="26" y="26" width="18" height="14" rx="1" /><path d="M22 15h4a4 4 0 0 1 4 4v7" /><polyline points="26,22 30,26 34,22" /></svg><p class="service-icon-label">Брокеридж</p></div></div></div>
 </div>
 
+<!-- SERVICE 04 -->
 <div class="service-block reverse">
-  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon-wrap"><svg width="200" height="200" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32 C8 32 12 20 20 26 C28 32 32 14 40 18" stroke-width="1.5"/><line x1="8" y1="40" x2="40" y2="40" /><line x1="8" y1="32" x2="8" y2="40" /><line x1="40" y1="18" x2="40" y2="40" /><circle cx="20" cy="26" r="2.5" fill="#111111" /><circle cx="32" cy="16" r="2.5" fill="#111111" /></svg><p class="service-icon-label">Marketing</p></div></div></div>
+  <div class="service-accent" style="display:flex;align-items:center;justify-content:center;"><div class="service-icon-wrap"><svg width="200" height="200" viewBox="0 0 48 48" fill="none" stroke="#111111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32 C8 32 12 20 20 26 C28 32 32 14 40 18" stroke-width="1.5"/><line x1="8" y1="40" x2="40" y2="40" /><line x1="8" y1="32" x2="8" y2="40" /><line x1="40" y1="18" x2="40" y2="40" /><circle cx="20" cy="26" r="2.5" fill="#111111" /><circle cx="32" cy="16" r="2.5" fill="#111111" /></svg><p class="service-icon-label">Маркетинг</p></div></div></div>
   <div class="service-text"><p class="service-number">04</p>
     <h2 class="service-title">MARKETING</h2>
-    <p class="service-desc">We develop marketing strategies aimed not only at brand awareness, but primarily at growing footfall, tenant sales and the commercial performance of the outlet centre. We combine strategic positioning, media planning, advertising campaigns, events, digital communications and analytics, adapting tools to each market and the objectives of each project.</p>
+    <p class="service-desc">Разрабатываем маркетинговые стратегии, направленные не только на узнаваемость объекта, но прежде всего на рост посещаемости, продаж арендаторов и коммерческих показателей аутлет-центра. Мы объединяем стратегическое позиционирование, медиапланирование, рекламные кампании, мероприятия, digital-коммуникации и аналитику, адаптируя инструменты под конкретный рынок и задачи каждого проекта.</p>
   </div>
 </div>
 
+<!-- CTA -->
 <section class="cta-section">
   <img src="cta-bg.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
   <div style="position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:1;"></div>
   <div class="container" style="position:relative;z-index:2;">
-    <h2 class="cta-heading">GOT A PROJECT?</h2>
-    <h2 class="cta-heading italic">LET'S TALK.</h2>
-    <p class="cta-body">Every outlet project requires an individual approach. Fashion House Group can act as a consultant, take on a specific area of a project, or build a comprehensive team for its launch and ongoing management.</p>
-    <a href="en.html#tenants" class="cta-link">DISCUSS A PROJECT &rarr;</a>
+    <h2 class="cta-heading">HAVE A PROJECT?</h2>
+    <h2 class="cta-heading italic">LET'S DISCUSS IT.</h2>
+    <p class="cta-body">Каждый аутлет-проект требует индивидуального подхода. Fashion House Group может выступать консультантом, взять на себя отдельное направление проекта или сформировать комплексную команду для его запуска и дальнейшего управления.</p>
+    <a href="en.html#tenants" class="cta-link">DISCUSS THE PROJECT &rarr;</a>
   </div>
 </section>
 
@@ -250,9 +280,9 @@ footer { background: var(--black); padding: 80px 0 56px; }
       <img src="FHGR_logotype_claim_RGB.jpg" alt="Fashion House Group">
     </div>
     <div class="footer-nav">
-      <a href="en.html#about">About Us</a>
+      <a href="en.html#about">About</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="en.html#news">News</a>
+      <a href="news.html">News</a>
       <a href="en.html#tenants">Leasing</a>
     </div>
     <div class="footer-contact">
