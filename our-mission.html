@@ -71,9 +71,8 @@ nav a:hover { color: var(--grey-text); }
 
 /* EXPERTISE SERVICES */
 .service-block { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
-.service-block.reverse .service-text { order: 2;  padding: 80px 100px;}
-.service-block.reverse 
-$1100px 80px; display: flex; flex-direction: column; justify-content: center; }
+.service-block.reverse .service-text { order: 2; padding: 80px 100px; }
+.service-block.reverse .service-accent { order: 1; padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; }
 
 .service-number { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; font-family: 'Roboto', sans-serif; }
 .service-title { font-size: clamp(36px, 3.5vw, 56px); font-weight: 300; font-family: 'Cormorant', serif; letter-spacing: 0.03em; line-height: 1.1; margin-bottom: 32px; }
@@ -106,7 +105,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
   .mission-cols { grid-template-columns: 1fr; gap: 40px; }
   .service-block, .service-block.reverse { grid-template-columns: 1fr; }
   
-  .service-block.reverse .service-text { order: 1;  padding: 80px 100px;}
+  .service-block.reverse .service-text { order: 1; padding: 80px 60px; }
   .footer-inner { grid-template-columns: 1fr; gap: 40px; }
   .footer-contact { text-align: left; }
   .footer-address { margin-left: 0; }
@@ -125,7 +124,7 @@ footer { background: var(--black); padding: 80px 0 56px; }
   .container { padding: 0 18px; }
   .mission-statement { padding: 60px 0; }
   .statement-block { padding: 80px 0; }
-  $1100px 80px; }
+  .service-block .service-text, .service-block.reverse .service-text { padding: 60px 32px; }
   .cta-section { padding: 80px 0; }
   .footer-inner { padding: 0 18px; gap: 28px; }
   .footer-bottom { padding: 20px 18px 0; }
