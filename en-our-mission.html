@@ -56,9 +56,8 @@ nav a:hover { color: var(--grey-text); }
 .statement-body p + p { margin-top: 20px; }
 .expertise-photo { width: 100%; height: 600px; object-fit: cover; object-position: center; display: block; }
 .service-block { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
-.service-block.reverse .service-text { order: 2;  padding: 80px 100px;}
-.service-block.reverse 
-$1100px 80px; display: flex; flex-direction: column; justify-content: center; }
+.service-block.reverse .service-text { order: 2; padding: 80px 100px; }
+.service-block.reverse .service-accent { order: 1; padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; }
 
 .service-number { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-text); margin-bottom: 20px; font-family: 'Roboto', sans-serif; }
 .service-title { font-size: clamp(36px, 3.5vw, 56px); font-weight: 300; font-family: 'Cormorant', serif; letter-spacing: 0.03em; line-height: 1.1; margin-bottom: 32px; }
@@ -112,8 +111,8 @@ footer { background: var(--black); padding: 80px 0 56px; }
 }
 .expertise-banner { position: relative; height: 600px; overflow: hidden; }
 .expertise-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-.expertise-banner-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 80px; }
-.expertise-banner-heading { font-family: 'Cormorant', Georgia, serif; font-size: clamp(32px,3.5vw,56px); font-weight: 300; color: #fff; letter-spacing: 0.06em; line-height: 1.2; }
+.expertise-banner-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); display: flex; text-align: center; align-items: center; justify-content: center; text-align: center; padding: 0 80px; }
+.expertise-banner-heading { text-align: center; font-family: 'Cormorant', Georgia, serif; font-size: clamp(32px,3.5vw,56px); font-weight: 300; color: #fff; letter-spacing: 0.06em; line-height: 1.2; }
 .expertise-body-section { background: var(--grey-light); padding: 80px 0; }
 .expertise-body-section .container { max-width: 900px; }
 .expertise-body-section p { font-size: 19px; line-height: 1.85; color: var(--black); margin-bottom: 24px; }
